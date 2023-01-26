@@ -9,41 +9,35 @@ from flask_sqlalchemy import SQLAlchemy
 db = SQLAlchemy()
 
 # Notes on classes below: 
-    # Nullable = FALSE --> means the user HAS to give an input
-
-    # DateTime documentation: https://strftime.org/
-        # datetime.strptime(date_string, format)
-        # >>> date_str = "31-Oct-2015"
-        # >>> format = "%d-%b-%Y"
-        # >>> date = datetime.strptime(date_str, format)
-        # Need to include --> from datetime import datetime
-
-    # The classes will inherit everything that exists in db.Model. db is the 
-    # SQLAlchemy object that is the "magic" behind the scenes
+    # Nullable = FALSE means the user HAS to give an input
+    # The classes will inherit everything that exists in db.Model.
+    # db is the SQLAlchemy object that is the "magic" behind the scenes
 
 class Book(db.Model):
     """A book."""
 
     __tablename__ = "books"
 
-    # Possibly make this book_id & do autoincrement=True if ISBN doesn't work out
-    book_ISBN = db.Column(db.Integer, primary_key=True, nullable=False)
+    # Book_id is not set to auto-increment because it will automatically be a
+    # unique ID from the OpenLibrary API. 
+    book_id = db.Column(db.String, primary_key=True, nullable=False)
+    book_ISBN = db.Column(db.Integer, nullable=False)
     author = db.Column(db.String, nullable=False)
     title = db.Column(db.String, nullable=False)
-    # Might change year_published to an int instead of DateTime... 
-    year_published = db.Column(db.DateTime, nullable=False)
+    year_published = db.Column(db.Integer, nullable=False)
     cover_path = db.Column(db.String, nullable=False)
-    overview = db.Column(db.String, nullable=False)
-    # Nice to haves... 
-    # author_img_path = db.Column(db.String, nullable=True)
+    overview = db.Column(db.Text, nullable=False)
+    author_img_path = db.Column(db.String, nullable=True)
 
     characters = db.relationship("Character", back_populates="book")
+    collections = db.relationship("Collection", back_populates="book")
+    ratings_and_reviews = db.relationship("Rating_and_Review", back_populates="book")
     
 
     def __repr__(self):
-        """Showing the title and ISBN of an object"""
+        """Showing the title and book id of a Book object"""
 
-        return f"<Title: {self.title}, ISBN: {self.book_ISBN}>"
+        return f"<Title: {self.title}, Book ID: {self.book_id}>"
     
 
 class Character(db.Model):
@@ -51,25 +45,88 @@ class Character(db.Model):
 
     __tablename__ = "characters"
 
-    character_id = db.Column(db.Integer, primary_key=True, autoincrement=True, 
-                                                               nullable=False)
+    character_id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     racial_identity = db.Column(db.String, nullable=False)
     gender_identity = db.Column(db.String, nullable=False)
-    book_ISBN = db.Column(db.Integer, db.ForeignKey("books.book_ISBN"), 
-                                                        nullable=False)
-    
+    book_id = db.Column(db.String, db.ForeignKey("books.book_id"))
+
+    # Using the "magic" attribute --> character_id.book would give you the book 
+    # that has that character_id 
     book = db.relationship("Book", back_populates="characters")
+    
+
+    def __repr__(self):
+        """Showing the character ID of a Character object"""
+
+        return f"<Character ID: {self.character_id}>"
+    
+
+class User(db.Model):
+    """A User."""
+
+    __tablename__ = "users"
+
+    user_id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    username = db.Column(db.String, nullable=False)
+    password = db.Column(db.String, nullable=False)
+    fname = db.Column(db.String, nullable=False)
+    lname = db.Column(db.String, nullable=False)
+
+   
+    collections = db.relationship("Collection", back_populates="user")
+    ratings_and_reviews = db.relationship("Rating_and_Review", back_populates="user")
+ 
+
+    def __repr__(self):
+        """Showing the first and last name and username of a User object"""
+
+        return f"<Name: {self.fname} {self.lname}, Username: {self.username}>"
+
+
+class Rating_and_Review(db.Model):
+    """A book rating of 1-5 stars and an optional review comment"""
+
+    __tablename__ = "ratings_and_reviews"
+
+    rating_review_id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    user_id = db.Column(db.Integer, db.ForeignKey("users.user_id"))
+    book_id = db.Column(db.String, db.ForeignKey("books.book_id"))
+    rating = db.Column(db.Integer, nullable=False)
+    review = db.Column(db.Text, nullable=True)
+
+    
+    user = db.relationship("User", back_populates="ratings_and_reviews")
+    book = db.relationship("Book", back_populates="ratings_and_reviews")
 
 
     def __repr__(self):
-        """Showing the racial and gender identities of an object"""
+        """Showing the rating/review id of an object."""
 
-        return f"<Race: {self.racial_identity}, Gender: {self.gender_identity}>"
+        return f"<Rating/Review ID: {self.rating_review_id}>"
+    
+
+class Collection(db.Model):
+    """A user's collection of books"""
+
+    __tablename__ = "collections"
+
+    collection_id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    user_id = db.Column(db.Integer, db.ForeignKey("users.user_id"))
+    book_id = db.Column(db.String, db.ForeignKey("books.book_id"))
+    collection_name = db.Column(db.String, nullable=False)
+    
+    user = db.relationship("User", back_populates="collections")
+    book = db.relationship("Book", back_populates="collections")
 
 
+    def __repr__(self):
+        """Showing the collection name of a Collection object."""
 
-#need to add correct db_name
-def connect_to_db(flask_app, db_uri="postgresql:///{db_name}", echo=True):
+        return f"<Collection Name: {self.collection_name}>"
+    
+
+
+def connect_to_db(flask_app, db_uri="postgresql:///books", echo=True):
     """Connect to database."""
 
     flask_app.config["SQLALCHEMY_DATABASE_URI"] = db_uri
