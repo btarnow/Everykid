@@ -21,7 +21,7 @@ class Book(db.Model):
     # Book_id is not set to auto-increment because it will automatically be a
     # unique ID from the OpenLibrary API. 
     book_id = db.Column(db.String, primary_key=True)
-    book_isbn_13 = db.Column(db.String, nullable=False)
+    isbn_13 = db.Column(db.String, nullable=False)
     title = db.Column(db.String, nullable=False)
     year_published = db.Column(db.String, nullable=False)
     cover_path = db.Column(db.String, nullable=False)
