@@ -93,32 +93,32 @@
     },
     "OL20639677W": {
         "title": "Black Is a Rainbow Color",
-        "year_published": "0",
+        "year_published": "2020",
         "Cover Path": "https://covers.openlibrary.org/b/id/9255807-L.jpg",
         "isbn_13": "9781626726314",
         "author_name": [
             "Angela Joy"
         ],
         "overview": "A child reflects on the meaning of being Black in this moving and powerful anthem about a people, a culture, a history, and a legacy that lives on.",
-        "gender_identity": "",
-        "racial_identity": ""
+        "gender_identity": "Cisgender Female",
+        "racial_identity": "Black"
     },
     "OL27137338W": {
         "title": "Frances in the Country",
-        "year_published": "0",
-        "Cover Path": "/static/images/blank_cover_img.png",
+        "year_published": "2022",
+        "Cover Path": "/static/images/frances_cover.jpg",
         "isbn_13": "9780823443321",
         "author_name": [
             "Elizabeth Garton Scanlon",
             "Sean Qualls"
         ],
         "overview": "Frances is a city kid, but it\u2019s hard for her to fit in. City walls aren\u2019t for climbing, city rooms aren\u2019t for running, city shops and city yards are too crowded, and there are so many rules that Frances can\u2019t seem to follow.",
-        "gender_identity": "",
-        "racial_identity": ""
+        "gender_identity": "Cisgender Female",
+        "racial_identity": "Black"
     },
     "OL20531661W": {
         "title": "The King of Kindergarten",
-        "year_published": "0",
+        "year_published": "2019",
         "Cover Path": "https://covers.openlibrary.org/b/id/11222771-L.jpg",
         "isbn_13": "9781984873989",
         "author_name": [
@@ -126,12 +126,12 @@
             "Vanessa Brantley-Newton"
         ],
         "overview": "Starting kindergarten is a big milestone--and the hero of this story is ready to make his mark! He's dressed himself, eaten a pile of pancakes, and can't wait to be part of a whole new kingdom of kids. The day will be jam-packed, but he's up to the challenge, taking new experiences in stride with his infectious enthusiasm! And afterward, he can't wait to tell his proud parents all about his achievements--and then wake up to start another day.",
-        "gender_identity": "",
-        "racial_identity": ""
+        "gender_identity": "Cisgender Male",
+        "racial_identity": "Black"
     },
     "OL25070735W": {
         "title": "Emile and the Field",
-        "year_published": "0",
+        "year_published": "2022",
         "Cover Path": "https://covers.openlibrary.org/b/id/11959436-L.jpg",
         "isbn_13": "9781984850430",
         "author_name": [
@@ -139,24 +139,24 @@
             "Chioma Ebinama"
         ],
         "overview": "In this lyrical picture book from an award-winning poet, a young boy cherishes a neighborhood field throughout the changing seasons. With stunning illustrations and a charming text, this beautiful story celebrates a child's relationship with nature.",
-        "gender_identity": "",
-        "racial_identity": ""
+        "gender_identity": "Cisgender Male",
+        "racial_identity": "Black"
     },
     "OL39666203M": {
         "title": "Lab Magic (Ty's Travels)",
         "year_published": "2022",
         "Cover Path": "https://covers.openlibrary.org/b/id/13154723-L.jpg",
-        "isbn_13": "0",
+        "isbn_13": "9780062951168",
         "author_name": [
             "Kelly Starling Lyons"
         ],
         "overview": "Ty and Corey love to visit the museum. When they step through the doors, they become scientists. They study bugs and hunt for fossils. They catch the wind. When Ty can\u2019t participate in a lab activity because of his age, he uses his big imagination at home. Discovering new things is so much fun!\r\n\r\nJoin Ty on his science adventure in this My First I Can Read for beginning readers. With simple, rhythmic text and joyful, bright art, this My First I Can Read book, Guided Reading Level I, is perfect for shared reading with a child. Books at this level feature basic language, word repetition, and whimsical illustrations, ideal for sharing with emergent readers. The active, engaging stories have appealing plots and lovable characters, encouraging children to continue their reading journey.",
-        "gender_identity": "",
-        "racial_identity": ""
+        "gender_identity": "Cisgender Male",
+        "racial_identity": "Black"
     },
     "OL24141019W": {
         "title": "Born Ready",
-        "year_published": "0",
+        "year_published": "2021",
         "Cover Path": "https://covers.openlibrary.org/b/id/10538475-L.jpg",
         "isbn_13": "9780593123638",
         "author_name": [
@@ -164,12 +164,12 @@
             "Charnelle Pinkney Barlow"
         ],
         "overview": "Penelope knows that he's a boy. (And a ninja.) The problem is getting everyone else to realize it.",
-        "gender_identity": "",
-        "racial_identity": ""
+        "gender_identity": "Transgender Male",
+        "racial_identity": "Black"
     },
     "OL20660371W": {
         "title": "We Are Water Protectors",
-        "year_published": "0",
+        "year_published": "2020",
         "Cover Path": "https://covers.openlibrary.org/b/id/11152714-L.jpg",
         "isbn_13": "9781713765196",
         "author_name": [
@@ -177,22 +177,23 @@
             "Michaela Goade"
         ],
         "overview": "Inspired by the many Indigenous-led movements across North America, We Are Water Protectors issues an urgent rallying cry to safeguard the Earth's water from harm and corruption -- a bold and lyrical picture book written by Carole Lindstrom and vibrantly illustrated by Michaela Goade. Water is the first medicine. It affects and connects us all. When a black snake threatens to destroy the Earth and poison her people's water, one young water protector takes a stand to defend Earth's most sacred resource. - Publisher.",
-        "gender_identity": "",
-        "racial_identity": ""
+        "gender_identity": "Cisgender Female",
+        "racial_identity": "American Indian or Alaska Native"
     },
     "OL46525616M": {
         "title": "You Hold Me Up",
         "year_published": "2017",
         "Cover Path": "https://covers.openlibrary.org/b/id/13154738-L.jpg",
-        "isbn_13": "0",
-        "author_name": [],
+        "isbn_13": "9781459814479",
+        "author_name": [
+            "Monique Gray Smith"],
         "overview": "Encourage children to show love and support for each other and to consider each other\u2019s well-being in their everyday actions.",
-        "gender_identity": "",
-        "racial_identity": ""
+        "gender_identity": "Cisgender Female",
+        "racial_identity": "American Indian or Alaska Native"
     },
     "OL24348919W": {
         "title": "I Sang You Down from the Stars",
-        "year_published": "0",
+        "year_published": "2021",
         "Cover Path": "https://covers.openlibrary.org/b/id/10873538-L.jpg",
         "isbn_13": "9780316493154",
         "author_name": [
@@ -200,70 +201,70 @@
             "Michaela Goade"
         ],
         "overview": "As she waits for the arrival of her new baby, a mother-to-be gathers gifts to create a sacred bundle. A white feather, cedar and sage, a stone from the river . . .\r\n\r\nEach addition to the bundle will offer the new baby strength and connection to tradition, family, and community. As they grow together, mother and baby will each have gifts to offer each other.\r\n\r\nTasha Spillett-Sumner and Michaela Goade, two Indigenous creators, bring beautiful words and luminous art together in a resonant celebration of the bond between mother and child.",
-        "gender_identity": "",
-        "racial_identity": ""
+        "gender_identity": "Cisgender Female",
+        "racial_identity": "American Indian or Alaska Native"
     },
     "OL46525603M": {
-        "title": "Inuki\u2019s Birthday Party",
+        "title": "Inuki's Birthday Party",
         "year_published": "2021",
         "Cover Path": "https://covers.openlibrary.org/b/id/13154725-L.jpg",
-        "isbn_13": "0",
-        "author_name": [],
+        "isbn_13": "9781774500477",
+        "author_name": ["Aviaq Johnston"],
         "overview": "Inuki lives in Iglulik, Nunavut. It is his fifth birthday! He can\u2019t wait for his party at the community hall. There is cake to eat and presents to open, but celebrating with his family and friends is Inuki\u2019s favorite gift of all!",
-        "gender_identity": "",
-        "racial_identity": ""
+        "gender_identity": "Cisgender Male",
+        "racial_identity": "American Indian or Alaska Native"
     },
     "OL19406W": {
         "title": "Abuela",
-        "year_published": "0",
+        "year_published": "1997",
         "Cover Path": "https://covers.openlibrary.org/b/id/1117782-L.jpg",
         "isbn_13": "9780606110198",
         "author_name": [
             "Arthur Dorros"
         ],
         "overview": "While riding on a bus with her grandmother, a little girl imagines that they are carried up into the sky and fly over the sights of New York City.",
-        "gender_identity": "",
-        "racial_identity": ""
+        "gender_identity": "Cisgender Female",
+        "racial_identity": "Hispanic, Latinx, or Spanish Origin"
     },
     "OL19987787W": {
         "title": "Besos for baby",
-        "year_published": "0",
+        "year_published": "2014",
         "Cover Path": "https://covers.openlibrary.org/b/id/12379354-L.jpg",
         "isbn_13": "9780316257510",
         "author_name": [
             "Jen Arena"
         ],
-        "overview": "\"Everyone has kisses for Baby, from Mami and Papi to perro and gato. Using simple Spanish words, this charming read-aloud proves that love is the same in every language!\"",
-        "gender_identity": "",
-        "racial_identity": ""
+        "overview": "Everyone has kisses for Baby, from Mami and Papi to perro and gato. Using simple Spanish words, this charming read-aloud proves that love is the same in every language!",
+        "gender_identity": "Cisgender Female",
+        "racial_identity": "Hispanic, Latinx, or Spanish Origin"
     },
     "OL26886570M": {
-        "title": "Call me tree",
+        "title": "Call Me Tree",
         "year_published": "2014",
         "Cover Path": "https://covers.openlibrary.org/b/id/13154734-L.jpg",
-        "isbn_13": "0",
+        "isbn_13": "9780892392940",
         "author_name": [
             "Maya Christina Gonzalez"
         ],
         "overview": "In this spare, lyrically written story, we join a child on a journey of self-discovery. Finding a way to grow from the inside out, just like a tree, the child develops as an individual comfortable in the natural world and in relationships with others. The child begins Within / The deep dark earth, like a seed, ready to grow and then dream and reach out to the world. Soon the child discovers birds and the sky and other children: Trees and trees / Just like me! Each is different too. The child embraces them all because All trees have roots/ All trees belong.",
-        "gender_identity": "",
-        "racial_identity": ""
+        "gender_identity": "Gender Non-Conforming",
+        "racial_identity": "Hispanic, Latinx, or Spanish Origin"
     },
     "OL20055629W": {
-        "title": "One of a kind like me",
-        "year_published": "0",
+        "title": "One of a Kind Like Me",
+        "year_published": "2016",
         "Cover Path": "https://covers.openlibrary.org/b/id/12347404-L.jpg",
         "isbn_13": "9780985351410",
         "author_name": [
             "Laurin Mayeno"
         ],
         "overview": "Tomorrow is the school parade, and Danny knows exactly what he will be: a princess. Mommy supports him 100%, and they race to the thrift store to find his costume. It's almost closing time - will Danny find the costume of his dreams in time? One of A Kind, Like Me / \u00danico como yo is a sweet story about unconditional love and the beauty of individuality. It's a unique book that lifts up children who don't fit gender stereotypes, and reflects the power of a loving and supportive community.",
-        "gender_identity": "",
-        "racial_identity": ""
+        "gender_identity": "Gender Non-Conforming",
+        "racial_identity": "Hispanic, Latinx, or Spanish Origin"
     },
     "OL20128080W": {
         "title": "The Proudest Blue",
-        "year_published": "0",
+        "year_published": "2019",
         "Cover Path": "https://covers.openlibrary.org/b/id/12705548-L.jpg",
         "isbn_13": "9781783449729",
         "author_name": [
@@ -272,8 +273,8 @@
             "Hatem Aly"
         ],
         "overview": "With her new backpack and light-up shoes, Faizah knows the first day of school is going to be special. It's the start of a brand new year and, best of all, it's her older sister Asiya's first day of hijab--a hijab of beautiful blue fabric, like the ocean waving to the sky. But not everyone sees hijab as beautiful, and in the face of hurtful, confusing words, Faizah will find new ways to be strong.",
-        "gender_identity": "",
-        "racial_identity": ""
+        "gender_identity": "Cisgender Female",
+        "racial_identity": "Middle Eastern or North African"
     },
     "OL34975354M": {
         "title": "Miguel's Community Garden",
