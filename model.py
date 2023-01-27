@@ -20,24 +20,43 @@ class Book(db.Model):
 
     # Book_id is not set to auto-increment because it will automatically be a
     # unique ID from the OpenLibrary API. 
-    book_id = db.Column(db.String, primary_key=True, nullable=False)
-    book_ISBN = db.Column(db.Integer, nullable=False)
-    author = db.Column(db.String, nullable=False)
+    book_id = db.Column(db.String, primary_key=True)
+    book_isbn_13 = db.Column(db.String, nullable=False)
     title = db.Column(db.String, nullable=False)
-    year_published = db.Column(db.Integer, nullable=False)
+    year_published = db.Column(db.String, nullable=False)
     cover_path = db.Column(db.String, nullable=False)
     overview = db.Column(db.Text, nullable=False)
-    author_img_path = db.Column(db.String, nullable=True)
 
     characters = db.relationship("Character", back_populates="book")
     collections = db.relationship("Collection", back_populates="book")
     ratings_and_reviews = db.relationship("Rating_and_Review", back_populates="book")
+    authors = db.relationship("Book", back_populates="book")
     
 
     def __repr__(self):
         """Showing the title and book id of a Book object"""
 
         return f"<Title: {self.title}, Book ID: {self.book_id}>"
+
+
+class Author(db.Model):
+    """An author."""
+
+    __tablename__ = "authors"
+
+    author_id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    book_id = db.Column(db.String, db.ForeignKey("books.book_id"))
+    author_name = db.Column(db.String, nullable=False)
+    author_img_path = db.Column(db.String, nullable=True)
+
+
+    book = db.relationship("Book", back_populates="authors")
+
+
+    def __repr__(self):
+        """Showing the author id and author name of an Author object"""
+
+        return f"<Author ID: {self.author_id}, Name: {self.author_name}>"
     
 
 class Character(db.Model):
