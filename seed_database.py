@@ -9,8 +9,7 @@ from server import app
 
 # Whatever I put in as a parameter, it will execute in the command line:
 # So instead of dropping and creating the database every time, I can instead run
-# python3 seed_database.py and it will run the following commands in the command 
-# line:
+# python3 seed_database.py and it will run the following commands: 
 os.system("dropdb books_db")
 os.system("createdb books_db")
 
@@ -35,7 +34,9 @@ book_OLIDs_list = ["OL20914137W", "OL25074818W", "OL22020948W", "OL27139917W",
                    "OL26977532M", "OL36181966M", "OL28091302M", "OL31807898M", 
                    "OL20984012W", "OL20568318W", "OL27911917M", "OL12312396M"]
 
+
 def create_database(book_OLIDs_list):
+    """This function pulls data from the Open Library API to seed the database"""
 
     books_database = {}
 
@@ -131,10 +132,10 @@ def create_database(book_OLIDs_list):
 
         ind_book_dict["overview"] = overview
 
-        # Make a placeholder for an empty list for gender_identity 
+        # Make a placeholder for an empty string for gender_identity 
         ind_book_dict["gender_identity"] = ""
 
-        # Make a placeholder for an empty list for racial_identity 
+        # Make a placeholder for an empty string for racial_identity 
         ind_book_dict["racial_identity"] = ""
 
 
@@ -152,9 +153,7 @@ def create_database(book_OLIDs_list):
 ################################################################################
 
 
-# Once I have ALL info, loop through the dictionary that I created and create an
-# instantiation object (a book) that would match the required fields of the columns
-# in my model.py tables. 
+
 
 
 # Look back at notes on .get and values and methods and functions for dictionaries. 
@@ -175,9 +174,11 @@ with open('static/books_database.json') as file:
 
 
 def seed_books():
+    """This function loops through books_database.json and creates an 
+    instantiation of a book object that matches the required fields of the 
+    columns in the model.py tables."""
     
     # book_data.keys() --> this gives all of the individual dicts. within the db
-
     for key in book_data.keys():
         book_id = key
         isbn_13 = book_data[key]["isbn_13"]
@@ -187,7 +188,8 @@ def seed_books():
         overview = book_data[key]["overview"]
 
     
-        book_to_add = crud.create_book(book_id, isbn_13, title, year_published, cover_path, overview)
+        book_to_add = crud.create_book(book_id, isbn_13, title, year_published, 
+                                       cover_path, overview)
         model.db.session.add(book_to_add)
 
 
@@ -217,11 +219,6 @@ def seed_authors():
 
 # To test that functions are working correctly, execute the following command 
 # in the command line: pg_dump books_db > books_practice.sql
-    
-    ######## COMMIT EVERYTHING AFTER ALL FUNCTIONS RUN!  LOOP!!! 
-    
-###QUESTION-- SHOULD I CREATE A FUNCTION THAT RUNS ALL OF THE FUNCTIONS AND 
-###THEN COMMITS THEM ALL TO AVOID THE REPETITION IN CODE?
 
 def seed_database():
     """Run all seed functions to seed database """
