@@ -1,11 +1,16 @@
 """Server for EveryKid app."""
 
-from flask import Flask
+from flask import Flask, request, render_template, flash, session, redirect
 
 app = Flask(__name__)
 
 
 # Replace this with routes and view functions!
+@app.route('/')
+def homepage():
+    """Return homepage"""   
+
+    return render_template("homepage.html")
 
 
 if __name__ == "__main__":

@@ -1,7 +1,27 @@
 """Script to seed database"""
 
 import requests 
+import os
 import json
+import crud 
+import model
+from server import app
+
+# Whatever I put in as a parameter, it will execute in the command line:
+# So instead of dropping and creating the database every time, I can instead run
+# python3 seed_database.py and it will run the following commands in the command 
+# line:
+os.system("dropdb books_db")
+os.system("createdb books_db")
+
+# Prevents error: 
+app.app_context().push() 
+
+# Connecting to database 
+model.connect_to_db(app)
+
+# Creates tables 
+model.db.create_all()
 
 book_OLIDs_list = ["OL20914137W", "OL25074818W", "OL22020948W", "OL27139917W",
                    "OL26585018W", "OL21183636W", "OL19635091W", "OL20639677W", 
@@ -126,8 +146,10 @@ def create_database(book_OLIDs_list):
 
     return books_database 
 
-create_database(book_OLIDs_list)
-
+################################################################################
+# The function below needs commented out, or it'll make a new .json file every time! 
+# create_database(book_OLIDs_list)
+################################################################################
 
 
 # Once I have ALL info, loop through the dictionary that I created and create an
@@ -143,3 +165,76 @@ create_database(book_OLIDs_list)
     # then assign those values to a variable, and once I have the variables and
     # use these in the crud function to make an instance of a book, then add it 
     # to the session, and then commit. 
+
+# define a function that opens and loads the data from the JSON file 
+
+
+# Load book data from JSON file:
+with open('static/books_database.json') as file:
+    book_data = json.loads(file.read())
+
+
+def seed_books():
+    
+    # book_data.keys() --> this gives all of the individual dicts. within the db
+
+    for key in book_data.keys():
+        book_id = key
+        isbn_13 = book_data[key]["isbn_13"]
+        title = book_data[key]["title"]
+        year_published = book_data[key]["year_published"]
+        cover_path = book_data[key]["Cover Path"]
+        overview = book_data[key]["overview"]
+
+    
+        book_to_add = crud.create_book(book_id, isbn_13, title, year_published, cover_path, overview)
+        model.db.session.add(book_to_add)
+
+
+def seed_characters():
+    for key in book_data.keys():
+        book_id = key
+        gender_identity = book_data[key]["gender_identity"]
+        racial_identity = book_data[key]["racial_identity"]
+        # For future versions, I could change the database to include a list of 
+        # characters to then iterate through like in seed_authors. 
+
+        character_to_add = crud.add_character(book_id, gender_identity, 
+                                              racial_identity)
+        model.db.session.add(character_to_add)
+
+        
+def seed_authors():
+    for key in book_data.keys():
+        book_id = key
+        # author name will be a list of author name/names. Is this okay?
+        author_name = book_data[key]["author_name"]
+        for author in author_name:
+            author_to_add = crud.add_author(book_id, author)
+            model.db.session.add(author_to_add)
+    
+
+
+# To test that functions are working correctly, execute the following command 
+# in the command line: pg_dump books_db > books_practice.sql
+    
+    ######## COMMIT EVERYTHING AFTER ALL FUNCTIONS RUN!  LOOP!!! 
+    
+###QUESTION-- SHOULD I CREATE A FUNCTION THAT RUNS ALL OF THE FUNCTIONS AND 
+###THEN COMMITS THEM ALL TO AVOID THE REPETITION IN CODE?
+
+def seed_database():
+    """Run all seed functions to seed database """
+    seed_books()
+    seed_characters()
+    seed_authors()
+    model.db.session.commit() 
+    print("All seed functions ran.")
+
+seed_database()
+
+
+
+
+
+

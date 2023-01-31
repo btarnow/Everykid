@@ -1,4 +1,3 @@
-"""Models for EveryKid app."""
 
 # Flask SQLAlchemy is a object-relational-mapper that translates Python classes 
 # to tables on relational databases and automatically converts function calls to 
@@ -30,7 +29,7 @@ class Book(db.Model):
     characters = db.relationship("Character", back_populates="book")
     collections = db.relationship("Collection", back_populates="book")
     ratings_and_reviews = db.relationship("Rating_and_Review", back_populates="book")
-    authors = db.relationship("Book", back_populates="book")
+    authors = db.relationship("Author", back_populates="book")
     
 
     def __repr__(self):
@@ -47,7 +46,8 @@ class Author(db.Model):
     author_id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     book_id = db.Column(db.String, db.ForeignKey("books.book_id"))
     author_name = db.Column(db.String, nullable=False)
-    author_img_path = db.Column(db.String, nullable=True)
+    # Can include the following if I have time to add author images
+    # author_img_path = db.Column(db.String, nullable=True)
 
 
     book = db.relationship("Book", back_populates="authors")
@@ -145,7 +145,7 @@ class Collection(db.Model):
     
 
 
-def connect_to_db(flask_app, db_uri="postgresql:///books", echo=True):
+def connect_to_db(flask_app, db_uri="postgresql:///books_db", echo=False):
     """Connect to database."""
 
     flask_app.config["SQLALCHEMY_DATABASE_URI"] = db_uri
@@ -161,5 +161,6 @@ def connect_to_db(flask_app, db_uri="postgresql:///books", echo=True):
 
 if __name__ == "__main__":
     from server import app
-
+    app.app_context().push()
+    db.create_all()
     connect_to_db(app, echo=False) # If echo=True, output will show in terminal
