@@ -25,7 +25,7 @@ def create_author(book_id, author_name):
     return author 
 
 
-def create_character(book_id, racial_identity, gender_identity):
+def create_character(book_id, gender_identity, racial_identity):
     """Create and return a character in a book"""
 
     character = Character(book_id = book_id, racial_identity = racial_identity, 
@@ -45,9 +45,17 @@ def filter_characters(race_filter, gender_filter):
     # To use make an AND statement in SQLalchemy, the syntax looks like this: 
     # Employee.query.filter( (Employee.state == 'CA') & (Employee.salary > 70000) )
 
+    print(race_filter)
+    print(gender_filter)
+    # filtered_characters = Character.query.filter(Character.gender_identity == 
+    #                                           "Cisgender Female").all()
     filtered_characters = Character.query.filter( (Character.racial_identity == 
                                               race_filter) & 
                                               (Character.gender_identity == 
                                                gender_filter) ).all()
+
+    # filtered_characters = Character.query.all()
+    print(filtered_characters)
+    
 
     return filtered_characters
