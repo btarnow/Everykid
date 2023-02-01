@@ -14,7 +14,7 @@ def create_book(book_id, isbn_13, title, year_published, cover_path, overview):
     return book
 
 
-def add_author(book_id, author_name):
+def create_author(book_id, author_name):
     """Create and return an author of a book"""
 
     # with author_id = author_id, we're strictly defining the variable to Python
@@ -25,7 +25,7 @@ def add_author(book_id, author_name):
     return author 
 
 
-def add_character(book_id, racial_identity, gender_identity):
+def create_character(book_id, racial_identity, gender_identity):
     """Create and return a character in a book"""
 
     character = Character(book_id = book_id, racial_identity = racial_identity, 

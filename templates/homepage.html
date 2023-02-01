@@ -9,7 +9,40 @@
     <h1>EveryKid</h1>
     <h2>Find children's books that celebrate diversity.</h2>
 
-   <p>Great job, Becky!</p>
+    <form>
+        <div>
+        Select at least one filter to get started
+        </div>
+
+        <div>
+        Primary Character's Race
+            <select>
+                <option value="am_indian_alaska_nat">American Indian or Alaska Native</option>
+                <option value="asian">Asian</option>
+                <option value="black_african_am">Black or African American</option>
+                <option value="hispanic_latinx_span">Hispanic, Latinx, or Spanish Origin</option>
+                <option value="middle_eastern">Middle Eastern or North African</option>
+                <option value="multiracial">Multiracial</option>
+                <option value="white">White</option>
+                <option value="hawaiian_pacific">Native Hawaiian or Other Pacific Islander</option>
+            </select> 
+        </div>
+
+        <div>
+        Primary Character's Gender
+            <select>
+                <option value="am_indian_alaska_nat">Cisgender Female</option>
+                <option value="asian">Cisgender Male</option>
+                <option value="black_african_am">Gender Fluid</option>
+                <option value="hispanic_latinx_span">Non-Binary</option>
+                <option value="middle_eastern">Transgender Female</option>
+                <option value="multiracial">Transgender Male</option>
+            </select>
+        </div>
+
+
+        <button type="submit">Find Books</button>
+    </form>
     
 
 {% endblock %}

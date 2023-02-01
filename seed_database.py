@@ -201,7 +201,7 @@ def seed_characters():
         # For future versions, I could change the database to include a list of 
         # characters to then iterate through like in seed_authors. 
 
-        character_to_add = crud.add_character(book_id, gender_identity, 
+        character_to_add = crud.create_character(book_id, gender_identity, 
                                               racial_identity)
         model.db.session.add(character_to_add)
 
@@ -212,7 +212,7 @@ def seed_authors():
         # author name will be a list of author name/names. Is this okay?
         author_name = book_data[key]["author_name"]
         for author in author_name:
-            author_to_add = crud.add_author(book_id, author)
+            author_to_add = crud.create_author(book_id, author)
             model.db.session.add(author_to_add)
     
 
