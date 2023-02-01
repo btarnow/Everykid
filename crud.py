@@ -32,3 +32,22 @@ def create_character(book_id, racial_identity, gender_identity):
                           gender_identity = gender_identity)
 
     return character
+
+
+
+# write a CRUD function that takes in a race and gender identity and returns 
+# all of the characters that meet that criteria  
+
+def filter_characters(race_filter, gender_filter):
+    """Filter books by a character's race and/or gender"""
+
+    # Need to do a sqlalchemy query within the characters table.
+    # To use make an AND statement in SQLalchemy, the syntax looks like this: 
+    # Employee.query.filter( (Employee.state == 'CA') & (Employee.salary > 70000) )
+
+    filtered_characters = Character.query.filter( (Character.racial_identity == 
+                                              race_filter) & 
+                                              (Character.gender_identity == 
+                                               gender_filter) ).all()
+
+    return filtered_characters
