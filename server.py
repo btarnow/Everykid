@@ -40,7 +40,9 @@ def apply_book_filters():
 
     # the list of books then gets passed to the books_results_page where it can
     # be iterated through using a Jinja loop. 
-    return render_template("book_results_page.html", book_list = book_list)
+    
+    return render_template("book_results_page.html", book_list = book_list, 
+                           race_filter = race_filter, gender_filter = gender_filter)
 
 
 

@@ -7,14 +7,82 @@
 
 {% block body %}
 
-    <h2>Books That Meet the Criteria</h2>
+<form action="/book_filters">
+    <div>
+    Select at least one filter to get started
+    </div>
+
+    <div>
+    Primary Character's Race
+        <select id="race" name="race">
+            <!-- The value for option needs to exactly match what's in the 
+                SQL characters table -->
+            
+            <option value="American Indian or Alaska Native">
+                American Indian or Alaska Native</option>
+            <option value="Asian">Asian</option>
+            <option value="Black">
+                Black or African American</option>
+            <option value="Hispanic, Latinx, or Spanish Origin">
+                Hispanic, Latinx, or Spanish Origin</option>
+            <option value="Middle Eastern or North African">
+                Middle Eastern or North African</option>
+            <option value="Multiracial">Multiracial</option>
+            <option value="White">White</option>
+            <option value="Native Hawaiian or Other Pacific Islander">
+                Native Hawaiian or Other Pacific Islander</option>
+            <option value="All Races">All Races</option>
+        </select> 
+    </div>
+
+    <div>
+    Primary Character's Gender
+        <select id="gender" name="gender">
+            <option value="Cisgender Female">Cisgender Female</option>
+            <option value="Cisgender Male">Cisgender Male</option>
+            <option value="Gender Fluid">Gender Fluid</option>
+            <option value="Non-Binary">Non-Binary</option>
+            <option value="Transgender Female">Transgender Female</option>
+            <option value="Transgender Male">Transgender Male</option>
+            <option value="All Genders">All Genders</option>
+        </select>
+    </div>
+
+
+    <button id="findBooksButton" type="submit">Find Books</button>
+</form>
+
+<!-- This <input type="hidden"> defines a hidden input field. I am using this 
+    in conjunction with JS so that when the user submits the form, their 
+    selections stay visible and the form doesn't reset to it's default select 
+    state. -->
+<input type="hidden" id="race_filter" value= "{{ race_filter }}">
+<input type="hidden" id="gender_filter" value= "{{ gender_filter }}">
+
+
+    <h1>Books That Meet the Criteria</h1>
         {% for book in book_list %}
             <div>
-            {{ book.title }}
-            {{ book.overview }}
+            <h2>{{ book.title }}</h2>
+
+            <!-- <p>{{ book.author }}</p> -->
+
+
+            {% for author in book.authors %}
+                {{ author.author_name }}{% if not loop.last %}, {% endif %}
+            {% endfor %}
+
+            <p>{{ book.year_published }}</p>
+
+            <p>{{ book.overview }}</p>
+
             <img src="{{ book.cover_path }}">
+            
             </div>
         {% endfor %}
 
+    <!-- The following script tag connects buttons.js to allow me to use 
+        documentQuerySelector with the IDs in the hidden script tags above-->
+    <script src="/static/buttons.js"></script>
 
 {% endblock %}

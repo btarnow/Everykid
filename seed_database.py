@@ -22,6 +22,19 @@ model.connect_to_db(app)
 # Creates tables 
 model.db.create_all()
 
+################################################################################
+# The following section of code was used to seed my database from the OpenLibrary
+# API. I identified books that I wanted to utilize and stored their OpenLibrary 
+# number in the list below, book_OLIDs_list. I then iterated through each book
+# in this list to pull out the following: title, author(s), overview, year 
+# published, and it's ISBN13 number in case I want to utilize GoogleBook's API 
+# later to do book previews. I also created a blank key/value pair for both 
+# gender and racial identity of the main character, and I added in that data 
+# myself because that could not be found in an API. I then stored all of this 
+# information in a JSON file called books_database. 
+################################################################################
+
+
 book_OLIDs_list = ["OL20914137W", "OL25074818W", "OL22020948W", "OL27139917W",
                    "OL26585018W", "OL21183636W", "OL19635091W", "OL20639677W", 
                    "OL27137338W", "OL20531661W", "OL25070735W", "OL39666203M", 
@@ -147,25 +160,15 @@ def create_database(book_OLIDs_list):
 
     return books_database 
 
-################################################################################
-# The function below needs commented out, or it'll make a new .json file every time! 
+
+# The function below needs commented out, or it'll make a new .json file every 
+# time! 
 # create_database(book_OLIDs_list)
+
 ################################################################################
-
-
-
-
-
-# Look back at notes on .get and values and methods and functions for dictionaries. 
-
-# open and read the book_database.json (may have to stringify?)
-
-# looping through and getting all of the values for each key 
-    # then assign those values to a variable, and once I have the variables and
-    # use these in the crud function to make an instance of a book, then add it 
-    # to the session, and then commit. 
-
-# define a function that opens and loads the data from the JSON file 
+# Once I seeded my JSON database, I then created seed functions below to 
+# instantiate book, character, and author objects. 
+################################################################################
 
 
 # Load book data from JSON file:
@@ -194,6 +197,10 @@ def seed_books():
 
 
 def seed_characters():
+    """This function loops through books_database.json and creates an 
+    instantiation of a character object that matches the required fields of the 
+    columns in the model.py tables."""
+
     for key in book_data.keys():
         book_id = key
         gender_identity = book_data[key]["gender_identity"]
@@ -207,6 +214,10 @@ def seed_characters():
 
         
 def seed_authors():
+    """This function loops through books_database.json and creates an 
+    instantiation of an author object that matches the required fields of the 
+    columns in the model.py tables."""
+
     for key in book_data.keys():
         book_id = key
         # author name will be a list of author name/names. Is this okay?

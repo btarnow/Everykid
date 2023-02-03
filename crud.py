@@ -45,17 +45,21 @@ def filter_characters(race_filter, gender_filter):
     # To use make an AND statement in SQLalchemy, the syntax looks like this: 
     # Employee.query.filter( (Employee.state == 'CA') & (Employee.salary > 70000) )
 
-    print(race_filter)
-    print(gender_filter)
-    # filtered_characters = Character.query.filter(Character.gender_identity == 
-    #                                           "Cisgender Female").all()
     filtered_characters = Character.query.filter( (Character.racial_identity == 
                                               race_filter) & 
                                               (Character.gender_identity == 
                                                gender_filter) ).all()
 
-    # filtered_characters = Character.query.all()
-    print(filtered_characters)
+    return filtered_characters
+
+
+#TODO: 
+# steps for later: 
+# add a blank option to dropdowns 
+# then modify crud filter_characters --> if else for gender/race filter both, 
+# one or the other 
+
+
     
 
-    return filtered_characters
+    
