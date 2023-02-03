@@ -7,7 +7,6 @@ import model
 app = Flask(__name__)
 
 
-# Replace this with routes and view functions!
 @app.route('/')
 def homepage():
     """Return homepage"""   
