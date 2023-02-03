@@ -44,12 +44,41 @@ def filter_characters(race_filter, gender_filter):
     # Need to do a sqlalchemy query within the characters table.
     # To use make an AND statement in SQLalchemy, the syntax looks like this: 
     # Employee.query.filter( (Employee.state == 'CA') & (Employee.salary > 70000) )
+    ############################################################################
+    
+    # if the user selects 'ALL GENDERS' and 'ALL RACES': 
+    if race_filter == "ALL RACES" and gender_filter== "ALL GENDERS":
+        filtered_characters = Character.query.all()
+    
+   
+    # if the user selects an individual race and 'ALL GENDERS': 
+    elif gender_filter == "ALL GENDERS":
+        filtered_characters = Character.query.filter(Character.racial_identity == 
+                                                race_filter).all()
 
-    filtered_characters = Character.query.filter( (Character.racial_identity == 
-                                              race_filter) & 
-                                              (Character.gender_identity == 
-                                               gender_filter) ).all()
+    # if the user selects an individual gender and 'ALL RACES': 
+    elif race_filter == "ALL RACES":
+        filtered_characters = Character.query.filter(Character.gender_identity == 
+                                                gender_filter).all()
+        
 
+    # If the user selects an individual race and gender (aka NOT 'ALL RACES' or 
+    # 'ALL GENDERS'): 
+    else: 
+        filtered_characters = Character.query.filter( (Character.racial_identity == 
+                                                race_filter) & 
+                                                (Character.gender_identity == 
+                                                gender_filter) ).all()
+
+
+    # QUESTIONS/KIND OF IDEAS: 
+        # What would the if statements be here? 
+        
+        #  Should I separate this into two different functions? One for filer_gender 
+        # and one for filter race? Would I be able to return both variables to 
+        # then use in my server.py function? 
+
+    
     return filtered_characters
 
 
