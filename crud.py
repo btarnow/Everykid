@@ -7,9 +7,9 @@ from model import db, Book, Author, Character, User, Rating_and_Review, Collecti
 def create_book(book_id, isbn_13, title, year_published, cover_path, overview):
     """Create and return a new book."""
 
-    book = Book(book_id = book_id, isbn_13 = isbn_13, title = title, 
-                year_published = year_published, cover_path = cover_path, 
-                overview = overview)
+    book = Book(book_id=book_id, isbn_13=isbn_13, title=title, 
+                year_published=year_published, cover_path=cover_path, 
+                overview=overview)
 
     return book
 
@@ -20,7 +20,7 @@ def create_author(book_id, author_name):
     # with author_id = author_id, we're strictly defining the variable to Python
     # If they weren't strictly defined, they could be accidentally put in any order 
     # as the parameters. 
-    author = Author(book_id = book_id, author_name = author_name)
+    author = Author(book_id=book_id, author_name=author_name)
 
     return author 
 
@@ -70,15 +70,6 @@ def filter_characters(race_filter, gender_filter):
                                                 (Character.gender_identity == 
                                                 gender_filter) ).all()
 
-
-    # QUESTIONS/KIND OF IDEAS: 
-        # What would the if statements be here? 
-        
-        #  Should I separate this into two different functions? One for filer_gender 
-        # and one for filter race? Would I be able to return both variables to 
-        # then use in my server.py function? 
-
-    
     return filtered_characters
 
 

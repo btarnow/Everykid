@@ -25,10 +25,10 @@ model.db.create_all()
 ################################################################################
 # The following section of code was used to seed my database from the OpenLibrary
 # API. I identified books that I wanted to utilize and stored their OpenLibrary 
-# number in the list below, book_OLIDs_list. I then iterated through each book
+# number in the list below-- book_OLIDs_list. I then iterated through each book
 # in this list to pull out the following: title, author(s), overview, year 
 # published, and it's ISBN13 number in case I want to utilize GoogleBook's API 
-# later to do book previews. I also created a blank key/value pair for both 
+# in the future. I also created a blank key/value pair for both 
 # gender and racial identity of the main character, and I added in that data 
 # myself because that could not be found in an API. I then stored all of this 
 # information in a JSON file called books_database. 
@@ -154,6 +154,7 @@ def create_database(book_OLIDs_list):
 
         books_database[book_OLID]= ind_book_dict 
 
+    # the "w" stands for "write" and is creating ("writing") AND opening a new file 
     out_file = open("books_database.json", "w")
     json.dump(books_database, out_file, indent = 4)
     out_file.close()
@@ -166,7 +167,7 @@ def create_database(book_OLIDs_list):
 # create_database(book_OLIDs_list)
 
 ################################################################################
-# Once I seeded my JSON database, I then created seed functions below to 
+# Once I created my JSON database, I then created seed functions below to 
 # instantiate book, character, and author objects. 
 ################################################################################
 
@@ -193,6 +194,7 @@ def seed_books():
     
         book_to_add = crud.create_book(book_id, isbn_13, title, year_published, 
                                        cover_path, overview)
+        # adding to the database session 
         model.db.session.add(book_to_add)
 
 
@@ -226,7 +228,6 @@ def seed_authors():
             author_to_add = crud.create_author(book_id, author)
             model.db.session.add(author_to_add)
     
-
 
 # To test that functions are working correctly, execute the following command 
 # in the command line: pg_dump books_db > books_practice.sql
