@@ -1,0 +1,105 @@
+/* The following portion of CSS comes from Richard Codes @ 
+https://www.youtube.com/watch?v=ceveRz3e7F0&t=1077s */
+
+body {
+    background-color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+    color: #808893;
+  }
+  
+  .form-container {
+    margin: 6rem auto;
+    padding: 4rem;
+    border-radius: 1rem;
+    max-width: 30rem;
+    background-color: white;
+    box-shadow: 0 4rem 4rem -3rem #495161;
+  }
+  
+  input {
+    border: 2px solid #d3d9f0;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 0.3rem;
+    height: 3.2rem;
+    padding: 1rem;
+  }
+  
+  input:focus, button:focus {
+    border: 2px solid #2659ff;
+  }
+  
+  input[type=submit] {
+    margin: 2.4rem 0;
+    background-color: #2659ff;
+    border: none;
+    color: white;
+    font-size: 1.3rem;
+    height: 4rem;
+  } 
+  
+  label {
+    display: block;
+    font-weight: 500;
+    padding: 2rem 0 0.5rem;
+  }
+  
+  .select-group {
+    position: relative;
+  }
+  
+  .button {
+    display: flex;
+    padding: 1rem;
+    justify-content: space-between;
+    border-radius: .3rem;
+    height: 3.2rem;
+    width: 100%;
+    background-color: white;
+    border: 2px solid #d3d9f0;
+    position: relative;
+  }
+  
+  .arrow {
+    border: solid black;
+    border-width: 0 2px 2px 0;
+    padding: 4px;
+    transform: rotate(45deg);
+  }
+  
+  .dropdown {
+    position: absolute;
+    width: 100%;
+    top: 7rem;
+    box-sizing: border-box;
+    border: 2px solid #d3d9f0;
+    border-radius: .3rem;
+    overflow: hidden;
+    opacity: 1;
+  }
+  
+  .option{
+    display: none;
+  }
+
+  
+  .gen-option{
+    display: none;
+  }
+
+
+  .select-item {
+    display: block;
+    padding: 1rem;
+    font-weight: 200;
+    background-color: #FFFFFF;
+    color: black;
+  }
+  
+  .select-item:hover {
+    background-color: #f2f2f2;
+  }
+  
+  .hidden {
+    display: none;
+  }

@@ -11,50 +11,115 @@
     <h1>EveryKid</h1>
     <h2>Find children's books that celebrate diversity.</h2>
 
-    <form action="/book_filters">
-        <div>
-        Select at least one filter to get started
-        </div>
 
-        <div>
-        Primary Character's Race
-            <select name="race">
-                <!-- The value for option needs to exactly match what's in the 
-                    SQL characters table -->
-                <option value="American Indian or Alaska Native">
-                    American Indian or Alaska Native</option>
-                <option value="Asian">Asian</option>
-                <option value="Black">
-                    Black or African American</option>
-                <option value="Hispanic, Latinx, or Spanish Origin">
-                    Hispanic, Latinx, or Spanish Origin</option>
-                <option value="Middle Eastern or North African">
-                    Middle Eastern or North African</option>
-                <option value="Multiracial">Multiracial</option>
-                <option value="White">White</option>
-                <option value="Native Hawaiian or Other Pacific Islander">
-                    Native Hawaiian or Other Pacific Islander</option>
-                <option value="ALL RACES">ALL RACES</option>
-            </select> 
-        </div>
-
-        <div>
-        Primary Character's Gender
-            <select name="gender">
-                <option value="Cisgender Female">Cisgender Female</option>
-                <option value="Cisgender Male">Cisgender Male</option>
-                <option value="Gender Fluid">Gender Fluid</option>
-                <option value="Non-Binary">Non-Binary</option>
-                <option value="Transgender Female">Transgender Female</option>
-                <option value="Transgender Male">Transgender Male</option>
-                <option value="ALL GENDERS">ALL GENDERS</option>
-            </select>
-        </div>
-
-
-        <button type="submit">Find Books</button>
-    </form>
+    <!-- HTML form-set up inspiration from Richard Codes @ 
+        https://www.youtube.com/watch?v=ceveRz3e7F0&t=1077s -->
+    <div class="form-container">
+        <p>
+            Select filters to get started
+        </p>
     
+        <form action="/book_filters">
+            <div class="select-group">
+                <label for="race-button">Primary Character's Race</label>
+                <button id="race-button" class="button">
+                    <span id="select-label-race">Select Race</span>
+                    <div id="arrow" class="arrow"></div>
+                </button>
+        
+                <div class="dropdown hidden" id="race-dropdown">
+                    <input type="radio" id="select-ind" name="race" 
+                    value="American Indian or Alaska Native" class="option">
+                    <label for="select-ind" class="select-item">American Indian or 
+                    Alaska Native</label>
+            
+                    <input type="radio" id="select-asain" name="race" 
+                    value="Asian" class="option">
+                    <label for="select-asian" class="select-item">Asian</label>
+    
+                    <input type="radio" id="select-black" name="race" 
+                    value="Black" class="option">
+                    <label for="select-black" class="select-item">Black or African 
+                    American</label>
+    
+                    <input type="radio" id="select-hisp" name="race" 
+                    value="Hispanic, Latinx, or Spanish Origin" class="option">
+                    <label for="select-hisp" class="select-item">Hispanic, Latinx, 
+                    or Spanish Origin</label>
+    
+                    <input type="radio" id="select-middleeast" name="race" 
+                    value="Middle Eastern or North African" class="option">
+                    <label for="select-middleeast" class="select-item">Middle Eastern 
+                    or North African</label>
+    
+                    <input type="radio" id="select-multi" name="race" 
+                    value="Multiracial" class="option">
+                    <label for="select-multi" class="select-item">Multiracial</label>
+                    
+                    <input type="radio" id="select-white" name="race" 
+                    value="White" class="option">
+                    <label for="select-white" class="select-item">White</label>
+    
+                    <input type="radio" id="select-haw" name="race" 
+                    value="Native Hawaiian or Other Pacific Islander" class="option">
+                    <label for="select-haw" class="select-item">Native 
+                    Hawaiian or Other Pacific Islander</label>
+    
+                    <input type="radio" id="select-allraces" name="race" 
+                    value="ALL RACES" class="option">
+                    <label for="select-haw" class="select-item">ALL RACES</label>
+    
+                </div>
+            </div>
+    
+    
+            <div class="select-group">
+    
+                <label for="gender-button">Primary Character's Gender</label>
+                <button id="gender-button" class="button">
+                    <span id="select-label-gender">Select Gender</span>
+                    <div id="arrow" class="arrow"></div>
+                </button>
+                
+                <div class="dropdown hidden" id="gender-dropdown">
+                    <input type="radio" id="select-cisfem" name="gender" 
+                    value="Cisgender Female" class="gen-option">
+                    <label for="select-cisfem" class="select-item">Cisgender 
+                    Female</label>
+    
+                    <input type="radio" id="select-cismale" name="gender" 
+                    value="Cisgender Male" class="gen-option">
+                    <label for="select-cismale" class="select-item">Cisgender 
+                    Male</label>
+    
+                    <input type="radio" id="select-genflu" name="gender" 
+                    value="Gender Fluid" class="gen-option">
+                    <label for="select-genflu" class="select-item">Gender Fluid</label>
+    
+                    <input type="radio" id="select-nonbin" name="gender" 
+                    value="Non-Binary" class="gen-optionn">
+                    <label for="select-nonbin" class="select-item">Non-Binary</label>
+    
+                    <input type="radio" id="select-transfem" name="gender" 
+                    value="Transgender Female" class="gen-option">
+                    <label for="select-transfem" class="select-item">Transgender Female</label>
+                    
+                    <input type="radio" id="select-transmale" name="gender" 
+                    value="Transgender Male" class="gen-option">
+                    <label for="select-transmale" class="select-item">Transgender Male</label>
+    
+                    <input type="radio" id="select-allgens" name="gender" 
+                    value="ALL GENDERS" class="gen-option">
+                    <label for="select-allgens" class="select-item">ALL GENDERS</label>
+                </div>
+            </div>
+    
+            <input type="submit" value="Find Books" />
+            
+        </form>
+    </div>
+
+    <script src="/static/homepage.js"></script>
 
 {% endblock %}
 
