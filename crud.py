@@ -73,6 +73,24 @@ def filter_characters(race_filter, gender_filter):
     return filtered_characters
 
 
+def get_book_by_id(book_id):
+    """Returns book by specific book_id"""
+
+    return Book.query.get(book_id)
+
+
+
+### FOR PERSONALIZED RECOMMENDATIONS: 
+
+# create a crud function to create a list of 
+    # if the book is already displayed, DONT display this 
+
+#create function to get a list of all cisgender female main characters  in crud 
+# > in server use the crud function and use random generator to pick 5 book 
+# titles > if book_title == display_book use the rand function to choose a new title
+
+
+
 #TODO: 
 # steps for later: 
 # add a blank option to dropdowns 

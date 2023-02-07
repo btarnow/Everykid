@@ -25,14 +25,19 @@ def apply_book_filters():
     race_filter = request.args.get("race")
     gender_filter = request.args.get("gender")
 
-   
-    # once I have all of the characters, get the book associated with each one 
-    # and put them into a list. This list of books would then go into my template. 
+    # to account for if the user does not select one or both filters, this will 
+    # still allow for books to show up since it's passing a value through to 
+    # make a query string. 
+    if not race_filter:
+        race_filter = "ALL RACES"
+    
+    if not gender_filter:
+        gender_filter = "ALL GENDERS"
 
-    # this will be a list of character objects
+    # get all of the characters that match the specified filters
     characters = crud.filter_characters(race_filter, gender_filter)
 
-    # get the book associated with each character and append that to a list
+    # get the books associated with each character and append them to a list
     book_list = []
     for character in characters:
         book_list.append(character.book)
@@ -42,6 +47,16 @@ def apply_book_filters():
     
     return render_template("book_results_page.html", book_list = book_list, 
                            race_filter = race_filter, gender_filter = gender_filter)
+
+
+@app.route('/book_filters/<book_id>')
+def show_book_details(book_id):
+    """Displays detailed book information"""
+
+    book = crud.get_book_by_id(book_id)
+
+    return render_template("book_details.html", book = book)   
+
 
 
 

@@ -15,9 +15,7 @@
     <!-- HTML form-set up inspiration from Richard Codes @ 
         https://www.youtube.com/watch?v=ceveRz3e7F0&t=1077s -->
     <div class="form-container">
-        <p>
-            Select filters to get started
-        </p>
+        <h3>Select at least one filter to get started.</h3>
     
         <form action="/book_filters">
             <div class="select-group">
@@ -27,7 +25,7 @@
                     <div id="arrow" class="arrow"></div>
                 </button>
         
-                <div class="dropdown hidden" id="race-dropdown">
+                <div class="dropdown-form hidden" id="race-dropdown">
                     <input type="radio" id="select-ind" name="race" 
                     value="American Indian or Alaska Native" class="option">
                     <label for="select-ind" class="select-item">American Indian or 
@@ -55,19 +53,19 @@
                     <input type="radio" id="select-multi" name="race" 
                     value="Multiracial" class="option">
                     <label for="select-multi" class="select-item">Multiracial</label>
+
+                    <input type="radio" id="select-haw" name="race" 
+                    value="Native Hawaiian or Other Pacific Islander" class="option">
+                    <label for="select-haw" class="select-item">Native 
+                    Hawaiian or Other Pacific Islander</label>
                     
                     <input type="radio" id="select-white" name="race" 
                     value="White" class="option">
                     <label for="select-white" class="select-item">White</label>
     
-                    <input type="radio" id="select-haw" name="race" 
-                    value="Native Hawaiian or Other Pacific Islander" class="option">
-                    <label for="select-haw" class="select-item">Native 
-                    Hawaiian or Other Pacific Islander</label>
-    
                     <input type="radio" id="select-allraces" name="race" 
                     value="ALL RACES" class="option">
-                    <label for="select-haw" class="select-item">ALL RACES</label>
+                    <label for="select-allraces" class="select-item">ALL RACES</label>
     
                 </div>
             </div>
@@ -81,7 +79,7 @@
                     <div id="arrow" class="arrow"></div>
                 </button>
                 
-                <div class="dropdown hidden" id="gender-dropdown">
+                <div class="dropdown-form hidden" id="gender-dropdown">
                     <input type="radio" id="select-cisfem" name="gender" 
                     value="Cisgender Female" class="gen-option">
                     <label for="select-cisfem" class="select-item">Cisgender 
