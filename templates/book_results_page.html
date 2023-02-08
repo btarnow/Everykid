@@ -57,20 +57,17 @@
     <h1>Books That Meet the Criteria</h1>
         {% for book in book_list %}
             <div>
-            <h2>{{ book.title }}</h2>
+                <h2>{{ book.title }}</h2>
 
-            {% for author in book.authors %}
-                {{ author.author_name }}{% if not loop.last %}, {% endif %}
-            {% endfor %}
+                <p>{{ book.overview }}</p>
 
-            <p>{{ book.year_published }}</p>
+                <img src="{{ book.cover_path }}">
 
-            <p>{{ book.overview }}</p>
-
-            <img src="{{ book.cover_path }}">
-
-            <a href="/book_results_page/{{ book.book_id }}">Learn More</a>
-            
+                <div> 
+                    <a href="/book_results_page/{{ book.book_id }}">Learn More</a>
+                </div>
+                <br>
+                
             </div>
 
         {% endfor %}

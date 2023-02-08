@@ -28,8 +28,8 @@ def create_author(book_id, author_name):
 def create_character(book_id, gender_identity, racial_identity):
     """Create and return a character in a book"""
 
-    character = Character(book_id = book_id, racial_identity = racial_identity, 
-                          gender_identity = gender_identity)
+    character = Character(book_id=book_id, racial_identity=racial_identity, 
+                          gender_identity=gender_identity)
 
     return character
 
@@ -73,29 +73,37 @@ def filter_characters(race_filter, gender_filter):
     return filtered_characters
 
 
+def find_similar_race_characters(char_race):
+    """Find characters of all genders given a specific race"""
+    
+    similar_race_characters = Character.query.filter(Character.racial_identity == 
+                                                char_race).all()
+    
+    return similar_race_characters
+
+
+
 def get_book_by_id(book_id):
     """Returns book by specific book_id"""
 
     return Book.query.get(book_id)
 
 
-
+#TODO: 
 ### FOR PERSONALIZED RECOMMENDATIONS: 
+######## FIX THIS CODE TOMORROW: ###################
+# def get_char_race(book_id):
+#     """Returns character's racial identity by specific book ID"""
+#     # book = Book.query.get(book_id) 
 
-# create a crud function to create a list of 
-    # if the book is already displayed, DONT display this 
+#     # return Character.query.filter.get(book)
+
 
 #create function to get a list of all cisgender female main characters  in crud 
 # > in server use the crud function and use random generator to pick 5 book 
 # titles > if book_title == display_book use the rand function to choose a new title
 
 
-
-#TODO: 
-# steps for later: 
-# add a blank option to dropdowns 
-# then modify crud filter_characters --> if else for gender/race filter both, 
-# one or the other 
 
 
     

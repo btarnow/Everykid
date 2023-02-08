@@ -68,6 +68,18 @@ body {
     padding: 4px;
     transform: rotate(45deg);
   }
+
+  .select-item {
+    display: block;
+    padding: 1rem;
+    font-weight: 200;
+    background-color: #FFFFFF;
+    color: black;
+  }
+  
+  .select-item:hover {
+    background-color: #f2f2f2;
+  }
   
   .dropdown-form {
     position: absolute;
@@ -84,23 +96,17 @@ body {
     display: none;
   }
 
+  .gen-option{
+    display: none;
+  }
+
   
   .gen-option{
     display: none;
   }
 
 
-  .select-item {
-    display: block;
-    padding: 1rem;
-    font-weight: 200;
-    background-color: #FFFFFF;
-    color: black;
-  }
-  
-  .select-item:hover {
-    background-color: #f2f2f2;
-  }
+ 
   
   .hidden {
     display: none;
