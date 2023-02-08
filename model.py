@@ -1,16 +1,7 @@
 
-# Flask SQLAlchemy is a object-relational-mapper that translates Python classes 
-# to tables on relational databases and automatically converts function calls to 
-# SQL statements
 from flask_sqlalchemy import SQLAlchemy
 
-# db is a SQLAlchemy object 
 db = SQLAlchemy()
-
-# Notes on classes below: 
-    # Nullable = FALSE means the user HAS to give an input
-    # The classes will inherit everything that exists in db.Model.
-    # db is the SQLAlchemy object that is the "magic" behind the scenes
 
 class Book(db.Model):
     """A book."""

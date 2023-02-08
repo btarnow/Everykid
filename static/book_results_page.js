@@ -1,7 +1,7 @@
 
 
-// In order to make the dropdown search bar NOT return back to it's original
-// state and hold the user's selections, I need to the following code:
+// Allows for the dropdown filters to hold the user's selections from 
+// previous page:
 
 const raceDropdown = document.querySelector('#race');
 const raceFilterInput = document.querySelector('#race_filter');

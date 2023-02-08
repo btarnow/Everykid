@@ -21,31 +21,27 @@
 
 
 
-            <!-- TODO: -->
-        <!-- F######## FIX THE BELOW CODE TOMORROW: ###################-->
-    <!-- <h2>You May Also Like:</h2>
-    {{ recommended_book_list }}
-            {% for book in recommended_book_list %}
-                <div>
-                    <h2>{{ book.title }}</h2>
-
-                    <img src="{{ book.cover_path }}">
-
-                </div>
-
-            {% endfor %} -->
-
-
-
-        <!-- Wrap above content in an if-statement because I don't want to show 
-        recommendations if there aren't any -->
-
-    <!-- {% if recommended_book_list|length > 0 %} -->
+            <!-- TODO:
+            Randomly pick 4 books from the list of returned books with 
+            characters of a similar race to display. 
+            -->
     
-    <!-- {% endif %} -->
+  
+        <h2>You May Also Like:</h2>
+
+        PRINT TEST: {{ recommended_books_race }}
+
+                {% for book in recommended_books_race %}
+                    <div>
+                        <h2>{{ book.title }}</h2>
+
+                        <img src="{{ book.cover_path }}">
+
+                    </div>
+
+                {% endfor %} -->
 
 
-
-            
+       
 
 {% endblock %}

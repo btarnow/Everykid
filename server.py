@@ -43,20 +43,21 @@ def show_book_details(book_id):
     """Displays detailed book information"""
 
     book = crud.get_book_by_id(book_id)
+    print(book)
+    print(f"book.character[0]= {book.characters[0].racial_identity}")
+    # TODO: 
+    # How can I access the racial_identity of the book that is displayed on 
+    # the book_details page? 
+    char_race = book.characters[0].racial_identity 
+    
 
-    #TODO: 
-    ######## FIX THIS CODE TOMORROW: ###################
-    # char_race = book.racial_identity 
-    # char_gender = book.gender_identity 
+    similar_race_characters = crud.find_similar_race_characters(char_race)
 
-    # similar_race_characters = crud.find_similar_characters(char_race)
+    recommended_books_race = []
+    for character in similar_race_characters:
+        recommended_books_race.append(character.book)
 
-    # recommended_books_race = []
-    # for character in similar_race_characters:
-    #     recommended_books_race.append(character.book)
-    #############################################################
-
-    return render_template("book_details.html", book=book) 
+    return render_template("book_details.html", book=book, recommended_books_race=recommended_books_race) 
 
 
 
