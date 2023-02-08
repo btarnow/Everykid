@@ -66,7 +66,7 @@ def create_database(book_OLIDs_list):
             ind_book_dict["isbn_13"] = "0"
         
 
-        # Get author_name 
+        # Get Author Name(s)
         author_path_list = []
         if "authors" in book_data:
             authors_to_parse = book_data["authors"]
@@ -113,12 +113,13 @@ def create_database(book_OLIDs_list):
         ind_book_dict["overview"] = overview
 
 
-        # Makes a placeholder for an empty string for gender_identity 
+        # Gender identity placeholder string 
         ind_book_dict["gender_identity"] = ""
+        
 
-
-        # Makes a placeholder for an empty string for racial_identity 
+        # Racial identity placeholder string 
         ind_book_dict["racial_identity"] = ""
+
 
         books_database[book_OLID]= ind_book_dict 
 

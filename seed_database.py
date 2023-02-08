@@ -1,4 +1,4 @@
-"""Script to seed database"""
+"""Script to seed database from books_database.json"""
 
 import os
 import json
@@ -78,8 +78,8 @@ def seed_database():
 seed_database()
 
 
-# To Test that these functions are working correctly, execute the following 
-# in the command line: pg_dump books_db > books_practice.sql
+# To Test that these functions are working correctly, execute 
+# pg_dump books_db > books_practice.sql
 
 
 

@@ -11,8 +11,6 @@
 <form action="/book_filters">
     Primary Character's Race
         <select id="race" name="race">
-            <!-- The value for option needs to exactly match what's in the 
-                SQL characters table -->
             <option value="American Indian or Alaska Native">
                 American Indian or Alaska Native</option>
             <option value="Asian">Asian</option>
@@ -48,8 +46,8 @@
 
 <!-- This <input type="hidden"> defines a hidden input field. I am using this 
     in conjunction with JS so that when the user submits the form, their 
-    selections stay visible and the form doesn't reset to it's default select 
-    state. -->
+    selections stay visible and the form doesn't reset to it's default 
+    unselected state. -->
 <input type="hidden" id="race_filter" value= "{{ race_filter }}">
 <input type="hidden" id="gender_filter" value= "{{ gender_filter }}">
 
