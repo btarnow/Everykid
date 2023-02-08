@@ -6,21 +6,19 @@
 
 
 {% block body %}
+
 <h1>{{ book.title }}</h1>
 
-</h2>
-
-            <!-- <p>{{ book.author }}</p> -->
-
-
-            <!-- {% for author in book.authors %}
+            By: {% for author in book.authors %}
                 {{ author.author_name }}{% if not loop.last %}, {% endif %}
-            {% endfor %} -->
+            {% endfor %} 
 
-            <!-- <p>{{ book.year_published }}</p> -->
+            <p>Published: {{ book.year_published }}</p> 
+            
+            <img src="{{ book.cover_path }}">
 
-            <!-- <p>{{ book.overview }}</p>
+            <p>{{ book.overview }}</p>
 
-            <img src="{{ book.cover_path }}"> -->
+            
 
 {% endblock %}

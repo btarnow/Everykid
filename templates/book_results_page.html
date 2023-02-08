@@ -2,18 +2,13 @@
 
 {% block title %}Book Results Page{% endblock %}
 
-{% block head %}Book Results Page{% endblock %}
+{% block head %}{% endblock %}
 
 
 {% block body %}
-<br>
-<br>
-<form action="/book_filters">
-    <div>
-    Select at least one filter to get started
-    </div>
 
-    <div>
+<div> 
+<form action="/book_filters">
     Primary Character's Race
         <select id="race" name="race">
             <!-- The value for option needs to exactly match what's in the 
@@ -33,9 +28,8 @@
                 Native Hawaiian or Other Pacific Islander</option>
             <option value="ALL RACES">ALL RACES</option>
         </select> 
-    </div>
 
-    <div>
+  
     Primary Character's Gender
         <select id="gender" name="gender">
             <option value="Cisgender Female">Cisgender Female</option>
@@ -46,11 +40,11 @@
             <option value="Transgender Male">Transgender Male</option>
             <option value="ALL GENDERS">ALL GENDERS</option>
         </select>
-    </div>
-
+   
 
     <button id="findBooksButton" type="submit">Find Books</button>
 </form>
+</div> 
 
 <!-- This <input type="hidden"> defines a hidden input field. I am using this 
     in conjunction with JS so that when the user submits the form, their 
@@ -59,7 +53,7 @@
 <input type="hidden" id="race_filter" value= "{{ race_filter }}">
 <input type="hidden" id="gender_filter" value= "{{ gender_filter }}">
 
-
+    <br>
     <h1>Books That Meet the Criteria</h1>
         {% for book in book_list %}
             <div>
@@ -78,6 +72,7 @@
             <a href="/book_results_page/{{ book.book_id }}">Learn More</a>
             
             </div>
+
         {% endfor %}
 
     <!-- The following script tag connects buttons.js to allow me to use 

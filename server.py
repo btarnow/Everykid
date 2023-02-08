@@ -49,7 +49,7 @@ def apply_book_filters():
                            race_filter = race_filter, gender_filter = gender_filter)
 
 
-@app.route('/book_filters/<book_id>')
+@app.route('/book_results_page/<book_id>')
 def show_book_details(book_id):
     """Displays detailed book information"""
 

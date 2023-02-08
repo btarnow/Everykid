@@ -1,7 +1,9 @@
 /* The following portion of CSS comes from Richard Codes @ 
-https://www.youtube.com/watch?v=ceveRz3e7F0&t=1077s */
+https://www.youtube.com/watch?v=ceveRz3e7F0&t=1077s to create the styling for 
+the homepage form */
 
 body {
+    padding-top: 75px;
     background-color: #ffffff;
     font-family: 'Roboto', sans-serif;
     color: #808893;
