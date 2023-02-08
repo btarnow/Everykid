@@ -3,6 +3,7 @@
 from flask import Flask, request, render_template, flash, session, redirect
 import crud
 import model
+import random 
 
 app = Flask(__name__)
 
@@ -43,21 +44,22 @@ def show_book_details(book_id):
     """Displays detailed book information"""
 
     book = crud.get_book_by_id(book_id)
-    print(book)
-    print(f"book.character[0]= {book.characters[0].racial_identity}")
-    # TODO: 
-    # How can I access the racial_identity of the book that is displayed on 
-    # the book_details page? 
     char_race = book.characters[0].racial_identity 
+    char_gender = book.characters[0].gender_identity
     
-
     similar_race_characters = crud.find_similar_race_characters(char_race)
+    similar_gender_characters = crud.find_similar_gender_characters(char_gender)
 
-    recommended_books_race = []
+    recommended_books = []
     for character in similar_race_characters:
-        recommended_books_race.append(character.book)
+        recommended_books.append(character.book)
+    for character in similar_gender_characters:
+        recommended_books.append(character.book)
+    recommended_books.remove(book)
 
-    return render_template("book_details.html", book=book, recommended_books_race=recommended_books_race) 
+    four_recs = set(random.sample(recommended_books, 4))
+
+    return render_template("book_details.html", book=book, four_recs=four_recs) 
 
 
 

@@ -9,38 +9,27 @@
 
 <h1>{{ book.title }}</h1>
 
-            By: {% for author in book.authors %}
-                {{ author.author_name }}{% if not loop.last %}, {% endif %}
-            {% endfor %} 
+    By: {% for author in book.authors %}
+        {{ author.author_name }}
+    {% endfor %} 
 
-            <p>Published: {{ book.year_published }}</p> 
-            
-            <img src="{{ book.cover_path }}">
-
-            <p>{{ book.overview }}</p>
-
-
-
-            <!-- TODO:
-            Randomly pick 4 books from the list of returned books with 
-            characters of a similar race to display. 
-            -->
+    <p>Published: {{ book.year_published }}</p> 
     
-  
-        <h2>You May Also Like:</h2>
+    <img src="{{ book.cover_path }}">
 
-        PRINT TEST: {{ recommended_books_race }}
+    <p>{{ book.overview }}</p>
 
-                {% for book in recommended_books_race %}
-                    <div>
-                        <h2>{{ book.title }}</h2>
+<h2>You May Also Like:</h2>
+    <div>
+        {% for book in four_recs %}
+            <div>
+                <h2>{{ book.title }}</h2>
 
-                        <img src="{{ book.cover_path }}">
+                <img src="{{ book.cover_path }}">
 
-                    </div>
-
-                {% endfor %} -->
-
+            </div>
+        {% endfor %} 
+    </div>
 
        
 
