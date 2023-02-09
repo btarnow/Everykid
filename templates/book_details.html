@@ -10,8 +10,8 @@
 <h1>{{ book.title }}</h1>
 
     By: {% for author in book.authors %}
-        {{ author.author_name }}
-    {% endfor %} 
+        {{ author.author_name }}{% if not loop.last %}, {% endif %}
+    {% endfor %}
 
     <p>Published: {{ book.year_published }}</p> 
     
@@ -23,14 +23,14 @@
     <div>
         {% for book in four_recs %}
             <div>
-                <h2>{{ book.title }}</h2>
+                <div>     
+                    <a href="/book_results_page/{{ book.book_id }}">{{ book.title }}</a>
+                </div>
 
                 <img src="{{ book.cover_path }}">
 
             </div>
         {% endfor %} 
     </div>
-
-       
 
 {% endblock %}

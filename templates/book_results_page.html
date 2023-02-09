@@ -33,6 +33,7 @@
             <option value="Cisgender Female">Cisgender Female</option>
             <option value="Cisgender Male">Cisgender Male</option>
             <option value="Gender Fluid">Gender Fluid</option>
+            <option value="Gender Non-Conforming">Gender Non-Conforming</option>
             <option value="Non-Binary">Non-Binary</option>
             <option value="Transgender Female">Transgender Female</option>
             <option value="Transgender Male">Transgender Male</option>
@@ -53,22 +54,32 @@
 
     <br>
     <h1>Books That Meet the Criteria</h1>
-        {% for book in book_list %}
-            <div>
-                <h2>{{ book.title }}</h2>
 
-                <p>{{ book.overview }}</p>
+        {% if book_list|length == 0 %}
 
-                <img src="{{ book.cover_path }}">
+            <div>There aren’t any books that met your criteria. Please try 
+                another combination!</div>
+            
 
-                <div> 
-                    <a href="/book_results_page/{{ book.book_id }}">Learn More</a>
+        {% else %}
+
+            {% for book in book_list %}
+                <div>
+                    <h2>{{ book.title }}</h2>
+
+                    <p>{{ book.overview }}</p>
+
+                    <img src="{{ book.cover_path }}">
+
+                    <div> 
+                        <a href="/book_results_page/{{ book.book_id }}">Learn More</a>
+                    </div>
+                    <br>
+                    
                 </div>
-                <br>
-                
-            </div>
-
-        {% endfor %}
+            {% endfor %}
+        
+        {% endif %}
 
     <!-- The following script tag connects buttons.js to allow me to use 
         documentQuerySelector with the IDs in the hidden script tags above-->
