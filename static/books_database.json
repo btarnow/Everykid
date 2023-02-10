@@ -5,8 +5,7 @@
         "Cover Path": "https://covers.openlibrary.org/b/id/10281383-L.jpg",
         "isbn_13": "9781250302953",
         "author_name": [
-            "Theresa Thorn",
-            "Noah Grigni"
+            "Theresa Thorn"
         ],
         "overview": "A picture book that introduces the concept of gender identity to the youngest reader from writer Theresa Thorn and illustrator Noah Grigni.\r\n\r\nSome people are boys. Some people are girls. Some people are both, neither, or somewhere in between.\r\n\r\nThis sweet, straightforward exploration of gender identity will give children a fuller understanding of themselves and others. With child-friendly language and vibrant art, It Feels Good to Be Yourself provides young readers and parents alike with the vocabulary to discuss this important topic with sensitivity.",
         "gender_identity": "Gender Fluid",
@@ -22,8 +21,16 @@
             "Anne Passchier"
         ],
         "overview": "Whenever Ari's Uncle Lior comes to visit, they ask Ari one question: \"What are your words?\" Some days Ari uses she/her. Other days Ari uses he/him. But on the day of the neighborhood's big summer bash, Ari doesn't know what words to use. On the way to the party, Ari and Lior meet lots of neighbors and learn the words each of them use to describe themselves, including pronouns like she/her, he/him, they/them, ey/em, and ze/zir. As Ari tries on different pronouns, they discover that it's okay to not know your words right away\u2014sometimes you have to wait for your words to find you.",
-        "gender_identity": "Gender Fluid",
-        "racial_identity": "Multiracial"
+        "gender_identity":  [
+            "Gender Fluid",
+            "Transgender Female",
+            "Transgender Male"
+        ],
+        "racial_identity": [
+            "Multiracial",
+            "Black",
+            "White"
+        ]
     },
     "OL22020948W": {
         "title": "Eyes That Kiss in the Corners",
@@ -299,8 +306,13 @@
             "Teshika Silver"
         ],
         "overview": "Someday girls like us will be able to wear whatever we want. People will call us by the names we choose. They'll respect that we are women. The cops will leave us alone and no one will go hungry.\"\r\n\r\nSylvia and Marsha are closer than sisters. They are kind and brave and not afraid to speak their truth, even when it makes other people angry.\r\n\r\nThis illustrated book introduces children to the story of Sylvia Rivera and Marsha P. Johnson, the two transgender women of color who helped kickstart the Stonewall Riots and dedicated their lives to fighting for LGBTQ+ equality. It introduces children to issues surrounding gender identity and diversity, accompanied by a reading guide and teaching materials to further the conversation.",
-        "gender_identity": "Transgender Female",
-        "racial_identity": "Black"
+        "gender_identity": [
+            "Transgender Female",
+            "Transgender Female"
+        ],
+        "racial_identity": [
+            "Black",
+            "Hispanic, Latinx, or Spanish Origin"]
     },
     "OL19743931W": {
         "title": "Saffron Ice Cream",
@@ -410,7 +422,7 @@
     "OL19667684W": {
         "title": "I am Jazz",
         "year_published": "2014",
-        "Cover Path": "https://covers.openlibrary.org/b/id/12578954-L.jpg",
+        "Cover Path": "/static/images/jazz.jpg",
         "isbn_13": "9788472907249",
         "author_name": [
             "Jessica Herthel",
@@ -526,5 +538,65 @@
         "overview": "The true story of Hawaiian Duke Kahanamoku, six-time Olympic swimming champion and legendary surfer who popularized surfing around the world.",
         "gender_identity": "Cisgender Male",
         "racial_identity": "Native Hawaiian or Other Pacific Islander"
+    },
+    "OL26265041W": {
+        "title": "Antiracist Baby",
+        "year_published": "2020",
+        "Cover Path": "https://covers.openlibrary.org/b/id/12266723-L.jpg",
+        "isbn_13": "9780241512371",
+        "author_name": [
+            "Ibram X. Kendi"
+        ],
+        "overview": "Take your first steps with Antiracist Baby! Or rather, follow Antiracist Baby's nine easy steps for building a more equitable world. With bold art and thoughtful yet playful text, Antiracist Baby introduces the youngest readers and the grown-ups in their lives to the concept and power of antiracism. Providing the language necessary to begin critical conversations at the earliest age, Antiracist Baby is the perfect gift for readers of all ages dedicated to forming a just society.",
+        "gender_identity": "Cisgender Female",
+        "racial_identity": "Black"
+    },
+    "OL46060039M": {
+        "title": "Kairavs Colorful Feelings",
+        "year_published": "2022",
+        "Cover Path": "https://covers.openlibrary.org/b/id/13260645-L.jpg",
+        "isbn_13": "9781839345777",
+        "author_name": [
+            "Launika Arya Raykar"
+        ],
+        "overview": "This story centers around an South Asian American boy, Kairav, who is unsure what to do with his big and colorful feelings. In this rhyming book, he learns to listen to his body and express his emotions in fun, silly and unique ways!",
+        "gender_identity": "Cisgender Male",
+        "racial_identity": "Asian"
+    },
+    "OL20198598W": {
+        "title": "Hot Hot Roti for Dada-Ji",
+        "year_published": "2017",
+        "Cover Path": "https://covers.openlibrary.org/b/id/8848465-L.jpg",
+        "isbn_13": "9781620143520",
+        "author_name": [
+            "F. Zia"
+        ],
+        "overview": "Aneel, a young boy, is very excited to have his grandparents visit him fron India. His grandfather, Dada-Ji, tells stories of how he had the powers of a tiger whenever he ate hot, hot roti! Aneel wants to find out if Dada-Ji still has those powers! But he first has to find out how to make up a pot of hot, hot roti.",
+        "gender_identity": "Cisgender Male",
+        "racial_identity": "Asian"
+    },
+    "OL15980266W": {
+        "title": "Mom, It's My First Day of Kindergarten!",
+        "year_published": "2012",
+        "Cover Path": "https://covers.openlibrary.org/b/id/8156490-L.jpg",
+        "isbn_13": "9780374350048",
+        "author_name": [
+            "Hyewon Yum"
+        ],
+        "overview": "A five-year-old boy, ready and eager on his first day at \"the big kids' school,\" must calm his very worried mother.",
+        "gender_identity": "Cisgender Male",
+        "racial_identity": "Asian"
+    },
+    "OL26972693M": {
+        "title": "They Call Me Mix/Me Llaman Maestre",
+        "year_published": "2018",
+        "Cover Path": "https://covers.openlibrary.org/b/id/8579807-L.jpg",
+        "isbn_13": "9780692148839",
+        "author_name": [
+            "Lourdes Rivas"
+        ],
+        "overview": "They Call Me Mix is a bilingual (English and Spanish) Children's book geared towards Kinder-2nd grade age students about what it means to be a transgender person of color. The story starts with Lourdes recalling childhood and noticing how gendered everything about existence is since before we're even born. Lourdes points out how people create categories to make life easier but when it comes to people, gender categories can make life so difficult - restrooms, clothing stores, toy stores, sports teams, fitting rooms. They have a hard time even imagining where they'll ever fit in. Then they find queer and trans community where they feel empowered to reinvent language that works for them and we see them doing fun everyday things with friends like play games, watch movies, build bonfires, etc. It ends with the message that people who identify as non binary look, dress, and sound all kinds of different ways and that gender is something everyone can decide for themselves at any moment in time.",
+        "gender_identity": "Non-Binary",
+        "racial_identity": "Hispanic, Latinx, or Spanish Origin"
     }
 }

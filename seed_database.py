@@ -47,12 +47,24 @@ def seed_characters():
         book_id = key
         gender_identity = book_data[key]["gender_identity"]
         racial_identity = book_data[key]["racial_identity"]
-        # For future versions, I would like to change the database to include a 
-        # list of characters to allow books to include more than one character. 
+        # # For future versions, I would like to change the database to include a 
+        # # list of characters to allow books to include more than one character. 
 
-        character_to_add = crud.create_character(book_id, gender_identity, 
+        # character_to_add = crud.create_character(book_id, gender_identity, 
+        #                                       racial_identity)
+        # model.db.session.add(character_to_add)
+
+        # TODO: Why didn't this work? 
+        if type(gender_identity) == str:
+             character_to_add = crud.create_character(book_id, gender_identity, 
                                               racial_identity)
-        model.db.session.add(character_to_add)
+             model.db.session.add(character_to_add)
+        elif type(gender_identity) == list:
+            for index in range(len(gender_identity)):
+                char_gender = gender_identity[index]
+                char_race = racial_identity[index]
+                character_to_add = crud.create_character(book_id, char_gender, char_race)
+                model.db.session.add(character_to_add)
 
         
 def seed_authors():

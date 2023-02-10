@@ -15,7 +15,9 @@ book_OLIDs_list = ["OL20914137W", "OL25074818W", "OL22020948W", "OL27139917W",
                    "OL24327244W", "OL46525611M", "OL46525610M", "OL21874814W", 
                    "OL28716700M", "OL35289538M", "OL19667684W", "OL17072538M", 
                    "OL26977532M", "OL36181966M", "OL28091302M", "OL31807898M", 
-                   "OL20984012W", "OL20568318W", "OL27911917M", "OL12312396M"]
+                   "OL20984012W", "OL20568318W", "OL27911917M", "OL12312396M",
+                   "OL26265041W", "OL46060039M", "OL20198598W", "OL15980266W",
+                   "OL26972693M"]
 
 
 def create_database(book_OLIDs_list):
@@ -123,7 +125,7 @@ def create_database(book_OLIDs_list):
 
         books_database[book_OLID]= ind_book_dict 
 
-    
+
     out_file = open("books_database.json", "w")
     json.dump(books_database, out_file, indent = 4)
     out_file.close()
