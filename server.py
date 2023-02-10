@@ -34,8 +34,10 @@ def apply_book_filters():
     book_list = []
     for character in characters:
         book_list.append(character.book)
+    book_set = set(book_list)
+    book_list = list(book_set)
     
-    return render_template("book_results_page.html", book_list=set(book_list), 
+    return render_template("book_results_page.html", book_list=book_list, 
                            race_filter=race_filter, gender_filter=gender_filter)
 
 

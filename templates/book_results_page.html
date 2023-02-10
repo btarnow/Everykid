@@ -53,15 +53,17 @@
 <input type="hidden" id="gender_filter" value= "{{ gender_filter }}">
 
     <br>
-    <h1>Books That Meet the Criteria</h1>
+    
 
         {% if book_list|length == 0 %}
 
-            <div>There aren’t any books that met your criteria. Please try 
-                another combination!</div>
+            <h2>There aren’t any books that met your criteria.</h2>
+            <p>Please try another combination!</p>
             
 
         {% else %}
+
+        <h1>Books That Meet the Criteria</h1>
 
             {% for book in book_list %}
                 <div>

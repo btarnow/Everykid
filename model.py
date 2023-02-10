@@ -60,8 +60,6 @@ class Character(db.Model):
     gender_identity = db.Column(db.String, nullable=False)
     book_id = db.Column(db.String, db.ForeignKey("books.book_id"))
 
-    # Using the "magic" attribute --> character_id.book would give you the book 
-    # that has that character_id 
     book = db.relationship("Book", back_populates="characters")
     
 
