@@ -1,7 +1,7 @@
 """CRUD operations."""
 
 from model import db, Book, Author, Character, User, Rating_and_Review, Collection, connect_to_db
-from passlib.hash import argon2
+# from passlib.hash import argon2
 
 
 # ----- FUNCTIONS FOR BOOKS TABLE ----- #
@@ -82,18 +82,18 @@ def find_similar_gender_characters(char_gender):
 
 
 # ----- FUNCTIONS FOR USERS TABLE ----- #
-def create_user(username, password, fname, lname):
+def create_user(email, password, fname, lname):
     """Create and return a new user"""
 
-    user = User(username=username, password=password, fname=fname, lname=lname)
+    user = User(email=email, password=password, fname=fname, lname=lname)
 
     return user 
 
 
-def get_user_by_id(user_id):
-    """Return a user's info by user_id, else returns None"""
+def get_user_by_email(email):
+    """Return a user's info by email, else returns None"""
 
-    return User.query.get(user_id)
+    return User.query.filter(User.email == email).first()
 
 
 def get_user_collections(user_id):
@@ -108,12 +108,6 @@ def get_all_users():
     """Return a list of all users"""
 
     return User.query.all()
-
-
-def hash_password(password):
-    """Converts password to hash with argon2"""
-
-    return argon2.hash(password)
 
 
 # TODO: Change this this FUNCTIONS if more than one... 

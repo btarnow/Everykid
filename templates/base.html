@@ -13,8 +13,11 @@
 <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 
+<!-- Fontawesome -->
+    <script src="https://kit.fontawesome.com/b8a98c2fb6.js" crossorigin="anonymous"></script>
+
 <!-- CSS -->
-    <link rel="stylesheet" href="/static/style.css">
+<link rel="stylesheet" href="/static/style.css">
 
     <title>
       {% block title %}{% endblock %}
@@ -51,8 +54,14 @@
                 </ul>
               </li>
             </div>
+          
           </div>
+          <form class="form-inline" action="/route_to_login">
+            <button class="btn btn-light" type="submit">Log In</button>
+          </form>  
         </div>
+    </div>
+
       </nav>
     </div>
     {% block body %}{% endblock %}
@@ -62,6 +71,13 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" 
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" 
     crossorigin="anonymous"></script>
+
+    <ul>
+      {% for message in get_flashed_messages() %}
+        <li>{{ message }}</li>
+      {% endfor %}
+    </ul>
+      
 
   </body>
 

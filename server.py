@@ -4,15 +4,78 @@ from flask import Flask, request, render_template, flash, session, redirect
 import crud
 import model
 import random 
+from passlib.hash import argon2
 
 app = Flask(__name__)
-
+app.secret_key = 'RANDOM SECRET KEY'
 
 @app.route('/')
 def homepage():
-    """Return homepage"""   
+    """Return homepage"""
+
+    #TODO: I'd like to check if the user is already in the session here... 
+
+    user = session.get('user')
+
+    if user:
+        return #??????
 
     return render_template("homepage.html")
+
+
+@app.route('/route_to_login')
+def show_login_page():
+    """Return login page"""
+    
+    return render_template("login_page.html")
+
+
+@app.route('/login', methods=["POST"])
+def login():
+    """Process user login"""
+    email = request.form.get("email")
+    password = request.form.get("password")
+
+    user = crud.get_user_by_email(email)
+    
+    if user is None:
+        flash("User does not exist. Please try again!")
+        return render_template("login_page.html")
+    
+    if argon2.verify(password, user.password):
+        session['user_id'] = user.user_id 
+        return redirect ("/")
+    else:
+        flash("Passwords do not match. Please try again.")
+        return render_template("login_page.html")
+
+
+@app.route('/signup', methods=["POST"])
+def signup():
+    """Create a new user"""
+    email = request.form.get("email")
+    fname = request.form.get("fname")
+    lname = request.form.get("lname")
+    password = request.form.get("password")
+
+    hashed_password = argon2.hash(password)
+    del password
+
+    existing_user = crud.get_user_by_email(email)
+
+    if existing_user:
+        flash("User already exists.")
+        return render_template("login_page.html")
+
+    else:
+        user = crud.create_user(email=email, password=hashed_password, 
+                                    fname=fname, lname=lname)
+        model.db.session.add(user)
+        model.db.session.commit()
+        session["user_id"] = user.user_id
+
+        flash("Account created!")
+        return redirect ("/")
 
 
 @app.route('/book_filters')
