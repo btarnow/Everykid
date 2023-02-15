@@ -13,12 +13,13 @@ app.secret_key = 'RANDOM SECRET KEY'
 def homepage():
     """Return homepage"""
 
-    #TODO: I'd like to check if the user is already in the session here... 
+    #TODO: Next step: If a user is saved in the session, redirect to the 
+    # homepage/{user}
 
-    user = session.get('user')
+    # user = session.get('user')
 
-    if user:
-        return #??????
+    # if user:
+    #     return #user specific page
 
     return render_template("homepage.html")
 
@@ -125,7 +126,6 @@ def show_book_details(book_id):
     four_recs = set(random.sample(recommended_books, 4))
 
     return render_template("book_details.html", book=book, four_recs=four_recs) 
-
 
 
 if __name__ == "__main__":

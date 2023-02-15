@@ -72,6 +72,7 @@ def seed_authors():
             author_to_add = crud.create_author(book_id, author)
             model.db.session.add(author_to_add)
 
+
 def seed_database():
     """Run all seed functions to seed database """
     seed_books()
