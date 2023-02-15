@@ -96,6 +96,12 @@ def get_user_by_email(email):
     return User.query.filter(User.email == email).first()
 
 
+def get_user_by_id(user_id):
+    """Return a user's info by user ID, else returns None"""
+
+    return User.query.get(user_id)
+
+
 def get_user_collections(user_id):
     """Return a list of user collections"""
 

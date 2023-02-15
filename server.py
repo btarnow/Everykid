@@ -12,23 +12,46 @@ app.secret_key = 'RANDOM SECRET KEY'
 @app.route('/')
 def homepage():
     """Return homepage"""
-
-    #TODO: Next step: If a user is saved in the session, redirect to the 
-    # homepage/{user}
-
-    # user = session.get('user')
-
-    # if user:
-    #     return #user specific page
-
+  
     return render_template("homepage.html")
 
 
-@app.route('/route_to_login')
-def show_login_page():
-    """Return login page"""
+# TODO: Most likely delete
+# @app.route('/route_to_login')
+# def show_login_page():
+#     """Return login page"""
     
-    return render_template("login_page.html")
+#     return render_template("login_page.html")
+
+
+# THIS ROUTES TO THE USER'S PAGE WHEN THE PROFILE ICON IS CLICKED ON THE NAV BAR
+@app.route('/route_to_user_page')
+def show_user_page():
+    """Return user_page page"""
+
+    # if a user is in the session, route to the user's profile page that 
+    # includes their collections
+    user_id = session.get('user_id')
+    
+    if user_id:
+        return redirect (f"/user_page/{user_id}")
+
+    else: 
+        return render_template("login_page.html")
+
+    # if the user is NOT in the session, return the render_template to the 
+    # login_page
+
+
+# TODO: 
+@app.route('/user_page/<user_id>')
+def user_page(user_id):
+    """Display user's homepage"""
+    
+    user = crud.get_user_by_id(user_id)
+    collections = user.collections
+
+    return render_template('user_page.html', user=user, collections=collections)
 
 
 @app.route('/login', methods=["POST"])
