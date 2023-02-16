@@ -118,13 +118,20 @@ def get_all_users():
 
 # TODO: Change this this FUNCTIONS if more than one... 
 # ----- FUNCTION FOR COLLECTIONS TABLE ----- #
-def create_collection(user_id, book_id, collection_name):
-    """Create and return a new collection"""
+def add_book_to_collection(user_id, book_id, collection_name):
+    """Add a book to the collection"""
 
-    collection = Collection(user_id=user_id, book_id=book_id, 
+    book_to_add = Collection(user_id=user_id, book_id=book_id, 
                             collection_name=collection_name)
     
-    return collection
+    return book_to_add
+
+def create_collection(user_id, collection_name):
+    """Create a collection"""
+
+    collection = Collection(user_id=user_id, collection_name=collection_name)
+
+    return collection 
 
 
 

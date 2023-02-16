@@ -16,7 +16,7 @@ def homepage():
     return render_template("homepage.html")
 
 
-# TODO: Most likely delete
+# # TODO: Most likely delete (this maps to the login button I had in the nav bar)
 # @app.route('/route_to_login')
 # def show_login_page():
 #     """Return login page"""
@@ -24,13 +24,10 @@ def homepage():
 #     return render_template("login_page.html")
 
 
-# THIS ROUTES TO THE USER'S PAGE WHEN THE PROFILE ICON IS CLICKED ON THE NAV BAR
 @app.route('/route_to_user_page')
 def show_user_page():
     """Return user_page page"""
 
-    # if a user is in the session, route to the user's profile page that 
-    # includes their collections
     user_id = session.get('user_id')
     
     if user_id:
@@ -39,11 +36,7 @@ def show_user_page():
     else: 
         return render_template("login_page.html")
 
-    # if the user is NOT in the session, return the render_template to the 
-    # login_page
 
-
-# TODO: 
 @app.route('/user_page/<user_id>')
 def user_page(user_id):
     """Display user's homepage"""
@@ -124,6 +117,7 @@ def apply_book_filters():
     book_set = set(book_list)
     book_list = list(book_set)
     
+    #if the user is signed in, return this PLUS the user's information
     return render_template("book_results_page.html", book_list=book_list, 
                            race_filter=race_filter, gender_filter=gender_filter)
 

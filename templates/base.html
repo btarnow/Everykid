@@ -57,14 +57,20 @@
           
           </div>
 
-          <!-- <form class="form-inline" action="/route_to_login">
-            <button class="btn btn-light" type="submit">Log In</button>
-          </form>   -->
-
-          <form class="form-inline" action="/route_to_user_page">
-            <button class="btn btn-sm btn btn-light" type="submit"><i 
-              class="fa-regular fa-user"></i> Profile</button>
-          </form>
+          <!-- TODO: add an if statement here to have it say log-in if the user is not in the session 
+            # Could try to just change the text and keep the route_to_user_page OR if that doesn't
+            # work keep two separate buttons  -->
+          
+          {% if user_id %}
+            <form class="form-inline" action="/route_to_user_page">
+              <button class="btn btn-light" type="submit">Log In</button>
+            </form>  
+          {% else %}
+            <form class="form-inline" action="/route_to_user_page">
+              <button class="btn btn-sm btn btn-light" type="submit"><i 
+                class="fa-regular fa-user"></i> Profile</button>
+            </form>
+          {% endif %}
 
         </div>
     </div>
