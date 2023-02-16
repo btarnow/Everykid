@@ -42,9 +42,16 @@ def user_page(user_id):
     """Display user's homepage"""
     
     user = crud.get_user_by_id(user_id)
-    collections = user.collections
 
-    return render_template('user_page.html', user=user, collections=collections)
+    my_books_collection = crud.create_collection(user_id, "My Books")
+
+    #TODO: do a get request to get the name of the collection and then use the 
+    # create_collection crud function OR could I do this with AJAX? Would need 
+    # some help getting started...
+
+    
+
+    return render_template('user_page.html', user=user, my_books_collection=my_books_collection)
 
 
 @app.route('/login', methods=["POST"])
@@ -90,6 +97,10 @@ def signup():
         model.db.session.add(user)
         model.db.session.commit()
         session["user_id"] = user.user_id
+        
+        my_books_collection = crud.create_collection(user.user_id, "My Books")
+        model.db.session.add(my_books_collection)
+        model.db.session.commit()
 
         flash("Account created!")
         return redirect ("/")
@@ -141,6 +152,10 @@ def show_book_details(book_id):
     recommended_books.remove(book)
 
     four_recs = set(random.sample(recommended_books, 4))
+
+    #TODO: a button that's a bookmark for each book and when clicked it would 
+    # send to a get request to get the book_id, store it in a session, plug it 
+    # into the crud function book_to_add, then add that to the database
 
     return render_template("book_details.html", book=book, four_recs=four_recs) 
 

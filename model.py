@@ -18,9 +18,9 @@ class Book(db.Model):
     overview = db.Column(db.Text, nullable=False)
 
     characters = db.relationship("Character", back_populates="book")
-    collections = db.relationship("Collection", back_populates="book")
     ratings_and_reviews = db.relationship("Rating_and_Review", back_populates="book")
     authors = db.relationship("Author", back_populates="book")
+    books_to_collections = db.relationship("Assoc_book_collection", back_populates="book")
     
 
     def __repr__(self):
@@ -91,6 +91,46 @@ class User(db.Model):
         return f"<Name: {self.fname} {self.lname}, Username: {self.username}>"
 
 
+class Assoc_book_collection(db.Model):
+    """An association table to connect books to collections"""
+
+    __tablename__ = "books_to_collections"
+
+    book_collect_id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    book_id = db.Column(db.String, db.ForeignKey("books.book_id"))
+    collection_id = db.Column(db.Integer, db.ForeignKey("collections.collection_id"))
+
+    book = db.relationship("Book", back_populates="books_to_collections")
+    collection = db.relationship("Collection", back_populates="books_to_collections")
+
+    def __repr__(self):
+        """Shows the book_to_collection_id"""
+
+        return f"<Book to Collection ID: {self.book_collect_id}>"
+
+    
+class Collection(db.Model):
+    """A user's collection of books"""
+
+    __tablename__ = "collections"
+
+    collection_id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    user_id = db.Column(db.Integer, db.ForeignKey("users.user_id"))
+    collection_name = db.Column(db.String, nullable=False)
+    
+    user = db.relationship("User", back_populates="collections")
+    books_to_collections = db.relationship("Assoc_book_collection", 
+                                           back_populates="collection")
+
+
+    def __repr__(self):
+        """Showing the collection name of a Collection object."""
+
+        return f"<Collection Name: {self.collection_name}>"
+    
+
+#### RATINGS AND REVIEWS HAS NOT BEEN IMPLEMENTED YET, BUT THE DATA MODEL WILL
+# SUPPORT THIS FEATURE IF/WHEN I ADD IT: 
 class Rating_and_Review(db.Model):
     """A book rating of 1-5 stars and an optional review comment"""
 
@@ -112,27 +152,6 @@ class Rating_and_Review(db.Model):
 
         return f"<Rating/Review ID: {self.rating_review_id}>"
     
-
-class Collection(db.Model):
-    """A user's collection of books"""
-
-    __tablename__ = "collections"
-
-    collection_id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    user_id = db.Column(db.Integer, db.ForeignKey("users.user_id"))
-    book_id = db.Column(db.String, db.ForeignKey("books.book_id"))
-    collection_name = db.Column(db.String, nullable=False)
-    
-    user = db.relationship("User", back_populates="collections")
-    book = db.relationship("Book", back_populates="collections")
-
-
-    def __repr__(self):
-        """Showing the collection name of a Collection object."""
-
-        return f"<Collection Name: {self.collection_name}>"
-    
-
 
 def connect_to_db(flask_app, db_uri="postgresql:///books_db", echo=False):
     """Connect to database."""

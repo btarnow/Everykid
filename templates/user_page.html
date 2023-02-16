@@ -8,16 +8,20 @@
 {% block body %}
 <h1>Welcome, {{ user.fname }}!</h1>
 
-    <div>
-        <div id="create-collection-form"> New Collection <i class="fa-solid fa-plus"></i>
-        <form id="toggle-form" action="/create_collection" hidden>
-            <label for="collection"></label>
-            <input type="text" name="collection" placeholder="Collection Name">
-            <button class="button" type="submit">Create</button>
-        </form>
+<p id="create-collection-form"> Create New Collection <i class="fa-solid fa-plus"></i></p>
+    
+    <div id="collection-form" hidden>    
+    <form action="/create_collection">
+        <label for="collection"></label>
+        <input type="text" name="collection" placeholder="Collection Name">
+        <button class="button" type="submit">Create</button>
+    </form>
     </div>
+   
 
+    
 <h2>My Books</h2>
+The generic collection for each user --> {{ my_books_collection.collection_name}}
 <!-- the list my_books does NOT exist yet... putting placeholder code here -->
     {% if my_books|length == 0 %}
 

@@ -116,8 +116,7 @@ def get_all_users():
     return User.query.all()
 
 
-# TODO: Change this this FUNCTIONS if more than one... 
-# ----- FUNCTION FOR COLLECTIONS TABLE ----- #
+# ----- FUNCTIONS FOR COLLECTIONS TABLE ----- #
 def add_book_to_collection(user_id, book_id, collection_name):
     """Add a book to the collection"""
 
@@ -125,6 +124,7 @@ def add_book_to_collection(user_id, book_id, collection_name):
                             collection_name=collection_name)
     
     return book_to_add
+
 
 def create_collection(user_id, collection_name):
     """Create a collection"""

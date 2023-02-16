@@ -1,7 +1,7 @@
 "use strict"
 
 const createCollection = document.querySelector('#create-collection-form');
-const toggleForm = document.querySelector('#toggle-form');
+const toggleForm = document.querySelector('#collection-form');
 
 createCollection.addEventListener('click', () => {
     if (toggleForm.hidden === true){

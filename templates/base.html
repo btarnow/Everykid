@@ -32,7 +32,7 @@
       <!-- navbar-light OR navbar-dark -->
       <nav class="navbar fixed-top navbar-expand-md navbar-dark bg-primary">
         <div class="container-fluid">
-          <a class="navbar-brand" href="/">EveryKid</a>
+          <a class="navbar-brand">EveryKid</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
           data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" 
           aria-expanded="false" aria-label="Toggle navigation">
@@ -40,7 +40,7 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-              <a class="nav-link active" aria-current="page" href="/">Home</a>
+              <a class="nav-link active" aria-current="page" href="/">Find Books</a>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" id="navbarScrollingDropdown" 
                 role="button" data-bs-toggle="dropdown" aria-expanded="false">About</a>
@@ -56,10 +56,6 @@
             </div>
           
           </div>
-
-          <!-- TODO: add an if statement here to have it say log-in if the user is not in the session 
-            # Could try to just change the text and keep the route_to_user_page OR if that doesn't
-            # work keep two separate buttons  -->
           
           {% if session.get('user_id') %}
           <form class="form-inline" action="/route_to_user_page">
