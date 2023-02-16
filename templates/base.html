@@ -61,15 +61,17 @@
             # Could try to just change the text and keep the route_to_user_page OR if that doesn't
             # work keep two separate buttons  -->
           
-          {% if user_id %}
-            <form class="form-inline" action="/route_to_user_page">
-              <button class="btn btn-light" type="submit">Log In</button>
-            </form>  
+          {% if session.get('user_id') %}
+          <form class="form-inline" action="/route_to_user_page">
+            <button class="btn btn-sm btn btn-light" type="submit"><i 
+              class="fa-regular fa-user"></i> Profile</button>
+          </form>
+           
           {% else %}
-            <form class="form-inline" action="/route_to_user_page">
-              <button class="btn btn-sm btn btn-light" type="submit"><i 
-                class="fa-regular fa-user"></i> Profile</button>
-            </form>
+          <form class="form-inline" action="/route_to_user_page">
+            <button class="btn btn-light" type="submit">Log In</button>
+          </form>  
+            
           {% endif %}
 
         </div>
