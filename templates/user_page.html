@@ -8,38 +8,30 @@
 {% block body %}
 <h1>Welcome, {{ user.fname }}!</h1>
 
-<p id="create-collection-form"> Create New Collection <i class="fa-solid fa-plus"></i></p>
+<!-- <p id="collection-form-label"> Create New Collection <i class="fa-solid fa-plus"></i></p>
     
-    <div id="collection-form" hidden>    
-    <form action="/create_collection">
+    <div id="collection-form-div" hidden>    
+    <form id="collection-form" method="post">
         <label for="collection"></label>
-        <input type="text" name="collection" placeholder="Collection Name">
-        <button class="button" type="submit">Create</button>
+        <input id="collection-input" type="text" name="new-collection" placeholder="Collection Name">
+        <button id="create-collection-btn" class="button" type="submit">Create</button>
     </form>
-    </div>
-   
+    </div> -->
+
+<div>
+    <h2>My Collections</h2>
+        <div id="user-collections">
+          
+        </div>
+    <h2>My Profile</h2>
+</div>
+
+
 
     
-<h2>My Books</h2>
-The generic collection for each user --> {{ my_books_collection.collection_name}}
-<!-- the list my_books does NOT exist yet... putting placeholder code here -->
-    {% if my_books|length == 0 %}
 
-        <p>You haven't added any books to your collection yet!</p>
-        
-            
-    {% else %}
 
-        {% for book in my_books %}
-            <div>
-                <h2>{{ book.title }}</h2>
 
-                <img src="{{ book.cover_path }}">
-                
-            </div>
-        {% endfor %}
-    
-    {% endif %}
 
 <script src="/static/js/user_page.js"></script>
 

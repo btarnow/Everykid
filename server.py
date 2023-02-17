@@ -1,6 +1,6 @@
 """Server for EveryKid app."""
 
-from flask import Flask, request, render_template, flash, session, redirect
+from flask import Flask, request, render_template, flash, session, redirect, jsonify
 import crud
 import model
 import random 
@@ -9,49 +9,14 @@ from passlib.hash import argon2
 app = Flask(__name__)
 app.secret_key = 'RANDOM SECRET KEY'
 
+
+
+# ----- ROUTES FOR HOMEPAGE/LOGIN ----- #
 @app.route('/')
 def homepage():
     """Return homepage"""
   
     return render_template("homepage.html")
-
-
-# # TODO: Most likely delete (this maps to the login button I had in the nav bar)
-# @app.route('/route_to_login')
-# def show_login_page():
-#     """Return login page"""
-    
-#     return render_template("login_page.html")
-
-
-@app.route('/route_to_user_page')
-def show_user_page():
-    """Return user_page page"""
-
-    user_id = session.get('user_id')
-    
-    if user_id:
-        return redirect (f"/user_page/{user_id}")
-
-    else: 
-        return render_template("login_page.html")
-
-
-@app.route('/user_page/<user_id>')
-def user_page(user_id):
-    """Display user's homepage"""
-    
-    user = crud.get_user_by_id(user_id)
-
-    my_books_collection = crud.create_collection(user_id, "My Books")
-
-    #TODO: do a get request to get the name of the collection and then use the 
-    # create_collection crud function OR could I do this with AJAX? Would need 
-    # some help getting started...
-
-    
-
-    return render_template('user_page.html', user=user, my_books_collection=my_books_collection)
 
 
 @app.route('/login', methods=["POST"])
@@ -106,6 +71,34 @@ def signup():
         return redirect ("/")
 
 
+# ----- ROUTES FOR USER PAGE ----- #
+
+@app.route('/route_to_user_page')
+def show_user_page():
+    """Return user_page page"""
+
+    user_id = session.get('user_id')
+    
+    if user_id:
+        return redirect (f"/user_page/{user_id}")
+
+    else: 
+        return render_template("login_page.html")
+    
+
+#TODO: will need to pass the user's "My Books" collection through here eventually
+@app.route('/user_page/<user_id>')
+def user_page(user_id):
+    """Display user's homepage"""
+    
+    user = crud.get_user_by_id(user_id)
+
+    return render_template('user_page.html', user=user)
+
+
+
+# ----- ROUTES FOR BOOK RESULTS AND DETAILS PAGES ----- #
+
 @app.route('/book_filters')
 def apply_book_filters():
     """Return filtered results page"""   
@@ -153,11 +146,39 @@ def show_book_details(book_id):
 
     four_recs = set(random.sample(recommended_books, 4))
 
-    #TODO: a button that's a bookmark for each book and when clicked it would 
-    # send to a get request to get the book_id, store it in a session, plug it 
-    # into the crud function book_to_add, then add that to the database
-
     return render_template("book_details.html", book=book, four_recs=four_recs) 
+
+
+@app.route('/add_book.json')
+def add_book():
+    """Add book to collection"""
+    user_id = session.get('user_id')
+    book_id = request.args.get('book-id')
+    collection_id = crud.get_users_mybooks_collection(user_id)
+
+    book_to_add = crud.add_book_to_collection(book_id, collection_id)
+    model.db.session.add(book_to_add)
+    model.db.session.commit()
+    
+    return ""
+
+
+# ----- ROUTES FOR BOOK ABOUT PAGES ----- #
+
+@app.route('/story')
+def show_story():
+    """Displays the story page"""
+
+    return render_template("story.html")
+
+
+@app.route('/identities')
+def show_identity_page():
+    """Displays the story page"""
+
+    return render_template("identities.html")
+
+
 
 
 if __name__ == "__main__":

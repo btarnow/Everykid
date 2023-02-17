@@ -7,17 +7,27 @@
 
 {% block body %}
 
-<h1>{{ book.title }}</h1>
+    <div id="book_details_div">
+        <h1>{{ book.title }}</h1>
 
-    By: {% for author in book.authors %}
-        {{ author.author_name }}{% if not loop.last %}, {% endif %}
-    {% endfor %}
+        <div class="favorite-bookmark">
+            <i class="fa-regular fa-bookmark" id="add-book-btn"> Save to Collection</i>
+            <input id="book-id" name="book-id" value="{{ book.book_id }}" hidden>
+        </div>
 
-    <p>Published: {{ book.year_published }}</p> 
-    
-    <img src="{{ book.cover_path }}">
+        <!-- SELECTED STATE ICON -->
+        <!-- <i class="fa-solid fa-bookmark"></i> -->
 
-    <p>{{ book.overview }}</p>
+        By: {% for author in book.authors %}
+            {{ author.author_name }}{% if not loop.last %}, {% endif %}
+        {% endfor %}
+
+        <p>Published: {{ book.year_published }}</p> 
+        
+        <img src="{{ book.cover_path }}">
+
+        <p>{{ book.overview }}</p>
+    </div>  
 
 <h2>You May Also Like:</h2>
     <div>

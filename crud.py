@@ -1,6 +1,6 @@
 """CRUD operations."""
 
-from model import db, Book, Author, Character, User, Rating_and_Review, Collection, connect_to_db
+from model import db, Book, Author, Character, User, Rating_and_Review, Collection, connect_to_db, Assoc_book_collection
 # from passlib.hash import argon2
 
 
@@ -102,29 +102,13 @@ def get_user_by_id(user_id):
     return User.query.get(user_id)
 
 
-def get_user_collections(user_id):
-    """Return a list of user collections"""
-
-    user = User.query.get(user_id)
-
-    return user.collections
-
-
 def get_all_users():
     """Return a list of all users"""
 
     return User.query.all()
 
 
-# ----- FUNCTIONS FOR COLLECTIONS TABLE ----- #
-def add_book_to_collection(user_id, book_id, collection_name):
-    """Add a book to the collection"""
-
-    book_to_add = Collection(user_id=user_id, book_id=book_id, 
-                            collection_name=collection_name)
-    
-    return book_to_add
-
+# ----- FUNCTIONS FOR COLLECTIONS ----- #
 
 def create_collection(user_id, collection_name):
     """Create a collection"""
@@ -134,13 +118,33 @@ def create_collection(user_id, collection_name):
     return collection 
 
 
+def add_book_to_collection(book_id, collection_id):
+    """Add a book to the "My Books" collection"""
 
-
-
-
-
-
-
+    book_to_add = Assoc_book_collection(book_id=book_id, collection_id=collection_id)
     
+    return book_to_add
 
-    
+
+def get_users_mybooks_collection(user_id):
+    """Return the "My Books" collections for a user"""
+
+    user = User.query.get(user_id)
+
+    return user.collections[0]
+
+
+#TODO: Need to make a crud function to remove a book from a collection 
+# def remove_book_from_collection(book_id, collection_id):
+#     """Removes a book from a given collection"""
+
+#     book_to_remove = Assoc_book_collection(book_id=book_id, collection_id=collection_id)
+
+#     return book_to_remove
+
+
+
+if __name__ == "__main__":
+    from server import app
+    connect_to_db(app)
+
