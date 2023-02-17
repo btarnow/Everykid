@@ -3,6 +3,8 @@
 from model import db, Book, Author, Character, User, Rating_and_Review, Collection, connect_to_db, Assoc_book_collection
 # from passlib.hash import argon2
 
+from sqlalchemy import delete
+
 
 # ----- FUNCTIONS FOR BOOKS TABLE ----- #
 def create_book(book_id, isbn_13, title, year_published, cover_path, overview):
@@ -119,11 +121,21 @@ def create_collection(user_id, collection_name):
 
 
 def add_book_to_collection(book_id, collection_id):
-    """Add a book to the "My Books" collection"""
+    """Creates a association object between a book and a collection"""
 
-    book_to_add = Assoc_book_collection(book_id=book_id, collection_id=collection_id)
+    book_to_collection = Assoc_book_collection(book_id=book_id, 
+                                            collection_id=collection_id)
     
-    return book_to_add
+    return book_to_collection
+
+
+def delete_book_from_collection(book_id, collection_id):
+    """Find all books in a given collection to delete"""
+
+    book_to_delete = Assoc_book_collection.query.filter_by(book_id=book_id, 
+                                            collection_id=collection_id).first()
+
+    return book_to_delete
 
 
 def get_users_mybooks_collection(user_id):
@@ -134,13 +146,26 @@ def get_users_mybooks_collection(user_id):
     return user.collections[0]
 
 
-#TODO: Need to make a crud function to remove a book from a collection 
-# def remove_book_from_collection(book_id, collection_id):
-#     """Removes a book from a given collection"""
+def check_if_book_in_collection(book_id, collection_id):
+    """Returns book if it's in the database, else returns None"""
 
-#     book_to_remove = Assoc_book_collection(book_id=book_id, collection_id=collection_id)
+    book_in_db = Assoc_book_collection.query.filter(Assoc_book_collection.book_id 
+                                                    == book_id, 
+                                                    Assoc_book_collection.collection_id 
+                                                    == collection_id).first()
+    
+    return book_in_db
 
-#     return book_to_remove
+
+
+    
+
+
+
+
+
+
+
 
 
 

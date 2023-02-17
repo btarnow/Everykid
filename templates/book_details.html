@@ -11,12 +11,18 @@
         <h1>{{ book.title }}</h1>
 
         <div class="favorite-bookmark">
-            <i class="fa-regular fa-bookmark" id="add-book-btn"> Save to Collection</i>
+            {% if check_if_in_collection == None %}
+                <i class="fa-regular fa-bookmark" id="add-book-btn" 
+                data-in-collection="false"> Add to Collection</i>
+            
+            {% else %}
+                <i class="fa-solid fa-bookmark" id="add-book-btn" 
+                data-in-collection="true"> Saved to My Books</i>
+
+            {% endif %}
+
             <input id="book-id" name="book-id" value="{{ book.book_id }}" hidden>
         </div>
-
-        <!-- SELECTED STATE ICON -->
-        <!-- <i class="fa-solid fa-bookmark"></i> -->
 
         By: {% for author in book.authors %}
             {{ author.author_name }}{% if not loop.last %}, {% endif %}
@@ -42,5 +48,7 @@
             </div>
         {% endfor %} 
     </div>
+
+    <script src="/static/js/book_details_page.js"></script>
 
 {% endblock %}

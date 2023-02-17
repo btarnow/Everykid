@@ -6,32 +6,36 @@
 
 
 {% block body %}
-<h1>Welcome, {{ user.fname }}!</h1>
-
-<!-- <p id="collection-form-label"> Create New Collection <i class="fa-solid fa-plus"></i></p>
-    
-    <div id="collection-form-div" hidden>    
-    <form id="collection-form" method="post">
-        <label for="collection"></label>
-        <input id="collection-input" type="text" name="new-collection" placeholder="Collection Name">
-        <button id="create-collection-btn" class="button" type="submit">Create</button>
-    </form>
-    </div> -->
+<h1>Welcome, {{ user.fname }}</h1>
 
 <div>
-    <h2>My Collections</h2>
-        <div id="user-collections">
-          
-        </div>
-    <h2>My Profile</h2>
-</div>
+    <h2>{{ collection.collection_name }}</h2>
 
+    {% if collection.books_to_collections|length == 0 %}
 
-
+        <p>There aren't any books in your collection yet! <a href="/">
+            Find Books</a> to add to your collection</p>
     
+    {% else %}
 
+        <div id="user-collections">
+            
+            {% for assoc in collection.books_to_collections %}
+            
+                <h3>{{ assoc.book.title }}</h3>
 
+                <img src="{{ assoc.book.cover_path }}">
 
+                <div> 
+                    <a href="/book_results_page/{{ assoc.book.book_id }}">Details</a>
+                </div>
+
+            {% endfor %}
+            
+        </div>
+
+    {% endif %}
+</div>
 
 <script src="/static/js/user_page.js"></script>
 

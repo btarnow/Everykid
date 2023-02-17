@@ -2,9 +2,10 @@
 
 from flask import Flask, request, render_template, flash, session, redirect, jsonify
 import crud
-import model
+import model 
 import random 
 from passlib.hash import argon2
+
 
 app = Flask(__name__)
 app.secret_key = 'RANDOM SECRET KEY'
@@ -67,15 +68,23 @@ def signup():
         model.db.session.add(my_books_collection)
         model.db.session.commit()
 
-        flash("Account created!")
         return redirect ("/")
+    
+
+@app.route("/logout")
+def logout():
+    """Log user out"""
+    #delete session
+    session.pop('user_id', None)
+
+    return redirect('/')
 
 
 # ----- ROUTES FOR USER PAGE ----- #
 
 @app.route('/route_to_user_page')
 def show_user_page():
-    """Return user_page page"""
+    """Return user_page page if logged in, or returns log in page"""
 
     user_id = session.get('user_id')
     
@@ -86,15 +95,20 @@ def show_user_page():
         return render_template("login_page.html")
     
 
-#TODO: will need to pass the user's "My Books" collection through here eventually
+#TODO: will need to pass the user's "My Books" collection through here 
+# eventually
 @app.route('/user_page/<user_id>')
 def user_page(user_id):
     """Display user's homepage"""
-    
+
     user = crud.get_user_by_id(user_id)
+    collection = crud.get_users_mybooks_collection(user_id)
 
-    return render_template('user_page.html', user=user)
+    collection_book_list = []
 
+
+  
+    return render_template('user_page.html', user=user, collection=collection)
 
 
 # ----- ROUTES FOR BOOK RESULTS AND DETAILS PAGES ----- #
@@ -121,7 +135,6 @@ def apply_book_filters():
     book_set = set(book_list)
     book_list = list(book_set)
     
-    #if the user is signed in, return this PLUS the user's information
     return render_template("book_results_page.html", book_list=book_list, 
                            race_filter=race_filter, gender_filter=gender_filter)
 
@@ -130,7 +143,13 @@ def apply_book_filters():
 def show_book_details(book_id):
     """Displays detailed book information"""
 
+    user_id = session.get('user_id')
     book = crud.get_book_by_id(book_id)
+    collection = crud.get_users_mybooks_collection(user_id)
+    check_if_in_collection = crud.check_if_book_in_collection(book_id, 
+                                                        collection.collection_id)
+
+
     char_race = book.characters[0].racial_identity 
     char_gender = book.characters[0].gender_identity
     
@@ -146,21 +165,46 @@ def show_book_details(book_id):
 
     four_recs = set(random.sample(recommended_books, 4))
 
-    return render_template("book_details.html", book=book, four_recs=four_recs) 
+    return render_template("book_details.html", book=book, four_recs=four_recs, 
+                           check_if_in_collection=check_if_in_collection) 
 
 
-@app.route('/add_book.json')
+@app.route('/add_book')
 def add_book():
     """Add book to collection"""
     user_id = session.get('user_id')
-    book_id = request.args.get('book-id')
-    collection_id = crud.get_users_mybooks_collection(user_id)
+    book_id = request.args.get('book_id')
+    collection = crud.get_users_mybooks_collection(user_id)
 
-    book_to_add = crud.add_book_to_collection(book_id, collection_id)
-    model.db.session.add(book_to_add)
+    check_if_in_collection = crud.check_if_book_in_collection(book_id, 
+                                                    collection.collection_id)
+    
+    if check_if_in_collection is None:
+        book_to_add = crud.add_book_to_collection(book_id, collection.collection_id)
+    
+        model.db.session.add(book_to_add)
+        model.db.session.commit()
+        
+        return collection.collection_name
+    
+    else:
+        pass
+
+
+@app.route('/remove_book_from_details')
+def remove_book():
+    """Remove book from collection from book details page"""
+    user_id = session.get('user_id')
+    book_id = request.args.get('book_id')
+    
+    collection = crud.get_users_mybooks_collection(user_id)
+    book_to_delete = crud.delete_book_from_collection(book_id, 
+                                                    collection.collection_id)
+   
+    model.db.session.delete(book_to_delete)
     model.db.session.commit()
     
-    return ""
+    return collection.collection_name
 
 
 # ----- ROUTES FOR BOOK ABOUT PAGES ----- #

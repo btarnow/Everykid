@@ -32,7 +32,7 @@
       <!-- navbar-light OR navbar-dark -->
       <nav class="navbar fixed-top navbar-expand-md navbar-dark bg-primary">
         <div class="container-fluid">
-          <a class="navbar-brand">EveryKid</a>
+          <a class="navbar-brand" href="/">EveryKid</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
           data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" 
           aria-expanded="false" aria-label="Toggle navigation">
@@ -52,22 +52,26 @@
                 </ul>
               </li>
             </div>
-          
           </div>
-          
+
           {% if session.get('user_id') %}
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/logout">Logout</a>
+            </li>
+          </ul>
+         
           <form class="form-inline" action="/route_to_user_page">
             <button class="btn btn-sm btn btn-light" type="submit"><i 
               class="fa-regular fa-user"></i> Profile</button>
           </form>
-           
+        
           {% else %}
           <form class="form-inline" action="/route_to_user_page">
             <button class="btn btn-light" type="submit">Log In</button>
           </form>  
             
           {% endif %}
-
         </div>
     </div>
 
