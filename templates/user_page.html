@@ -18,21 +18,23 @@
     
     {% else %}
 
-        <div id="user-collections">
+        
             
             {% for assoc in collection.books_to_collections %}
-            
-                <h3>{{ assoc.book.title }}</h3>
+                <div id="user-collections">
 
-                <img src="{{ assoc.book.cover_path }}">
+                    <h3>{{ assoc.book.title }}</h3>
 
-                <div> 
-                    <a href="/book_results_page/{{ assoc.book.book_id }}">Details</a>
+                    <img src="{{ assoc.book.cover_path }}">
+
+                    <div> 
+                        <a href="/book_results_page/{{ assoc.book.book_id }}">Details</a>
+                    </div>
                 </div>
 
             {% endfor %}
             
-        </div>
+        
 
     {% endif %}
 </div>
