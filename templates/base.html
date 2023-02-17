@@ -44,36 +44,37 @@
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" id="navbarScrollingDropdown" 
                 role="button" data-bs-toggle="dropdown" aria-expanded="false">About</a>
-                <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-                  <li><a class="dropdown-item" href="/story">
-                    Our Story</a></li>
-                  <li><a class="dropdown-item" href="/identities">
-                    Identities</a></li>
-                </ul>
+                  <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                    <li><a class="dropdown-item" href="/story">
+                      Our Story</a></li>
+                    <li><a class="dropdown-item" href="/identities">
+                      Identities</a></li>
+                  </ul>
               </li>
             </div>
           </div>
 
+
+          <!-- New test code! -->
           {% if session.get('user_id') %}
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/logout">Logout</a>
-            </li>
-          </ul>
-         
-          <form class="form-inline" action="/route_to_user_page">
-            <button class="btn btn-sm btn btn-light" type="submit"><i 
-              class="fa-regular fa-user"></i> Profile</button>
-          </form>
-        
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="fa-regular fa-user"></i> Profile</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="/route_to_user_page">My Books</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="/logout">Logout</a></li>
+            </ul>
+          </li>
+
           {% else %}
           <form class="form-inline" action="/route_to_user_page">
             <button class="btn btn-light" type="submit">Log In</button>
           </form>  
             
           {% endif %}
-        </div>
-    </div>
+
+          <!-- End test code  -->
 
       </nav>
     </div>

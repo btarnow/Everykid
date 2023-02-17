@@ -19,7 +19,12 @@ body {
   cursor: pointer;
 }
 
-
+.nav-link {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: #f8f9fa;
+  text-decoration: none;
+}
 
 
 /* * {
