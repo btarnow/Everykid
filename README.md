@@ -12,7 +12,7 @@ There is a disparity around who is represented in children’s books, so EveryKi
 
 ## Technologies Used
 * Backend: Python, Flask, SQL, PostgreSQL, SQLAlchemy
-* Frontend: Javascript, HTML, CSS, Bootstrap, JSON, Jinja2
+* Frontend: Javascript, HTML, CSS, Bootstrap, JSON, Jinja2, AJAX
 * APIs: Open Library’s Books and Authors APIs
 * Planning: DB Designer, Figma 
 * Data Model: 
