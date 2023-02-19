@@ -10,19 +10,23 @@
     <div id="book_details_div">
         <h1>{{ book.title }}</h1>
 
-        <div class="favorite-bookmark">
-            {% if check_if_in_collection == None %}
-                <i class="fa-regular fa-bookmark" id="add-book-btn" 
-                data-in-collection="false"> Add to Collection</i>
-            
-            {% else %}
-                <i class="fa-solid fa-bookmark" id="add-book-btn" 
-                data-in-collection="true"> Saved to My Books</i>
+        <!-- TODO: If a user is not signed in, the bookmark code should not run at all.  -->
+        <!-- {% if session.get('user_id') %} -->
+            <div class="favorite-bookmark">
+                {% if check_if_in_collection == None %}
+                    <i class="fa-regular fa-bookmark" id="add-book-btn" 
+                    data-in-collection="false"> Add to Collection</i>
+                
+                {% else %}
+                    <i class="fa-solid fa-bookmark" id="add-book-btn" 
+                    data-in-collection="true"> Saved to My Books</i>
 
-            {% endif %}
+                {% endif %}
 
-            <input id="book-id" name="book-id" value="{{ book.book_id }}" hidden>
-        </div>
+                <input id="book-id" name="book-id" value="{{ book.book_id }}" hidden>
+            </div>
+        <!-- {% endif %} -->
+        
 
         By: {% for author in book.authors %}
             {{ author.author_name }}{% if not loop.last %}, {% endif %}

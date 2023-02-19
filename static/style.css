@@ -2,6 +2,48 @@ body {
   padding-top: 75px;
 }
 
+* {
+  font-family: 'Poppins', sans-serif;
+}
+
+
+/* Styling for the navbar */
+.container {
+  color: #109CF1;
+}
+
+a {
+  color: #109CF1;
+}
+
+a:hover {
+  color: #34AFF9;
+}
+
+a.nav-link.active {
+  color: #109CF1;
+}
+
+a.nav-link.active:hover {
+  color: #34AFF9;
+}
+
+a.nav-link.dropdown-toggle {
+  color: white;
+}
+
+a.nav-link.dropdown-toggle:hover {
+  color: rgba(255, 255, 255, 0.887);
+}
+
+.navbar-brand {
+  font-weight: 500;
+  font-size: 23px;
+}
+
+
+/*  */
+
 .login-image {
   width: 100%;
   height: 100%;
@@ -26,7 +68,16 @@ body {
   text-decoration: none;
 }
 
-/* li.nav-item.dropdown::marker {
-  display: none;
-  } */
+li {
+  list-style-type: none;
+}
+
+.navbar-toggler {
+	position: absolute;
+	top: 10px;
+  right: 130px;
+}
+.navbar-collapse {
+	position: inherit;
+}
 

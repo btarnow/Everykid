@@ -201,9 +201,6 @@ def remove_book():
     book_to_delete = crud.delete_book_from_collection(book_id, 
                                                     collection.collection_id)
    
-   #TODO: When there is only one book in the collection and that book gets 
-   # deleted, the user's My Books collection is then gone which throws and error 
-   # from line 148/149. 
     model.db.session.delete(book_to_delete)
     model.db.session.commit()
     
