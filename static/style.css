@@ -42,7 +42,13 @@ a.nav-link.dropdown-toggle:hover {
 }
 
 
-/*  */
+
+/* Homepage */
+
+.homepage-img {
+  position: absolute;
+}
+
 
 .login-image {
   width: 100%;
