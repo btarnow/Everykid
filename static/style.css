@@ -1,5 +1,5 @@
 body {
-  padding-top: 75px;
+  padding-top: 100px;
 }
 
 * {
@@ -41,24 +41,25 @@ a.nav-link.dropdown-toggle:hover {
   font-size: 23px;
 }
 
+li {
+  list-style-type: none;
+}
+
+.navbar-toggler {
+	position: absolute;
+	top: 10px;
+  right: 130px;
+}
+
+.navbar-collapse {
+	position: inherit;
+}
+
 
 /* Homepage */
 
-.full-page-div {
-  width: 100%
-}
-
-.left-div {
-  width: 50%;
-  float: left;
-}
-
-.right-div {
-  margin-left: 50%;
-}
-
 .div-title {
-  font-weight: 500;
+  font-weight: 400;
   font-size: 56px;
   color: #192A3E;
   line-height: 84px;
@@ -70,6 +71,31 @@ a.nav-link.dropdown-toggle:hover {
   font-size: 14px;
   line-height: 20px;
 }
+
+.homepage-img {
+  height: 100%;
+  width: 100%;
+}
+
+.row {
+  align-items: center;
+}
+
+.input-field-title {
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 16px;
+  letter-spacing: 0.2px;
+  color: #109CF1;
+}
+
+.btn-div {
+  text-align: center;
+}
+
+
+
+/* User Page */
 
 
 .login-image {
@@ -89,23 +115,4 @@ a.nav-link.dropdown-toggle:hover {
   cursor: pointer;
 }
 
-.nav-link {
-  display: block;
-  padding: 0.5rem 1rem;
-  color: #f8f9fa;
-  text-decoration: none;
-}
-
-li {
-  list-style-type: none;
-}
-
-.navbar-toggler {
-	position: absolute;
-	top: 10px;
-  right: 130px;
-}
-.navbar-collapse {
-	position: inherit;
-}
 
