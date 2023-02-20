@@ -145,10 +145,13 @@ def show_book_details(book_id):
 
     user_id = session.get('user_id')
     book = crud.get_book_by_id(book_id)
-    collection = crud.get_users_mybooks_collection(user_id)
-    check_if_in_collection = crud.check_if_book_in_collection(book_id, 
-                                                        collection.collection_id)
 
+    if user_id is None:
+        check_if_in_collection = None
+    else: 
+        collection = crud.get_users_mybooks_collection(user_id)
+        check_if_in_collection = crud.check_if_book_in_collection(book_id, 
+                                                            collection.collection_id)
 
     char_race = book.characters[0].racial_identity 
     char_gender = book.characters[0].gender_identity

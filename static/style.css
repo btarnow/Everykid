@@ -8,7 +8,7 @@ body {
 
 
 /* Styling for the navbar */
-.container {
+.nav-bar {
   color: #109CF1;
 }
 
@@ -42,11 +42,33 @@ a.nav-link.dropdown-toggle:hover {
 }
 
 
-
 /* Homepage */
 
-.homepage-img {
-  position: absolute;
+.full-page-div {
+  width: 100%
+}
+
+.left-div {
+  width: 50%;
+  float: left;
+}
+
+.right-div {
+  margin-left: 50%;
+}
+
+.div-title {
+  font-weight: 500;
+  font-size: 56px;
+  color: #192A3E;
+  line-height: 84px;
+
+}
+
+.div-subtitle {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
 }
 
 

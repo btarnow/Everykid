@@ -10,8 +10,7 @@
     <div id="book_details_div">
         <h1>{{ book.title }}</h1>
 
-        <!-- TODO: If a user is not signed in, the bookmark code should not run at all.  -->
-        <!-- {% if session.get('user_id') %} -->
+        {% if session.get('user_id') %}
             <div class="favorite-bookmark">
                 {% if check_if_in_collection == None %}
                     <i class="fa-regular fa-bookmark" id="add-book-btn" 
@@ -25,7 +24,7 @@
 
                 <input id="book-id" name="book-id" value="{{ book.book_id }}" hidden>
             </div>
-        <!-- {% endif %} -->
+        {% endif %}
         
 
         By: {% for author in book.authors %}

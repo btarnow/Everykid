@@ -8,57 +8,60 @@
 
 {% block body %}
 
-    <h1>Everykid</h1>
-    <h2>Find children's books that celebrate diversity.</h2>
-
-        <div class="container-fluid"> 
-            <h3 id="select-instructions">Select at least one filter to get started</h3>
-            <div class="container"> 
-            <form action="/book_filters">
-                Primary Character's Race
-                    <select id="race" name="race">
-                        <option value="" disabled selected hidden>
-                            Select Race</option> 
-                        <option value="American Indian or Alaska Native">
-                            American Indian or Alaska Native</option>
-                        <option value="Asian">Asian</option>
-                        <option value="Black">
-                            Black or African American</option>
-                        <option value="Hispanic, Latinx, or Spanish Origin">
-                            Hispanic, Latinx, or Spanish Origin</option>
-                        <option value="Middle Eastern or North African">
-                            Middle Eastern or North African</option>
-                        <option value="Multiracial">Multiracial</option>
-                        <option value="White">White</option>
-                        <option value="Native Hawaiian or Other Pacific Islander">
-                            Native Hawaiian or Other Pacific Islander</option>
-                        <option value="ALL RACES">ALL RACES</option>
-                    </select> 
-            </div>
+<div class="container full-page-div"> 
             
-            <div class="container">
-                Primary Character's Gender
-                    <select id="gender" name="gender">
-                        <option value="" disabled selected hidden>
-                            Select Gender</option> 
-                        <option value="Cisgender Female">Cisgender Female</option>
-                        <option value="Cisgender Male">Cisgender Male</option>
-                        <option value="Gender Fluid">Gender Fluid</option>
-                        <option value="Gender Non-Conforming">Gender Non-Conforming</option>
-                        <option value="Non-Binary">Non-Binary</option>
-                        <option value="Transgender Female">Transgender Female</option>
-                        <option value="Transgender Male">Transgender Male</option>
-                        <option value="ALL GENDERS">ALL GENDERS</option>
-                    </select>
-                
-                <button id="findBooksButton" type="submit">Find Books</button>
-            </form>
-            </div> 
+    <div class="left-div">
+    <h1 class="div-title">Everykid</h1>
+    <h2 class="div-subtitle">Find children's books that celebrate diversity.</h2>
+    <h3 class="div-subtitle">Select at least one filter to get started</h3>
+        <div class="container"> 
+        <form action="/book_filters">
+            Primary Character's Race
+                <select id="race" name="race">
+                    <option value="" disabled selected hidden>
+                        Select Race</option> 
+                    <option value="American Indian or Alaska Native">
+                        American Indian or Alaska Native</option>
+                    <option value="Asian">Asian</option>
+                    <option value="Black">
+                        Black or African American</option>
+                    <option value="Hispanic, Latinx, or Spanish Origin">
+                        Hispanic, Latinx, or Spanish Origin</option>
+                    <option value="Middle Eastern or North African">
+                        Middle Eastern or North African</option>
+                    <option value="Multiracial">Multiracial</option>
+                    <option value="White">White</option>
+                    <option value="Native Hawaiian or Other Pacific Islander">
+                        Native Hawaiian or Other Pacific Islander</option>
+                    <option value="ALL RACES">ALL RACES</option>
+                </select> 
         </div>
-
+        
         <div class="container">
-            <img class="homepage-img" src="/static/images/kid_in_lib.png" alt="Kids in library">
-        </div>
+            Primary Character's Gender
+                <select id="gender" name="gender">
+                    <option value="" disabled selected hidden>
+                        Select Gender</option> 
+                    <option value="Cisgender Female">Cisgender Female</option>
+                    <option value="Cisgender Male">Cisgender Male</option>
+                    <option value="Gender Fluid">Gender Fluid</option>
+                    <option value="Gender Non-Conforming">Gender Non-Conforming</option>
+                    <option value="Non-Binary">Non-Binary</option>
+                    <option value="Transgender Female">Transgender Female</option>
+                    <option value="Transgender Male">Transgender Male</option>
+                    <option value="ALL GENDERS">ALL GENDERS</option>
+                </select>
+            <button id="findBooksButton" type="submit">Find Books</button>
+        </form>
+        </div> 
+    </div>
+
+    <div class="right-div img-fluid">
+        <img class="homepage-img" src="/static/images/kid_in_lib.png" alt="Kids in library">
+    </div>
+</div>
+
+        
 
 {% endblock %}
 
