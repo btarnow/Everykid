@@ -14,10 +14,10 @@ function toggleSignUpLogIn (evt) {
     if (viewLogin) {
         loginForm.classList.add("form-hidden");
         signUpForm.classList.remove("form-hidden");
-        signUpLogInText.innerHTML = "Already have an account? Login";
+        signUpLogInText.innerHTML = "Already have an account? <span class='blue'>Login</span>";
     } else {
         loginForm.classList.remove("form-hidden");
         signUpForm.classList.add("form-hidden");
-        signUpLogInText = "Don't have an account? Sign Up";
+        signUpLogInText = "Don't have an account? <span class='blue'>Sign Up</span>";
     }
 }

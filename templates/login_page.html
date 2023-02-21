@@ -6,63 +6,76 @@
 
 {% block body %}
 
-<div class="login-page-container">
-    <h1>EveryKid</h1>
-    <h3>Because every kid deserves to see themselves in a book.</h3>    
-    <div class="form-box">
-        <div class="login-form">
-            <h2>Log In Form</h2>
-            <form action="/login" method="POST">
-                <div class="input-field">
-                    <i class="fa-solid fa-envelope"></i>
-                    <label hidden for="email">Email</label>
-                    <input type="text" name="email" placeholder="Email">
-                </div>
+<div class="container-fluid row"> 
 
-                <div class="input-field">
-                    <i class="fa-solid fa-lock"></i>
-                    <label for="password" hidden>Password</label>
-                    <input type="password" name="password" placeholder="Password">
-                </div>
-                
-                <button class="button" type="submit" value="login">Login</button>
-            </form>
+    <!-- Left column -->
+    <div class="col-12 col-md-6 col-lg-6">
+        <div class="row justify-content-center">
+        <div class="col-8 text-start"> 
+    
+            <div class="login-form">
+                <h2 class="div-title">Sign In</h2>
+                <form action="/login" method="POST">
+                    
+                    <div class="login-input-field">
+                        <!-- <i class="fa-solid fa-envelope"></i> -->
+                        <label hidden for="email">Email</label>
+                        <input class="no-outline" type="text" name="email" placeholder="Email">
+                    </div>
+
+                    <div class="login-input-field">
+                        <!-- <i class="fa-solid fa-lock"></i> -->
+                        <label for="password" hidden>Password</label>
+                        <input class="no-outline" type="password" name="password" placeholder="Password">
+                    </div>
+                    <br>
+                    <br>
+                    <button class="form-btn" type="submit" value="login">Sign In</button>
+                </form>
+            </div>
+
+            <div class="sign-up-form form-hidden">
+                <h2 class="div-title">Sign Up</h2>
+                <form action="/signup" method="POST">
+
+                    <div class="login-input-field">
+                        <!-- <i class="fa-solid fa-envelope"></i> -->
+                        <label for="email" hidden>Email</label>
+                        <input class="no-outline" type="text" name="email" placeholder="Email">
+                    </div>
+                    
+                    <div class="login-input-field">
+                        <!-- <i class="fa-solid fa-user"></i> -->
+                        <label for="fname" hidden>First Name</label>
+                        <input class="no-outline" type="text" name="fname" placeholder="Enter first name">
+                    </div>
+
+                    <div class="login-input-field">
+                        <!-- <i class="fa-solid fa-user"></i> -->
+                        <label for="lname" hidden>Last Name</label>
+                        <input class="no-outline" type="text" name="lname" placeholder="Enter last name">
+                    </div>
+
+                    <div class="login-input-field">
+                        <!-- <i class="fa-solid fa-lock"></i> -->
+                        <label for="password" hidden>Password</label>
+                        <input class="no-outline" type="password" name="password" placeholder="Password">
+                    </div>
+                    <br>
+                    <br>
+                    <button class="form-btn" type="submit" value="sign-up">Sign Up</button>
+                </form>
+            </div>
+            <div class="toggle-signup">Don't have an account? <span class='blue'>Sign Up</span></div>
         </div>
-
-        <div class="sign-up-form form-hidden">
-            <h2>Sign Up</h2>
-            <form action="/signup" method="POST">
-                <div class="input-field">
-                    <i class="fa-solid fa-envelope"></i>
-                    <label for="email" hidden>Email</label>
-                    <input type="text" name="email" placeholder="Email">
-                </div>
-                
-                <div class="input-field">
-                    <i class="fa-solid fa-user"></i>
-                    <label for="fname" hidden>First Name</label>
-                    <input type="text" name="fname" placeholder="Enter first name">
-                </div>
-
-                <div class="input-field">
-                    <i class="fa-solid fa-user"></i>
-                    <label for="lname" hidden>Last Name</label>
-                    <input type="text" name="lname" placeholder="Enter last name">
-                </div>
-
-                <div class="input-field">
-                    <i class="fa-solid fa-lock"></i>
-                    <label for="password" hidden>Password</label>
-                    <input type="password" name="password" placeholder="Password">
-                </div>
-                <button class="button" type="submit" value="sign-up">Sign Up</button>
-            </form>
         </div>
-        <div class="toggle-signup">Don't have an account? Sign Up</div>
-
+    </div>
         
-
-<img class="login-image" src="/static/images/background.jpg" alt="Little girl reading">
+    <!-- Right Column -->
+    <div class="col-12 col-md-6 col-lg-6">
+        <img class="login-image" src="/static/images/girl_reading2.png" alt="Little girl reading">
+    </div>
+</div>
 
 <script src="/static/js/login_page.js"></script>
 
