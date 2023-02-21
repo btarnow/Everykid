@@ -46,12 +46,30 @@ li {
 
 .navbar-toggler {
 	position: absolute;
-	top: 10px;
-  right: 130px;
+  right: 80px;
+  color: #109CF1;
+}
+
+.nav-bar-toggler:hover {
+  color: #34AFF9;
 }
 
 .navbar-collapse {
 	position: inherit;
+}
+
+.login-btn {
+  text-align: center;
+  width: 70px;
+  background-color: #109CF1;
+  color: white;
+  padding: 6px;
+  border-radius: 8px;
+  border: #109CF1;
+}
+
+.login-btn:hover {
+  background-color: #34AFF9;
 }
 
 
@@ -73,9 +91,7 @@ li {
   line-height: 20px;
 }
 
-.homepage-img {
-  height: 100%;
-}
+
 
 .row {
   align-items: center;
@@ -99,7 +115,10 @@ li {
   padding: 6px;
   border-radius: 8px;
   border: #109CF1;
- 
+}
+
+.form-btn:hover {
+  background-color: #34AFF9;
 }
 
 /* The following made the dropdown area  */
@@ -122,6 +141,10 @@ li {
   right: 5px;
   content: "";
   z-index: 98;
+  }
+
+  .form-input-field:after:hover {
+    color: #34AFF9;
   }
 
 .form-input-field select{
@@ -167,10 +190,6 @@ input {
   color:#109CF1;
   font-weight: bold;
 
-}
-
-.login-image {
-  width: 100%;
 }
 
 .form-hidden {

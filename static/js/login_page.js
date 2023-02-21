@@ -18,6 +18,6 @@ function toggleSignUpLogIn (evt) {
     } else {
         loginForm.classList.remove("form-hidden");
         signUpForm.classList.add("form-hidden");
-        signUpLogInText = "Don't have an account? <span class='blue'>Sign Up</span>";
+        signUpLogInText.innerHTML = "Don't have an account? <span class='blue'>Sign Up</span>";
     }
 }
