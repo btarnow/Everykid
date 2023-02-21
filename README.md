@@ -1,7 +1,7 @@
-# EveryKid
+# Everykid
 Discover children’s books with diverse characters 📚
 
-There is a disparity around who is represented in children’s books, so EveryKid exists to help people find children’s books that celebrate diversity. Users can filter books by the racial and/or gender identity of the main character and add books to their collection. The goal is for every kid to see themselves represented in a book.
+There is a disparity around who is represented in children’s books, so Everykid exists to help people find children’s books that celebrate diversity. Users can filter books by the racial and/or gender identity of the main character and add books to their collection. The goal is for every kid to see themselves represented in a book.
 
 ## Table of Contents
 * 🤖 [Technologies](#technologies-used)
@@ -38,7 +38,7 @@ There is a disparity around who is represented in children’s books, so EveryKi
 ## Set Up
 To run this project, first clone or fork this repo:
 ```
-git clone https://github.com/btarnow/EveryKid.git
+git clone https://github.com/btarnow/Everykid.git
 ```
 Create and activate a virtual environment inside your directory
 ```
@@ -58,7 +58,7 @@ Run the app:
 ```
 python3 server.py
 ```
-You can now navigate to 'localhost:5000/' to access the EveryKid app!
+You can now navigate to 'localhost:5000/' to access the Everykid app!
 
 ## About Me
 👩🏼‍💻 Hi, all! I am Becky Tarnowski, and I am an educator turned software engineer. I am currently in an intensive software engineering bootcamp and will be seeking a full-time software engineering job in the second quarter of 2023. This is my capstone project for the program.  
