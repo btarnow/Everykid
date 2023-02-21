@@ -1,11 +1,8 @@
-body {
-  padding-top: 100px;
-}
+
 
 * {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
-
 
 /* Styling for the navbar */
 .nav-bar {
@@ -59,10 +56,12 @@ li {
 /* Homepage */
 
 .div-title {
+  padding-bottom: 10px;
   font-weight: 400;
-  font-size: 56px;
+  font-size: 48px;
   color: #192A3E;
   line-height: 84px;
+  width: 100%;
 
 }
 
@@ -74,7 +73,6 @@ li {
 
 .homepage-img {
   height: 100%;
-  width: 100%;
 }
 
 .row {
@@ -82,6 +80,7 @@ li {
 }
 
 .input-field-title {
+  padding-top: 10px;
   font-weight: 500;
   font-size: 13px;
   line-height: 16px;
@@ -89,8 +88,55 @@ li {
   color: #109CF1;
 }
 
-.btn-div {
+
+#findBooksButton {
   text-align: center;
+  width: 100%;
+  background-color: #109CF1;
+  color: white;
+  padding: 8px;
+  border-radius: 8px;
+  border: #109CF1;
+ 
+}
+
+/* The following made the dropdown area  */
+.form-input-field {
+  width: 100%;
+  overflow: hidden;
+  border-bottom: .75px solid #000;
+  position: relative;
+  padding: 3px 0;
+  }
+
+.form-input-field:after{
+  width: 0; 
+  height: 0; 
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid #109CF1;
+  position: absolute;
+  top: 40%;
+  right: 5px;
+  content: "";
+  z-index: 98;
+  }
+
+.form-input-field select{
+  width: 100%;
+  border: 0;
+  position: relative;
+  z-index: 99;
+  background: none;
+}
+
+/* This is to make the original select dropdown arrow disappear */
+select {
+  appearance: none;
+}
+
+option {
+  color: red;
 }
 
 
