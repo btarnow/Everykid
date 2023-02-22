@@ -10,7 +10,7 @@ bookToAddBtn.addEventListener('click', evt => {
         fetch(`/remove_book_from_details?book_id=${bookID}`)
         .then((response) => response.text())
             .then((collectionName) => {
-                bookToAddBtn.innerHTML = ` Add to Collection`;
+                bookToAddBtn.innerHTML = `<span class='text-in-btn'>Add to My Books</span>`;
                 bookToAddBtn.classList.toggle('fa-regular');
                 bookToAddBtn.classList.toggle('fa-solid');
                 bookToAddBtn.dataset.inCollection = 'false';
@@ -22,7 +22,7 @@ bookToAddBtn.addEventListener('click', evt => {
             .then((response) => response.text())
             .then((collectionName) => {
                 console.log('The route /add_books is being hit.')
-                bookToAddBtn.innerHTML = ` Saved to ${collectionName}`;
+                bookToAddBtn.innerHTML = `<span class='text-in-btn'>Saved to ${collectionName}</span>`;
                 bookToAddBtn.classList.toggle('fa-regular');
                 bookToAddBtn.classList.toggle('fa-solid');
                 bookToAddBtn.dataset.inCollection = 'true';
