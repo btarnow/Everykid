@@ -7,43 +7,48 @@
 
 {% block body %}
 
-<div> 
-<form action="/book_filters">
-    Primary Character's Race
-        <select id="race" name="race">
-            <option value="American Indian or Alaska Native">
-                American Indian or Alaska Native</option>
-            <option value="Asian">Asian</option>
-            <option value="Black">
-                Black or African American</option>
-            <option value="Hispanic, Latinx, or Spanish Origin">
-                Hispanic, Latinx, or Spanish Origin</option>
-            <option value="Middle Eastern or North African">
-                Middle Eastern or North African</option>
-            <option value="Multiracial">Multiracial</option>
-            <option value="White">White</option>
-            <option value="Native Hawaiian or Other Pacific Islander">
-                Native Hawaiian or Other Pacific Islander</option>
-            <option value="ALL RACES">ALL RACES</option>
-        </select> 
+<!-- <body class="book-results-background"> -->
 
-  
-    Primary Character's Gender
-        <select id="gender" name="gender">
-            <option value="Cisgender Female">Cisgender Female</option>
-            <option value="Cisgender Male">Cisgender Male</option>
-            <option value="Gender Fluid">Gender Fluid</option>
-            <option value="Gender Non-Conforming">Gender Non-Conforming</option>
-            <option value="Non-Binary">Non-Binary</option>
-            <option value="Transgender Female">Transgender Female</option>
-            <option value="Transgender Male">Transgender Male</option>
-            <option value="ALL GENDERS">ALL GENDERS</option>
-        </select>
-   
+<h1 class="results-page-heading container-fluid">Books That Meet the Criteria</h1>
 
-    <button id="findBooksButton" type="submit">Find Books</button>
-</form>
-</div> 
+<div class="results-form-div container-fluid"> 
+    <form action="/book_filters">
+
+            <span class="identity-title-race">Character's Race: </span>
+            <select class="narrow-race" id="race" name="race">
+                <option value="American Indian or Alaska Native">
+                    American Indian or Alaska Native</option>
+                <option value="Asian">Asian</option>
+                <option value="Black">
+                    Black or African American</option>
+                <option value="Hispanic, Latinx, or Spanish Origin">
+                    Hispanic, Latinx, or Spanish Origin</option>
+                <option value="Middle Eastern or North African">
+                    Middle Eastern or North African</option>
+                <option value="Multiracial">Multiracial</option>
+                <option value="White">White</option>
+                <option value="Native Hawaiian or Other Pacific Islander">
+                    Native Hawaiian or Other Pacific Islander</option>
+                <option value="ALL RACES">ALL RACES</option>
+            </select> 
+    
+      
+            <span class="identity-title-gender">Character's Gender: </span>
+            <select class="narrow-gender" id="gender" name="gender">
+                <option value="Cisgender Female">Cisgender Female</option>
+                <option value="Cisgender Male">Cisgender Male</option>
+                <option value="Gender Fluid">Gender Fluid</option>
+                <option value="Gender Non-Conforming">Gender Non-Conforming</option>
+                <option value="Non-Binary">Non-Binary</option>
+                <option value="Transgender Female">Transgender Female</option>
+                <option value="Transgender Male">Transgender Male</option>
+                <option value="ALL GENDERS">ALL GENDERS</option>
+            </select>
+       
+    
+        <button id="find-books-button" type="submit">Find Books</button>
+    </form>
+    </div> 
 
 <!-- This <input type="hidden"> defines a hidden input field. I am using this 
     in conjunction with JS so that when the user submits the form, their 
@@ -52,39 +57,54 @@
 <input type="hidden" id="race_filter" value= "{{ race_filter }}">
 <input type="hidden" id="gender_filter" value= "{{ gender_filter }}">
 
-    <br>
-    
-
         {% if book_list|length == 0 %}
 
-            <h2>There aren’t any books that met your criteria.</h2>
-            <p>Please try another combination!</p>
+        <div class="row try-again">
+            <!-- Left column -->
+            <div class="col-12 col-md-6 col-lg-6">
+                <div class="row justify-content-center">
+                    <div class="col-8">
+                        <h2 class="br-subheading">There aren’t any books that 
+                            met your criteria. Try another combination above.</h2>
+                    </div>
+                </div>
+            </div>
+          
+
+            <!-- Right Column -->
+            <div class="col-12 col-md-6 col-lg-6 right-column">
+                <img class="img-fluid" src="/static/images/kids-in-lib-5.jpg" 
+                alt="Kids in library">
+            </div>
+        </div>
             
 
         {% else %}
 
-        <h1>Books That Meet the Criteria</h1>
-
             {% for book in book_list %}
-                <div>
-                    <h2>{{ book.title }}</h2>
-
-                    <p>{{ book.overview }}</p>
-
-                    <img src="{{ book.cover_path }}">
-
-                    <div> 
-                        <a href="/book_results_page/{{ book.book_id }}">Learn More</a>
+                <div class="book-results-div row">
+                    <div class="col-3 cover-div">
+                        <img class="cover-in-results mx-auto d-block" src="{{ book.cover_path }}">
                     </div>
-                    <br>
-                    
+
+                    <div class="col-8">
+                        <h4 class="book-results-title">{{ book.title }}</h4>
+                        <div>
+                            <a class="learn-more" href="/book_results_page/{{ book.book_id }}">
+                            Learn More</a>
+                        </div>
+                        <p class="book-results-overview">{{ book.overview }}</p>
+
+                    </div>
                 </div>
             {% endfor %}
         
         {% endif %}
 
+
     <!-- The following script tag connects buttons.js to allow me to use 
         documentQuerySelector with the IDs in the hidden script tags above-->
     <script src="/static/js/book_results_page.js"></script>
+</body>
 
 {% endblock %}

@@ -1,3 +1,9 @@
+
+/* CSS STYLESHEET */
+
+
+/* Styling for all pages */
+
 body {
   padding-top: 60px;
 }
@@ -5,6 +11,7 @@ body {
 * {
   font-family: 'Open Sans', sans-serif;
 }
+
 
 /* Styling for the navbar */
 .nav-bar {
@@ -73,7 +80,7 @@ li {
 }
 
 
-/* Homepage and Two-Column Layouts*/
+/* Homepage and Two-Column Layouts */
 
 .div-title {
   padding-bottom: 10px;
@@ -91,8 +98,6 @@ li {
   line-height: 20px;
 }
 
-
-
 .row {
   align-items: center;
 }
@@ -105,7 +110,6 @@ li {
   letter-spacing: 0.2px;
   color: #109CF1;
 }
-
 
 .form-btn {
   text-align: center;
@@ -121,7 +125,7 @@ li {
   background-color: #34AFF9;
 }
 
-/* The following made the dropdown area  */
+/* The following made the select dropdown area  */
 .form-input-field {
   width: 100%;
   overflow: hidden;
@@ -156,7 +160,7 @@ li {
 }
 
 /* This is to make the original select dropdown arrow disappear */
-select {
+.select-hidden {
   appearance: none;
 }
 
@@ -189,7 +193,11 @@ input {
 .blue {
   color:#109CF1;
   font-weight: bold;
+}
 
+.blue:hover {
+  color: #34AFF9;
+  font-weight: bold;
 }
 
 .form-hidden {
@@ -201,7 +209,122 @@ input {
   padding-top: 20px;
 }
 
-/* User Page */
+/* Book Results Page */
+
+.results-page-heading {
+  font-weight: 500;
+  font-size: 25px;
+  padding-top: 20px;
+}
+
+.identity-title-race {
+  color: #6A707E;
+  font-size: 14px;
+  padding-left: 3px;
+}
+
+.identity-title-gender {
+  color: #6A707E;
+  font-size: 14px;
+  padding-left: 15px;
+}
+
+.results-form-div {
+  padding-top: 20px;
+}
+
+#find-books-button {
+  background-color: transparent;
+  color: #109CF1;
+  border: transparent;
+  font-weight: 600;
+  padding-left: 50px;
+  font-size: 14px;
+}
+
+#find-books-button:hover {
+  color: #34AFF9;
+  text-decoration: underline;
+}
+
+.narrow-race {
+  width: 210px;
+  border-radius: 4px;
+  color: #109CF1;
+  border-color: #109CF1;
+  font-size: 14px;
+}
+
+.narrow-race:hover {
+  color: #34AFF9;
+  border-color: #34AFF9;
+}
+
+.narrow-gender {
+  width: 210px;
+  border-radius: 4px;
+  color: #109CF1;
+  border-color: #109CF1;
+  font-size: 14px;
+}
+
+.narrow-gender:hover {
+  color: #34AFF9;
+  border-color: #34AFF9;
+}
+
+.try-again {
+  padding-top: 30px;
+}
+
+.br-subheading {
+  font-size: 18px;
+  font-weight: 300;
+}
+
+.cover-div {
+  max-width: 100%;
+}
+
+.cover-in-results {
+  max-width: 100%;
+}
+
+.book-results-div {
+  min-height: 150px;
+  padding-top: 25px;
+  padding-left: 15px;
+}
+
+.book-results-title {
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.book-results-overview {
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 20px;
+}
+
+.learn-more {
+  color: #109CF1;
+  font-size: 12px;
+  text-decoration: none;
+  margin: 0;
+}
+
+.learn-more:hover {
+  color:  #34AFF9;
+  font-size: 12px;
+  text-decoration: underline;
+}
+
+
+
+
+
+
 
 
 
