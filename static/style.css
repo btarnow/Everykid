@@ -209,6 +209,7 @@ input {
   padding-top: 20px;
 }
 
+
 /* Book Results Page */
 
 .results-page-heading {
@@ -231,6 +232,7 @@ input {
 
 .results-form-div {
   padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 #find-books-button {
@@ -278,8 +280,14 @@ input {
 }
 
 .br-subheading {
-  font-size: 18px;
+  font-size: 24px;
   font-weight: 300;
+  text-align: center;
+  margin-top: -115px;
+}
+
+.br-subheading b {
+  font-weight: 600;
 }
 
 .cover-div {
@@ -292,7 +300,8 @@ input {
 
 .book-results-div {
   min-height: 150px;
-  padding-top: 25px;
+  padding-top: 12.5px;
+  padding-bottom: 12.5px;
   padding-left: 15px;
 }
 
@@ -305,6 +314,11 @@ input {
   font-weight: 300;
   font-size: 12px;
   line-height: 20px;
+}
+
+.learn-more-div {
+  margin-top: -11px;
+  margin-bottom: 11px;
 }
 
 .learn-more {
@@ -320,6 +334,9 @@ input {
   text-decoration: underline;
 }
 
+.img-for-no-books {
+  max-width: 100%;
+}
 
 
 

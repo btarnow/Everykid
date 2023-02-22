@@ -64,8 +64,8 @@
             <div class="col-12 col-md-6 col-lg-6">
                 <div class="row justify-content-center">
                     <div class="col-8">
-                        <h2 class="br-subheading">There aren’t any books that 
-                            met your criteria. Try another combination above.</h2>
+                        <h2 class="br-subheading">There aren't any books that 
+                            met your criteria yet. <b>Try another combination above.</b></h2>
                     </div>
                 </div>
             </div>
@@ -73,7 +73,7 @@
 
             <!-- Right Column -->
             <div class="col-12 col-md-6 col-lg-6 right-column">
-                <img class="img-fluid" src="/static/images/kids-in-lib-5.jpg" 
+                <img class="img-for-no-books" src="/static/images/kids-in-lib-5.jpg" 
                 alt="Kids in library">
             </div>
         </div>
@@ -83,13 +83,13 @@
 
             {% for book in book_list %}
                 <div class="book-results-div row">
-                    <div class="col-3 cover-div">
+                    <div class="col-lg-2 col-md-2 col-sm-4 col-6 cover-div">
                         <img class="cover-in-results mx-auto d-block" src="{{ book.cover_path }}">
                     </div>
 
-                    <div class="col-8">
+                    <div class="col-lg-8 col-md-9 col-sm-8 col-6">
                         <h4 class="book-results-title">{{ book.title }}</h4>
-                        <div>
+                        <div class="learn-more-div">
                             <a class="learn-more" href="/book_results_page/{{ book.book_id }}">
                             Learn More</a>
                         </div>
