@@ -346,7 +346,7 @@ input {
 }
 
 .book-detail-overall-div {
-  padding-top: 70px;
+  padding-top: 50px;
   padding-bottom: 50px;
 }
 
@@ -354,13 +354,25 @@ input {
   margin-left: -26px;
 }
 
+.book-rec-row {
+  max-height: 200px;
+}
+
 .book-rec-div {
-  /* max-height: 100px; */
   object-fit: contain;
 }
 
 .book-rec-cover {
   max-width: 100%;
+}
+
+.book-rec-title {
+  text-decoration: none;
+}
+
+.book-rec-title:hover {
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 

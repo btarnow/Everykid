@@ -58,7 +58,7 @@
     <h2 class="col-lg-4">You May Also Like:</h2>
 </div>
 
-<div class="row">
+<div class="row book-rec-row">
 
     <div class="col-lg-1"></div>
         {% for book in five_recs %}
@@ -67,7 +67,7 @@
                 <img class="book-rec-cover" src="{{ book.cover_path }}">
             </a>
             <!-- #TODO: Get feedback for if people would expect a link below or not -->
-            <a href="/book_results_page/{{ book.book_id }}">{{ book.title }}</a>
+            <a class="book-rec-title" href="/book_results_page/{{ book.book_id }}">{{ book.title }}</a>
         </div>
         {% endfor %} 
     <div class="col-lg-1"></div>
