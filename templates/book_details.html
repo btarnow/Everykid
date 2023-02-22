@@ -7,8 +7,20 @@
 
 {% block body %}
 
-    <div id="book_details_div">
-        <h1>{{ book.title }}</h1>
+<!-- Book Details Row -->
+<div class="row book-detail-overall-div">
+    <!-- Left Space Column -->
+    <div class="col-lg-1 col-md-1 col-0"></div>
+    <!-- Book Cover Column -->
+    <div class="col-lg-3 col-md-5 col-5 cover-div">
+        <img class="cover-in-div" src="{{ book.cover_path }}">
+    </div>
+
+     <!-- Middle Space Column -->
+     <div class="col-lg-1 col-md-1 col-1 mid-space-col"></div>
+
+    <!-- Book Details Column -->
+    <div class="col-lg-6 col-md-5 col-6">
 
         {% if session.get('user_id') %}
             <div class="favorite-bookmark">
@@ -26,31 +38,41 @@
             </div>
         {% endif %}
         
+        <h1>{{ book.title }}</h1>
 
         By: {% for author in book.authors %}
             {{ author.author_name }}{% if not loop.last %}, {% endif %}
         {% endfor %}
 
         <p>Published: {{ book.year_published }}</p> 
-        
-        <img src="{{ book.cover_path }}">
 
         <p>{{ book.overview }}</p>
     </div>  
+</div>
+<!-- Right Space Column -->
+<div class="col-lg-1"></div>
 
-<h2>You May Also Like:</h2>
-    <div>
-        {% for book in four_recs %}
-            <div>
-                <div>     
-                    <a href="/book_results_page/{{ book.book_id }}">{{ book.title }}</a>
-                </div>
 
-                <img src="{{ book.cover_path }}">
+<div class="row">
+    <div class="col-lg-1"></div>
+    <h2 class="col-lg-4">You May Also Like:</h2>
+</div>
 
-            </div>
+<div class="row">
+
+    <div class="col-lg-1"></div>
+        {% for book in five_recs %}
+        <div class="col-lg-2 book-rec-div">
+            <a href="/book_results_page/{{ book.book_id }}">
+                <img class="book-rec-cover" src="{{ book.cover_path }}">
+            </a>
+            <!-- #TODO: Get feedback for if people would expect a link below or not -->
+            <a href="/book_results_page/{{ book.book_id }}">{{ book.title }}</a>
+        </div>
         {% endfor %} 
-    </div>
+    <div class="col-lg-1"></div>
+    
+</div>
 
     <script src="/static/js/book_details_page.js"></script>
 

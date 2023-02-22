@@ -339,11 +339,29 @@ input {
 }
 
 
+/* Individual Book Details Page */
 
+.cover-in-div {
+  max-width: 100%;
+}
 
+.book-detail-overall-div {
+  padding-top: 70px;
+  padding-bottom: 50px;
+}
 
+.mid-space-col {
+  margin-left: -26px;
+}
 
+.book-rec-div {
+  /* max-height: 100px; */
+  object-fit: contain;
+}
 
+.book-rec-cover {
+  max-width: 100%;
+}
 
 
 

@@ -166,9 +166,9 @@ def show_book_details(book_id):
         recommended_books.append(character.book)
     recommended_books.remove(book)
 
-    four_recs = set(random.sample(recommended_books, 4))
+    five_recs = set(random.sample(recommended_books, 5))
 
-    return render_template("book_details.html", book=book, four_recs=four_recs, 
+    return render_template("book_details.html", book=book, five_recs=five_recs, 
                            check_if_in_collection=check_if_in_collection) 
 
 
