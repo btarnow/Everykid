@@ -82,6 +82,7 @@ def logout():
 
 # ----- ROUTES FOR USER PAGE ----- #
 
+
 @app.route('/route_to_user_page')
 def show_user_page():
     """Return user_page page if logged in, or returns log in page"""
@@ -94,9 +95,8 @@ def show_user_page():
     else: 
         return render_template("login_page.html")
     
-
-#TODO: will need to pass the user's "My Books" collection through here 
-# eventually
+#TODO: Possibly delete
+# @app.endpoint('user_page_nav')
 @app.route('/user_page/<user_id>')
 def user_page(user_id):
     """Display user's homepage"""
@@ -106,8 +106,6 @@ def user_page(user_id):
 
     collection_book_list = []
 
-
-  
     return render_template('user_page.html', user=user, collection=collection)
 
 

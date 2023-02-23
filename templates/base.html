@@ -32,8 +32,16 @@
 
   <body>
 
-    <div class="container nav-bar">
+    
+
+    
+<div class="nav-bar container">
+    {% if request.endpoint=='user_page' %}
+      <nav class="navbar fixed-top navbar-expand-md border border-bottom" style="background-color: white" style="border-color: #f2f2f2">
+    {% else %}
       <nav class="navbar fixed-top navbar-expand-md" style="background-color: white">
+    {% endif %}
+        
         <div class="container-fluid">
           <a class="navbar-brand" href="/">Everykid <i class="fa-solid fa-book-open-reader"></i></a>
 

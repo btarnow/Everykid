@@ -302,7 +302,7 @@ input {
   min-height: 150px;
   padding-top: 12.5px;
   padding-bottom: 12.5px;
-  padding-left: 15px;
+  padding-left: 16px;
 }
 
 .book-results-title {
@@ -381,11 +381,11 @@ input {
   display:flex;
   justify-content: right;
   padding-bottom: 10px;
-  /* text-transform: capitalize; */
 }
 
 #add-book-btn:hover {
   color:  #34AFF9;
+  cursor: pointer;
 }
 
 .text-in-btn {
@@ -395,6 +395,39 @@ input {
 }
 
 
+/* User Page  */
 
+/* .user-page-heading {
+  font-weight: 600;
+  font-size: 25px;
+  padding-top: 20px;
+} */
+
+
+.no-center {
+  align-items:normal;
+}
+
+.side-nav {
+  color: white;
+  border-right: #f2f2f2;
+  border-style: solid;
+}
+
+.user-nav-link {
+  color: #109CF1;
+}
+
+.user-nav-link:hover {
+  color:  #34AFF9;
+}
+
+.user-page-div {
+  border-top: #f2f2f2;
+  border-style: solid;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 60px;
+}
 
 
