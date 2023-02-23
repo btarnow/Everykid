@@ -11,11 +11,16 @@
 <div class="user-page-div container-fluid border border-0">
     <div class="no-center row flex-nowrap">
         <div class="side-nav col-auto col-md-3 col-xl-2 px-sm-2 px-0">
-            <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 min-vh-100">
-                <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+            <div class="d-flex flex-column align-items-center 
+            align-items-sm-start px-3 pt-2 min-vh-100">
+                <ul class="nav nav-pills flex-column mb-sm-auto mb-0 
+                align-items-center align-items-sm-start" id="menu">
                     <li class="nav-item">
-                        <a href="/route_to_user_page" class="user-nav-link nav-link align-middle px-0">
-                            <span class="ms-1 d-none d-sm-inline"><i class="fa-solid fa-user-gear"></i>  {{ collection.collection_name }}</span>
+                        <a href="/route_to_user_page" class="user-nav-link 
+                        nav-link align-middle px-0">
+                            <span class="ms-1 d-none d-sm-inline">
+                                <i class="fa-solid fa-user-gear"></i>  
+                                  {{ collection.collection_name }}</span>
                         </a>
                     </li> 
                 </ul>
@@ -23,31 +28,37 @@
             </div>
         </div>
         <div class="col py-3">
-            <div class="fs-5 d-none d-sm-inline">Welcome, {{ user.fname }}</div>
+            <h3 class="d-none d-sm-inline" id="welcome">Welcome, {{ user.fname }}</h3>
             {% if collection.books_to_collections|length == 0 %}
 
-                <p>There aren't any books in your collection yet! <a href="/">
-                    Find Books</a> to add to your collection</p>
+                <p class="no-books-msg">There aren't any books in your collection yet. 
+                    <a href="/">Find Books</a> to add to your collection!</p>
+                
+                <div class="row img-no-collection-container">
+                    <img class="img-for-no-collection" src="/static/images/smiley-readers.jpg" 
+                    alt="Kids in library">
+                </div>
             
             {% else %}
 
-                    {% for assoc in collection.books_to_collections %}
-                    <div class="book-results-div row">
-                        <div class="col-lg-3 col-md-3 col-sm-4 col-6 cover-div">
-                            <img class="cover-in-results mx-auto d-block" src="{{ assoc.book.cover_path }}">
-                        </div>
-
-                        <div class="col-lg-8 col-md-9 col-sm-8 col-6">
-                            <h4 class="book-results-title">{{ assoc.book.title }}</h4>
-                            <div class="learn-more-div">
-                                <a class="learn-more" href="/book_results_page/{{ assoc.book.book_id }}">
-                                Learn More</a>
-                            </div>
-                            <p class="book-results-overview">{{ assoc.book.overview }}</p>
-                        </div>
+                {% for assoc in collection.books_to_collections %}
+                <div class="book-results-div row">
+                    <div class="col-lg-3 col-md-3 col-sm-4 col-6 cover-div">
+                        <img class="cover-in-results mx-auto d-block" 
+                        src="{{ assoc.book.cover_path }}">
                     </div>
 
-                    {% endfor %}
+                    <div class="col-lg-8 col-md-9 col-sm-8 col-6">
+                        <h4 class="book-results-title">{{ assoc.book.title }}</h4>
+                        <div class="learn-more-div">
+                            <a class="learn-more" 
+                            href="/book_results_page/{{ assoc.book.book_id }}">
+                            Learn More</a>
+                        </div>
+                        <p class="book-results-overview">{{ assoc.book.overview }}</p>
+                    </div>
+                </div>
+                {% endfor %}
                     
             {% endif %}
         </div>

@@ -425,9 +425,23 @@ input {
 .user-page-div {
   border-top: #f2f2f2;
   border-style: solid;
-  position: -webkit-sticky;
   position: sticky;
   top: 60px;
 }
 
+.no-books-msg {
+  padding-top: 40px;
+}
+
+.img-no-collection-container {
+  max-width: 100%;
+}
+
+.img-for-no-collection {
+  object-fit: contain;
+}
+
+.welcome {
+  font-size: 28px;
+}
 
