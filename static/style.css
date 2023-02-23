@@ -1,13 +1,4 @@
 
-/* CSS STYLESHEET */
-
-
-/* Styling for all pages */
-
-body {
-  padding-top: 60px;
-}
-
 * {
   font-family: 'Open Sans', sans-serif;
 }
@@ -89,7 +80,6 @@ li {
   color: #192A3E;
   line-height: 84px;
   width: 100%;
-
 }
 
 .div-subtitle {
@@ -166,7 +156,6 @@ li {
 
 
 /* Sign Up/Sign In Page */
-
 .login-input-field {
   width: 100%;
   overflow: hidden;
@@ -211,7 +200,6 @@ input {
 
 
 /* Book Results Page */
-
 .results-page-heading {
   font-weight: 500;
   font-size: 25px;
@@ -340,7 +328,6 @@ input {
 
 
 /* Individual Book Details Page */
-
 .cover-in-div {
   max-width: 100%;
 }
@@ -396,14 +383,6 @@ input {
 
 
 /* User Page  */
-
-/* .user-page-heading {
-  font-weight: 600;
-  font-size: 25px;
-  padding-top: 20px;
-} */
-
-
 .no-center {
   align-items:normal;
 }
