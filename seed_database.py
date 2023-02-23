@@ -20,9 +20,7 @@ with open('static/books_database.json') as file:
 
 
 def seed_books():
-    """This function iterates through books_database.json and creates an 
-    instantiation of a book object that matches the required fields of the 
-    columns in the model.py tables."""
+    """Seeds books into database"""
     
     for key in book_data.keys():
         book_id = key
@@ -39,9 +37,7 @@ def seed_books():
 
 
 def seed_characters():
-    """This function iterates through books_database.json and creates an 
-    instantiation of a character object that matches the required fields of the 
-    columns in the model.py tables."""
+    """Seeds characters into database"""
 
     for key in book_data.keys():
         book_id = key
@@ -61,9 +57,7 @@ def seed_characters():
 
         
 def seed_authors():
-    """This function iterates through books_database.json and creates an 
-    instantiation of an author object that matches the required fields of the 
-    columns in the model.py tables."""
+    """Seeds authors into database"""
 
     for key in book_data.keys():
         book_id = key

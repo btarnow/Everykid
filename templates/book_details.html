@@ -1,13 +1,11 @@
 {% extends 'base.html' %}
 
-{% block title %}{% endblock %}
 
-{% block head %}{% endblock %}
+{% block title %}{{ book.title }} Details Page{% endblock %}
 
 
 {% block body %}
 
-<!-- Book Details Row -->
 <div class="row book-detail-overall-div">
     <!-- Left Space Column -->
     <div class="col-lg-1 col-md-1 col-0"></div>
@@ -15,10 +13,8 @@
     <div class="col-lg-3 col-md-5 col-5 cover-div">
         <img class="cover-in-div" src="{{ book.cover_path }}">
     </div>
-
      <!-- Middle Space Column -->
      <div class="col-lg-1 col-md-1 col-1 mid-space-col"></div>
-
     <!-- Book Details Column -->
     <div class="col-lg-6 col-md-5 col-6">
 
@@ -26,16 +22,19 @@
             <div class="favorite-bookmark">
                 {% if check_if_in_collection == None %}
                     <i class="fa-regular fa-bookmark" id="add-book-btn" 
-                    data-in-collection="false"><span class='text-in-btn'>Add to My Books</span></i>
+                    data-in-collection="false"><span class='text-in-btn'>
+                    Add to My Books</span></i>
                 
                 {% else %}
                     <i class="fa-solid fa-bookmark" id="add-book-btn" 
-                    data-in-collection="true"><span class='text-in-btn'>Saved to My Books</span> </i>
+                    data-in-collection="true"><span class='text-in-btn'>
+                    Saved to My Books</span> </i>
 
                 {% endif %}
 
                 <input id="book-id" name="book-id" value="{{ book.book_id }}" hidden>
             </div>
+
         {% endif %}
         
         <h1>{{ book.title }}</h1>
@@ -64,18 +63,23 @@
 <div class="row book-rec-row">
 
     <div class="col-lg-1 col-md-1 col-0"></div>
+
         {% for book in five_recs %}
+
         <div class="col-lg-2 col-md-2 col-4 book-rec-div">
             <a href="/book_results_page/{{ book.book_id }}">
                 <img class="book-rec-cover" src="{{ book.cover_path }}">
             </a>
-            <a class="book-rec-title" href="/book_results_page/{{ book.book_id }}">{{ book.title }}</a>
+            <a class="book-rec-title" href="/book_results_page/{{ book.book_id }}">
+            {{ book.title }}</a>
         </div>
+
         {% endfor %} 
+
     <div class="col-lg-1 col-md-1 col-0"></div>
     
 </div>
 
-    <script src="/static/js/book_details_page.js"></script>
+<script src="/static/js/book_details_page.js"></script>
 
 {% endblock %}

@@ -2,8 +2,6 @@
 
 from model import db, Book, Author, Character, User, Collection, connect_to_db, Assoc_book_collection
 
-# from sqlalchemy import delete
-
 
 # ----- FUNCTIONS FOR BOOKS TABLE ----- #
 def create_book(book_id, isbn_13, title, year_published, cover_path, overview):

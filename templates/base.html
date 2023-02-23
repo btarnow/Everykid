@@ -36,21 +36,22 @@
 
     
 <div class="nav-bar container">
+
     {% if request.endpoint=='user_page' %}
-      <nav class="navbar fixed-top navbar-expand-md border border-bottom" style="background-color: white" style="border-color: #f2f2f2">
+      <nav class="navbar fixed-top navbar-expand-md border border-bottom" 
+      style="background-color: white" style="border-color: #f2f2f2">
+
     {% else %}
       <nav class="navbar fixed-top navbar-expand-md" style="background-color: white">
+
     {% endif %}
         
         <div class="container-fluid">
           <a class="navbar-brand" href="/">Everykid <i class="fa-solid fa-book-open-reader"></i></a>
-
-         
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
           data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" 
           aria-expanded="false" aria-label="Toggle navigation">
-            <i class="fas fa-bars"></i>
-          </button>
+            <i class="fas fa-bars"></i></button>
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
               <a class="nav-link active" aria-current="page" href="/">Find Books</a>
@@ -58,7 +59,6 @@
             </div>
           </div>
           
-
           {% if session.get('user_id') %}
           <li class="nav-item dropdown" style="background-color: #109CF1">
             <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" 
@@ -82,8 +82,6 @@
     </div>
 
 
-
-
     {% block body %}{% endblock %}
 
     {% block after_body %}{% endblock %}
@@ -92,14 +90,12 @@
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" 
     crossorigin="anonymous"></script>
 
-    
     <ul>
       {% for message in get_flashed_messages() %}
         <li>{{ message }}</li>
       {% endfor %}
     </ul>
       
-
   </body>
 
 </html>

@@ -1,4 +1,4 @@
-// "use strict";
+"use strict";
 
 // Handles if the user selects the bookmark to save a book to their collection
 const bookToAddBtn = document.querySelector('#add-book-btn');
