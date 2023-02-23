@@ -1,6 +1,6 @@
 """Server for EveryKid app."""
 
-from flask import Flask, request, render_template, flash, session, redirect, jsonify
+from flask import Flask, request, render_template, flash, session, redirect
 import crud
 import model 
 import random 
@@ -9,7 +9,6 @@ from passlib.hash import argon2
 
 app = Flask(__name__)
 app.secret_key = 'RANDOM SECRET KEY'
-
 
 
 # ----- ROUTES FOR HOMEPAGE/LOGIN ----- #
@@ -23,6 +22,7 @@ def homepage():
 @app.route('/login', methods=["POST"])
 def login():
     """Process user login"""
+
     email = request.form.get("email")
     password = request.form.get("password")
 
@@ -43,6 +43,7 @@ def login():
 @app.route('/signup', methods=["POST"])
 def signup():
     """Create a new user"""
+
     email = request.form.get("email")
     fname = request.form.get("fname")
     lname = request.form.get("lname")
@@ -74,15 +75,13 @@ def signup():
 @app.route('/logout')
 def logout():
     """Log user out"""
-    #delete session
+
     session.pop('user_id', None)
 
     return redirect('/')
 
 
 # ----- ROUTES FOR USER PAGE ----- #
-
-
 @app.route('/route_to_user_page')
 def show_user_page():
     """Return user_page page if logged in, or returns log in page"""
@@ -95,8 +94,7 @@ def show_user_page():
     else: 
         return render_template("login_page.html")
     
-#TODO: Possibly delete
-# @app.endpoint('user_page_nav')
+
 @app.route('/user_page/<user_id>')
 def user_page(user_id):
     """Display user's homepage"""
@@ -104,13 +102,10 @@ def user_page(user_id):
     user = crud.get_user_by_id(user_id)
     collection = crud.get_users_mybooks_collection(user_id)
 
-    collection_book_list = []
-
     return render_template('user_page.html', user=user, collection=collection)
 
 
 # ----- ROUTES FOR BOOK RESULTS AND DETAILS PAGES ----- #
-
 @app.route('/book_filters')
 def apply_book_filters():
     """Return filtered results page"""   
@@ -124,7 +119,6 @@ def apply_book_filters():
     if not gender_filter:
         gender_filter = "ALL GENDERS"
 
-    
     characters = crud.filter_characters(race_filter, gender_filter)
 
     book_list = []
@@ -173,6 +167,7 @@ def show_book_details(book_id):
 @app.route('/add_book')
 def add_book():
     """Add book to collection"""
+
     user_id = session.get('user_id')
     book_id = request.args.get('book_id')
     collection = crud.get_users_mybooks_collection(user_id)
@@ -195,6 +190,7 @@ def add_book():
 @app.route('/remove_book_from_details')
 def remove_book():
     """Remove book from collection from book details page"""
+
     user_id = session.get('user_id')
     book_id = request.args.get('book_id')
     
@@ -209,7 +205,6 @@ def remove_book():
 
 
 # ----- ROUTES FOR BOOK ABOUT PAGES ----- #
-
 @app.route('/story')
 def show_story():
     """Displays the story page"""
@@ -222,7 +217,6 @@ def show_identity_page():
     """Displays the story page"""
 
     return render_template("identities.html")
-
 
 
 

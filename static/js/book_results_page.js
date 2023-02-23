@@ -1,3 +1,5 @@
+"use strict";
+
 // Allows for the dropdown filters to hold the user's selections from 
 // previous page:
 

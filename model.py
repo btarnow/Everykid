@@ -171,4 +171,3 @@ if __name__ == "__main__":
     app.app_context().push()
     db.create_all()
     connect_to_db(app, echo=False) 
-                        # ^ If echo=True, output will show in terminal

@@ -445,3 +445,17 @@ input {
   font-size: 28px;
 }
 
+
+/* Story Page */
+
+/* #TODO: FIX!  */
+/* .s-heading {
+  margin-top: -115px;
+} */
+
+.s-subheading {
+  font-size: 20px;
+  font-weight: 300;
+  text-align: left;
+  margin-top: -115px;
+}

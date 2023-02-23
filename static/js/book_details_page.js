@@ -1,4 +1,6 @@
-// // Handles if the user selects the bookmark to save a book to their collection
+// "use strict";
+
+// Handles if the user selects the bookmark to save a book to their collection
 const bookToAddBtn = document.querySelector('#add-book-btn');
 
 bookToAddBtn.addEventListener('click', evt => {
@@ -6,7 +8,6 @@ bookToAddBtn.addEventListener('click', evt => {
     const bookID = document.querySelector('#book-id').value;
 
     if (bookToAddBtn.dataset.inCollection === 'true') {
-        console.log("Remove from collection.")
         fetch(`/remove_book_from_details?book_id=${bookID}`)
         .then((response) => response.text())
             .then((collectionName) => {
@@ -21,7 +22,6 @@ bookToAddBtn.addEventListener('click', evt => {
         fetch(`/add_book?book_id=${bookID}`)
             .then((response) => response.text())
             .then((collectionName) => {
-                console.log('The route /add_books is being hit.')
                 bookToAddBtn.innerHTML = `<span class='text-in-btn'>Saved to ${collectionName}</span>`;
                 bookToAddBtn.classList.toggle('fa-regular');
                 bookToAddBtn.classList.toggle('fa-solid');

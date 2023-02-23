@@ -1,9 +1,8 @@
 """CRUD operations."""
 
-from model import db, Book, Author, Character, User, Rating_and_Review, Collection, connect_to_db, Assoc_book_collection
-# from passlib.hash import argon2
+from model import db, Book, Author, Character, User, Collection, connect_to_db, Assoc_book_collection
 
-from sqlalchemy import delete
+# from sqlalchemy import delete
 
 
 # ----- FUNCTIONS FOR BOOKS TABLE ----- #
@@ -111,7 +110,6 @@ def get_all_users():
 
 
 # ----- FUNCTIONS FOR COLLECTIONS ----- #
-
 def create_collection(user_id, collection_name):
     """Create a collection"""
 
