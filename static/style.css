@@ -3,6 +3,9 @@
   font-family: 'Open Sans', sans-serif;
 }
 
+body {
+  padding-top: 60px;
+}
 
 /* Styling for the navbar */
 .nav-bar {

@@ -14,7 +14,7 @@ There is a disparity around who is represented in children’s books, so Everyki
 * Backend: Python, Flask, SQL, PostgreSQL, SQLAlchemy
 * Frontend: Javascript, HTML, CSS, Bootstrap, JSON, Jinja2, AJAX
 * APIs: Open Library’s Books and Authors APIs
-* Planning: DB Designer, Figma 
+* Planning: DB Designer & Figma 
 * Data Model: 
 ![Data Model](/static/screenshots/data_model.png)
 
@@ -27,10 +27,12 @@ There is a disparity around who is represented in children’s books, so Everyki
 
 * Users can create an account/log in to gain access to the functionality of saving books to a collection 
 
-## Future Improvements
-* This project is still in progress. I am working to add the functionality of users storing books to their collection and will be styling soon.
+* Users that have an account can see their saved books in their My Books section of their profile page 
 
-* Utilize AJAX within the character identity form to reload matching book results without updating the whole page 
+## Future Improvements
+* Utilize AJAX on the homepage to show book results from the user's input without routing to a different page
+
+* Allow users to delete books from their My Books collection from their personal collection page
 
 * Add the functionality for users to rate and review books 
 
@@ -61,7 +63,7 @@ python3 server.py
 You can now navigate to 'localhost:5000/' to access the Everykid app!
 
 ## About Me
-👩🏼‍💻 Hi, all! I am Becky Tarnowski, and I am an educator turned software engineer. I am currently in an intensive software engineering bootcamp and will be seeking a full-time software engineering job in the second quarter of 2023. This is my capstone project for the program.  
+👩🏼‍💻 Hi, all! I am Becky Tarnowski, and I am an educator turned software engineer. I am currently in an intensive software engineering bootcamp and will be seeking a full-time software engineering job in the second quarter of 2023. This is my capstone project for the program.
 
 During my seven years as an educator, I worked in Indianapolis Public Schools. When the pandemic hit, I realized that I had a knack for solving problems with technology. For example, when faced with the problem of how to get students their work virtually, I taught myself how to use a learning management system and led software training and enablement sessions for teachers and staff. 
 
