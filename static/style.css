@@ -287,8 +287,10 @@ input {
 }
 
 .book-results-title {
+  color: black;
+  text-decoration: none;
   font-weight: 700;
-  font-size: 16px;
+  font-size: 17px;
 }
 
 .book-results-overview {
@@ -299,20 +301,18 @@ input {
 }
 
 .learn-more-div {
-  margin-top: -11px;
-  margin-bottom: 11px;
+  margin-top: -15px;
 }
 
 .learn-more {
   color: #109CF1;
-  font-size: 12px;
+  font-size: 14px;
   text-decoration: none;
   margin: 0;
 }
 
 .learn-more:hover {
   color:  #34AFF9;
-  font-size: 12px;
   text-decoration: underline;
 }
 

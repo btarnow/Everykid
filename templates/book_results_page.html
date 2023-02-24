@@ -82,12 +82,14 @@
                 </div>
 
                 <div class="col-lg-8 col-md-9 col-sm-8 col-6">
-                    <h4 class="book-results-title">{{ book.title }}</h4>
+                    <a class="book-results-title" href="/book_results_page/{{ book.book_id }}">
+                        <h4 class="book-results-title">{{ book.title }}</h4>
+                    </a>
+                    <p class="book-results-overview">{{ book.overview }}</p>
                     <div class="learn-more-div">
                         <a class="learn-more" href="/book_results_page/{{ book.book_id }}">
                         Learn More</a>
                     </div>
-                    <p class="book-results-overview">{{ book.overview }}</p>
                 </div>
             </div>
         {% endfor %}
