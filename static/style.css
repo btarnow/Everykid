@@ -205,19 +205,19 @@ input {
 /* Book Results Page */
 .results-page-heading {
   font-weight: 500;
-  font-size: 25px;
+  font-size: 35px;
   padding-top: 20px;
 }
 
 .identity-title-race {
-  color: #6A707E;
-  font-size: 14px;
+  color: #000000;
+  font-size: 16px;
   padding-left: 3px;
 }
 
 .identity-title-gender {
-  color: #6A707E;
-  font-size: 14px;
+  color: #000000;
+  font-size: 16px;
   padding-left: 15px;
 }
 
@@ -231,8 +231,8 @@ input {
   color: #109CF1;
   border: transparent;
   font-weight: 600;
-  padding-left: 50px;
-  font-size: 14px;
+  padding-left: 37px;
+  font-size: 17px;
 }
 
 #find-books-button:hover {
@@ -243,27 +243,17 @@ input {
 .narrow-race {
   width: 210px;
   border-radius: 4px;
-  color: #109CF1;
-  border-color: #109CF1;
-  font-size: 14px;
-}
-
-.narrow-race:hover {
-  color: #34AFF9;
-  border-color: #34AFF9;
+  color: #000000;
+  border-color:#000000;
+  font-size: 16px;
 }
 
 .narrow-gender {
   width: 210px;
   border-radius: 4px;
-  color: #109CF1;
-  border-color: #109CF1;
-  font-size: 14px;
-}
-
-.narrow-gender:hover {
-  color: #34AFF9;
-  border-color: #34AFF9;
+  color: #000000;
+  border-color:#000000;
+  font-size: 16px;
 }
 
 .try-again {
@@ -303,8 +293,9 @@ input {
 
 .book-results-overview {
   font-weight: 300;
-  font-size: 12px;
+  font-size: 16px;
   line-height: 20px;
+  color: #000000;
 }
 
 .learn-more-div {
