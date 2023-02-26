@@ -87,8 +87,9 @@ li {
 
 .div-subtitle {
   font-weight: 500;
-  font-size: 14px;
+  font-size: 17px;
   line-height: 20px;
+  margin-top: -25px;
 }
 
 .row {
@@ -96,9 +97,18 @@ li {
 }
 
 .input-field-title {
+  padding-top: 30px;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 16px;
+  letter-spacing: 0.2px;
+  color: #109CF1;
+}
+
+.input-field-title-2 {
   padding-top: 10px;
   font-weight: 500;
-  font-size: 13px;
+  font-size: 15px;
   line-height: 16px;
   letter-spacing: 0.2px;
   color: #109CF1;
@@ -337,6 +347,7 @@ input {
 
 .book-rec-row {
   max-height: 200px;
+  
 }
 
 .book-rec-div {
@@ -433,9 +444,4 @@ input {
   text-align: left;
 }
 
-.tagline {
-  margin-top: -15px;
-  font-size: 24px;
-  font-weight: 600;
-  text-align: left;
-}
+
