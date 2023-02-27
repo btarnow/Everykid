@@ -1,7 +1,7 @@
 # Everykid
 Discover children’s books with diverse characters 📚
 
-There is a disparity around who is represented in children’s books, so Everykid exists to help people find children’s books that celebrate diversity. Users can filter books by the racial and/or gender identity of the main character and add books to their collection. The goal is for every kid to see themselves represented in a book.
+There is a disparity around who is represented in children’s books, so Everykid exists to help people find children’s books that celebrate diversity. Users can discover books by the racial and/or gender identity of the main character and add books to their collection. The goal is for every kid to see themselves represented in a book.
 
 ## Table of Contents
 * 🤖 [Technologies](#technologies-used)
@@ -19,26 +19,38 @@ There is a disparity around who is represented in children’s books, so Everyki
 ![Data Model](/static/screenshots/data_model.png)
 
 ## Features
-* Users start at an empty state/basic landing page where they can select to filter books by a main character’s racial and/or gender identity
+🎥 [See a full video walk-through](https://youtu.be/d1moGgvH0Ew)
 
-* Once they apply filters, they are taken to a book results page where they are shown books that meet that criteria
+### Homepage
+* Users start at an empty state/basic landing page where they can filter books by a main character’s racial and/or gender identity
+![Homepage](/static/screenshots/homepage.png)
 
-* They can click into an individual book to find out more about the book as well as receive recommendations for books they may like based on the selected book’s characters
+### Book Results Page
+* The user is taken to a book results page where they are shown books that meet their criteria 
+* I utilized SQLAlchemy to optimize database queries to display relevant books 
+![Book Results Page](/static/screenshots/book-reuslts.png)
 
-* Users can create an account/log in to gain access to the functionality of saving books to a collection 
+### Login 
+* Users can create an account to save books they are interested in
+* To protect the user’s password, I used a ​​cryptographic hashing algorithm that stores a hashed version of the user’s password to my database
+![Book Results Page](/static/screenshots/login.png)
 
-* Users that have an account can see their saved books in their My Books section of their profile page 
+### Book Details Page 
+* The user can view individual book details and save the book to their personal collection
+* This page includes a "Books You May Like" section to help users discover more books that characters with similar identities
+![Book Details Page](/static/screenshots/book-details.png)
+
+### User's Profile Page
+* Users can access their personally curated book collection by going to the ‘My Books’ portion of their profile
 
 ## Future Improvements
+* Allow users to add and delete books from their My Books collection from multiple avenues 
+
 * Utilize AJAX on the homepage to show book results from the user's input without routing to a different page
-
-* Allow users to delete books from their My Books collection from their personal collection page
-
-* Add the functionality for users to rate and review books 
 
 
 ## Set Up
-To run this project, first clone or fork this repo:
+To run this project locally, first clone or fork this repo:
 ```
 git clone https://github.com/btarnow/Everykid.git
 ```
@@ -69,7 +81,7 @@ During my seven years as an educator, I worked in Indianapolis Public Schools. W
 
 Looking forward, I hope to continue to solve problems with technology as an engineer. 
 
-Feel free to connect with me on LinkedIn: https://www.linkedin.com/in/becky-tarnowski/
+Feel free to connect with me on [LinkedIn] (https://www.linkedin.com/in/becky-tarnowski/)!
 
 
 
