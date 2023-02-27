@@ -80,7 +80,8 @@ During my seven years as an educator, I worked in Indianapolis Public Schools. W
 
 Looking forward, I hope to continue to solve problems with technology as an engineer. 
 
-Feel free to connect with me on [LinkedIn] (https://www.linkedin.com/in/becky-tarnowski/)!
+Feel free to connect with me on [LinkedIn](https://www.linkedin.com/in/becky-tarnowski/)!
+
 
 
 
