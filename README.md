@@ -28,7 +28,7 @@ There is a disparity around who is represented in children’s books, so Everyki
 ### Book Results Page
 * The user is taken to a book results page where they are shown books that meet their criteria 
 * I utilized SQLAlchemy to optimize database queries to display relevant books 
-![Book Results Page](/static/screenshots/book-reuslts.png)
+![Book Results Page](/static/screenshots/book-results.png)
 
 ### Login 
 * Users can create an account to save books they are interested in
