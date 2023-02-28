@@ -49,6 +49,7 @@ There is a disparity around who is represented in children’s books, so Everyki
 ## Future Improvements
 * Allow users to add and delete books from their My Books collection from multiple avenues 
 * Utilize AJAX on the homepage to show book results from the user's input without routing to a different page
+* Expand the user profile page to allow for users to create multiple collections as well as have access to changing their account information 
 
 ## Set Up
 To run this project locally, first clone or fork this repo:
