@@ -44,6 +44,7 @@ There is a disparity around who is represented in children’s books, so Everyki
 
 ### User's Profile Page
 * Users can access their personally curated book collection by going to the ‘My Books’ portion of their profile
+![User's Page](/static/screenshots/user-collection.png)
 
 ## Future Improvements
 * Allow users to add and delete books from their My Books collection from multiple avenues 
