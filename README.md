@@ -6,7 +6,7 @@ There is a disparity around who is represented in children’s books, so Everyki
 **Demo Site:** http://18.216.150.110/
 
 ## Table of Contents
-* 🤖 [Technologies](#technologies-used)
+* 🤖 [Technologies Used](#technologies-used)
 * ⭐ [Features](#features)
 * 🚀 [Future Improvements](#future-improvements)
 * 📖 [Set Up](#set-up)
