@@ -39,7 +39,7 @@ There is a disparity around who is represented in children’s books, so Everyki
 
 ### Book Details Page 
 * The user can view individual book details and save the book to their personal collection
-* This page includes a "Books You May Like" section to help users discover more books that characters with similar identities
+* This page includes a "Books You May Like" section to help users discover more books that have characters with similar identities
 ![Book Details Page](/static/screenshots/book-details.png)
 
 ### User's Profile Page
