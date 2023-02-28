@@ -4,6 +4,7 @@ Discover children’s books with diverse characters 📚
 There is a disparity around who is represented in children’s books, so Everykid exists to help people find children’s books that celebrate diversity. Users can discover books by the racial and/or gender identity of the main character and add books to their collection. The goal is for every kid to see themselves represented in a book.
 
 **Demo Site:** http://18.216.150.110/
+🎥 [See a full video walk-through](https://youtu.be/d1moGgvH0Ew)
 
 ## Table of Contents
 * 🤖 [Technologies](#technologies-used)
@@ -21,7 +22,6 @@ There is a disparity around who is represented in children’s books, so Everyki
 ![Data Model](/static/screenshots/data_model.png)
 
 ## Features
-🎥 [See a full video walk-through](https://youtu.be/d1moGgvH0Ew)
 
 ### Homepage
 * Users start at an empty state/basic landing page where they can filter books by a main character’s racial and/or gender identity
