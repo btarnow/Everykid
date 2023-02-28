@@ -5,8 +5,6 @@ There is a disparity around who is represented in children’s books, so Everyki
 
 **Demo Site:** http://18.216.150.110/
 
-🎥 [See a full video walk-through](https://youtu.be/d1moGgvH0Ew)
-
 ## Table of Contents
 * 🤖 [Technologies](#technologies-used)
 * ⭐ [Features](#features)
@@ -19,10 +17,11 @@ There is a disparity around who is represented in children’s books, so Everyki
 * Frontend: Javascript, HTML, CSS, Bootstrap, JSON, Jinja2, AJAX
 * APIs: Open Library’s Books and Authors APIs
 * Planning: DB Designer & Figma 
-* Data Model: 
-![Data Model](/static/screenshots/data_model.png)
+<!-- * Data Model: 
+![Data Model](/static/screenshots/data_model.png) -->
 
 ## Features
+🎥 [See a full video walk-through](https://youtu.be/d1moGgvH0Ew)
 
 ### Homepage
 * Users start at an empty state/basic landing page where they can filter books by a main character’s racial and/or gender identity
