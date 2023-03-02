@@ -598,5 +598,17 @@
         "overview": "They Call Me Mix is a bilingual (English and Spanish) Children's book geared towards Kinder-2nd grade age students about what it means to be a transgender person of color. The story starts with Lourdes recalling childhood and noticing how gendered everything about existence is since before we're even born. Lourdes points out how people create categories to make life easier but when it comes to people, gender categories can make life so difficult - restrooms, clothing stores, toy stores, sports teams, fitting rooms. They have a hard time even imagining where they'll ever fit in. Then they find queer and trans community where they feel empowered to reinvent language that works for them and we see them doing fun everyday things with friends like play games, watch movies, build bonfires, etc. It ends with the message that people who identify as non binary look, dress, and sound all kinds of different ways and that gender is something everyone can decide for themselves at any moment in time.",
         "gender_identity": "Non-Binary",
         "racial_identity": "Hispanic, Latinx, or Spanish Origin"
+    },
+    "OL19761538W": {
+        "title": "The girl with a mind for math",
+        "year_published": "2018",
+        "Cover Path": "https://covers.openlibrary.org/b/id/10119339-L.jpg",
+        "isbn_13": "9781943147700",
+        "author_name": [
+            "Julia Finley Mosca"
+        ],
+        "overview": "After touring a German submarine in the early 1940s, young Raye set her sights on becoming an engineer. Little did she know sexism and racial inequality would challenge that dream every step of the way, even keeping her greatest career accomplishment a secret for decades. Through it all, the gifted mathematician persisted finally gaining her well-deserved title in history: a pioneer who changed the course of ship design forever.",
+        "gender_identity": "Cisgender Female",
+        "racial_identity": "Black"
     }
 }

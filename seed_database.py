@@ -15,11 +15,7 @@ app.app_context().push()
 model.connect_to_db(app)
 model.db.create_all()
 
-with open('static/books_database.json') as file:
-    book_data = json.loads(file.read())
-
-
-def seed_books():
+def seed_books(book_data):
     """Seeds books into database"""
     
     for key in book_data.keys():
@@ -36,7 +32,7 @@ def seed_books():
         model.db.session.add(book_to_add)
 
 
-def seed_characters():
+def seed_characters(book_data):
     """Seeds characters into database"""
 
     for key in book_data.keys():
@@ -56,7 +52,7 @@ def seed_characters():
                 model.db.session.add(character_to_add)
 
         
-def seed_authors():
+def seed_authors(book_data):
     """Seeds authors into database"""
 
     for key in book_data.keys():
@@ -67,15 +63,19 @@ def seed_authors():
             model.db.session.add(author_to_add)
 
 
-def seed_database():
+def seed_database(file_name):
     """Run all seed functions to seed database """
-    seed_books()
-    seed_characters()
-    seed_authors()
+
+    with open(file_name) as file:
+        book_data = json.loads(file.read())
+
+    seed_books(book_data)
+    seed_characters(book_data)
+    seed_authors(book_data)
     model.db.session.commit() 
     print("All seed functions ran.")
 
-seed_database()
+seed_database('static/books_database.json')
 
 
 # To Test that these functions are working correctly, execute 
