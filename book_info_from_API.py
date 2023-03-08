@@ -4,7 +4,7 @@ APIs-- https://openlibrary.org/developers/api -- to generate my database"""
 import requests 
 import json
 
-# These are the books I want to include in my database: 
+# These are the books included in my database: 
 book_OLIDs_list = ["OL20914137W", "OL25074818W", "OL22020948W", "OL27139917W",
                    "OL26585018W", "OL21183636W", "OL19635091W", "OL20639677W", 
                    "OL27137338W", "OL20531661W", "OL25070735W", "OL39666203M", 
@@ -18,8 +18,6 @@ book_OLIDs_list = ["OL20914137W", "OL25074818W", "OL22020948W", "OL27139917W",
                    "OL20984012W", "OL20568318W", "OL27911917M", "OL12312396M",
                    "OL26265041W", "OL46060039M", "OL20198598W", "OL15980266W",
                    "OL26972693M"]
-
-
 
 
 def create_database(book_OLIDs_list):
