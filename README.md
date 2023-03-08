@@ -17,8 +17,8 @@ There is a disparity around who is represented in children’s books, so Everyki
 * Frontend: Javascript, HTML, CSS, Bootstrap, JSON, Jinja2, AJAX
 * APIs: Open Library’s Books and Authors APIs
 * Planning: DB Designer & Figma 
-<!-- * Data Model: 
-![Data Model](/static/screenshots/data_model.png) -->
+* Data Model: 
+![Data Model](/static/screenshots/data_model.png)
 
 ## Features
 🎥 [See a full video walk-through](https://youtu.be/d1moGgvH0Ew)

@@ -6,9 +6,6 @@ import model
 from server import app
 from seed_database import seed_database 
 
-# # Prevents error: 
-# app.app_context().push() 
-
 model.connect_to_db(app)
 
 file_name = sys.argv[1]
