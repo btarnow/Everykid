@@ -53,19 +53,23 @@ def get_cover_url_path(book_data):
     return cover_path
 
 
-def get_isbn(book_OLID): 
+def get_isbn(book_OLID, book_data): 
     """Returns the ISBN number of a book if available. Otherwise it will 
     return '0' """
 
-    isbn_request = requests.get(f"https://openlibrary.org/works/{book_OLID}/editions.json")
-    isbn_data = isbn_request.json()
-
-    if "entries" in isbn_data:
-        entries_dict = isbn_data["entries"][0]
-        isbn_13 = entries_dict.get("isbn_13", "0")
-        isbn = isbn_13[0]
+    if "isbn_13" in book_data: 
+        isbn = book_data["isbn_13"][0]
+    
     else: 
-        isbn = "0"
+        isbn_request = requests.get(f"https://openlibrary.org/works/{book_OLID}/editions.json")
+        isbn_data = isbn_request.json()
+
+        if "entries" in isbn_data:
+            entries_dict = isbn_data["entries"][0]
+            isbn_13 = entries_dict.get("isbn_13", "0")
+            isbn = isbn_13[0]
+        else: 
+            isbn = "0"
     
     return isbn
 
@@ -74,6 +78,7 @@ def get_authors_names(book_data):
     """Returns the name(s) of the author(s) of a book in the form of a list"""
 
     author_path_list = []
+    author_names_list = []
 
     if "authors" in book_data:
         authors_to_parse = book_data["authors"]
@@ -89,18 +94,19 @@ def get_authors_names(book_data):
             if "author" in authors_to_parse[0]:
                 author_path_list.append(authors_to_parse[0]["author"]["key"])
 
-    author_names_list = []
+        if len(author_path_list) >= 1: 
+            for path in author_path_list:
+                author_request = requests.get(f"https://openlibrary.org{path}.json")
+                author_dict = author_request.json()
 
-    if len(author_path_list) >= 1: 
-        for path in author_path_list:
-            author_request = requests.get(f"https://openlibrary.org{path}.json")
-            author_dict = author_request.json()
+                if "name" in author_dict:
+                    author_names_list.append(author_dict["name"])
 
-            if "name" in author_dict:
-                author_names_list.append(author_dict["name"])
-
-            elif "personal_name" in author_dict:
-                author_names_list.append(author_dict["personal_name"])
+                elif "personal_name" in author_dict:
+                    author_names_list.append(author_dict["personal_name"])
+        
+        elif "publishers" in book_data:
+            author_names_list = book_data["publishers"]
 
     return author_names_list
 
@@ -134,7 +140,7 @@ def create_database(book_OLIDs_list):
         ind_book_dict["title"] = get_title(book_data)
         ind_book_dict["year_published"] = get_publish_date(book_data)
         ind_book_dict["Cover Path"] = get_cover_url_path(book_data)
-        ind_book_dict["isbn_13"] = get_isbn(book_OLID)
+        ind_book_dict["isbn_13"] = get_isbn(book_OLID, book_data)
         ind_book_dict["author_name"] = get_authors_names(book_data)
         ind_book_dict["overview"] = get_overview(book_data)
 

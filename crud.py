@@ -154,18 +154,6 @@ def check_if_book_in_collection(book_id, collection_id):
 
 
 
-    
-
-
-
-
-
-
-
-
-
-
 if __name__ == "__main__":
     from server import app
     connect_to_db(app)
-
