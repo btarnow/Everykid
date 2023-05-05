@@ -10,7 +10,7 @@ There is a disparity around who is represented in children’s books, so Everyki
 * ⭐ [Features](#features)
 * 🚀 [Future Improvements](#future-improvements)
 * 📖 [Set Up](#set-up)
-* 👩🏼‍💻 [About Me](#about-me)
+* 👩🏼‍💻 [About This Project](#about-this-project)
 
 ## Technologies Used
 * Backend: Python, Flask, SQL, PostgreSQL, SQLAlchemy
@@ -76,12 +76,13 @@ python3 server.py
 ```
 You can now navigate to 'localhost:5000/' to access the Everykid app!
 
-## About Me
-👩🏼‍💻 Hi, all! I am Becky Tarnowski, and I am an educator turned software engineer. I am currently in an intensive software engineering bootcamp and will be seeking a full-time software engineering job in the second quarter of 2023. This is my capstone project for the program.
+## About This Project
+👩🏼‍💻 Hi, all! I am Becky Tarnowski, and I am software engineer with a background in education. This is my capstone project for an intensive software engineering fellowship that I recently completed. 
 
-During my seven years as an educator, I worked in Indianapolis Public Schools. When the pandemic hit, I realized that I had a knack for solving problems with technology. For example, when faced with the problem of how to get students their work virtually, I taught myself how to use a learning management system and led software training and enablement sessions for teachers and staff. 
+This project was inspired by my previous students and a research study I led at 
+my school on the relationship between students’ sense of belonging and their representation in our school. The inspiration from my students came when they noticed an inequity around who was represented in the books and our classroom.To work towards a more equitable library, we researched books together that highlighted the stories of more diverse characters and wrote a grant to get them for our classroom. I wished a tool like this existed at the time to help us discover books that celebrate diversity.
 
-Looking forward, I hope to continue to solve problems with technology as an engineer. 
+The research study on the relationship between belonging and representation also inspired this because the findings of the study showed a correlation between who was represented in our school environment and who felt like they belonged. Finding books that represent and celebrate diverse characters was one way our school worked to increase representation, and I want to help others fill their libraries with books that celebrate every kid too! 
 
 Feel free to connect with me on [LinkedIn](https://www.linkedin.com/in/becky-tarnowski/)!
 
