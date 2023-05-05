@@ -1,4 +1,5 @@
-"""CRUD operations."""
+"""CRUD Operations: Essential operations for creating and managing persistent 
+data elements in databases such as the database of books."""
 
 from model import db, Book, Author, Character, User, Collection, connect_to_db, Assoc_book_collection
 
